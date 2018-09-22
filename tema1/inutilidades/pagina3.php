@@ -15,7 +15,6 @@ if (isset($_GET['nombre'])){
     $nombre = $_GET['nombre'];
 }
 
-
 //Si llega parámetro post nombre del parámetro leelo
 if (isset($_POST['nombre'])){
     $nombre = $_POST['nombre'];
