@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./styles.css">
     <div id="contenedor">
         <h2>Formulario</h2>
-        <form action="" method="POST">
+        <form action="form.php" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="name">Nombre</label>
                 <input type="text" id="name" name="nombre" required>
@@ -21,7 +21,7 @@
             </div>
             <div>
                 <label for="country">Ciudad</label>
-                <input list="countries" id="country" required>
+                <input list="countries" id="country" name="ciudad" required>
                 <datalist id="countries">
                     <option value="Granada"></option>
                     <option value="Madrid"></option>
@@ -40,7 +40,7 @@
             </div>
             <div>
                 <label for="pwd">Contraseña</label>
-                <input type="text" id="pwd" name="password" minlength="6" maxlength="16">
+                <input type="password" id="pwd" name="password" minlength="6" maxlength="16">
             </div>
             <div>
                 <label for="age">Edad</label>
@@ -56,6 +56,14 @@
                     <input type="radio" required name="genre" id="male" value="Sr" ><label for="male" class="inputGenre">Masculino </label>
                     <input type="radio" required name="genre" id="female" value="Sra"><label for="female" class="inputGenre">Femenino</label>
                 </fieldset>
+            </div>
+            <div>
+                <label for="image">Imagen</label>
+                <input type="file" id="image" name="imagen" accept="image/*" required>
+            </div>
+            <div>
+                <label for="color">Color</label>
+                <input type="color" id="color" name="color" required>
             </div>
             <div class="button">
                 <button>Enviar</button>
