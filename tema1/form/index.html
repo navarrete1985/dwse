@@ -1,74 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>    
-    <link rel="stylesheet" href="./styles.css">
-    <div id="contenedor">
-        <h2>Formulario</h2>
-        <form action="form.php" method="POST" enctype="multipart/form-data">
-            <div>
-                <label for="name">Nombre</label>
-                <input type="text" id="name" name="nombre" required>
-            </div>
-            <div>
-                <label for="username">Nombre de usuario</label>
-                <input type="text" id="username" name="usuario" maxlength="20" pattern="[A-Za-z0-9_%]{4,20}" required>
-            </div>
-            <div>
-                <label for="country">Ciudad</label>
-                <input list="countries" id="country" name="ciudad" required>
-                <datalist id="countries">
-                    <option value="Granada"></option>
-                    <option value="Madrid"></option>
-                    <option value="Málaga"></option>
-                    <option value="Barcelona"></option>
-                    <option value="Comunidad Valenciana"></option>
-                </datalist>
-            </div>
-            <div>
-                <label for="email">Correo electrónico</label>
-                <input type="email" id="email" name="mail">
-            </div>
-            <div>
-                <label for="github">Enlace github</label>
-                <input type="url" id="github" name="repositorio" required placeholder="http://www.github.com/repositorio">
-            </div>
-            <div>
-                <label for="pwd">Contraseña</label>
-                <input type="password" id="pwd" name="password" minlength="6" maxlength="16">
-            </div>
-            <div>
-                <label for="age">Edad</label>
-                <input type="number" id="age" name="edad" min="18" max="120" value="18" required>
-            </div>
-            <div>
-                <label for="observations">Observaciones</label>
-                <textarea id="observations" name="observaciones" rows="4" maxlength="80"></textarea>
-            </div>
-            <div>
-                <fieldset>
-                    <legend>Género</legend>
-                    <input type="radio" required name="genre" id="male" value="Sr" ><label for="male" class="inputGenre">Masculino </label>
-                    <input type="radio" required name="genre" id="female" value="Sra"><label for="female" class="inputGenre">Femenino</label>
-                </fieldset>
-            </div>
-            <div>
-                <label for="image">Imagen</label>
-                <input type="file" id="image" name="imagen" accept="image/*" required>
-            </div>
-            <div>
-                <label for="color">Color</label>
-                <input type="color" id="color" name="color" required>
-            </div>
-            <div class="button">
-                <button>Enviar</button>
-            </div>
-        </form>
-    </div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>    
+        <link rel="stylesheet" href="./styles.css">
+        <div id="contenedor">
+            <h2>Formulario</h2>
+            <form action="form.php" method="POST" enctype="multipart/form-data">
+                <div>
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="nombre" required>
+                </div>
+                <div>
+                    <label for="username">Nombre de usuario</label>
+                    <input type="text" id="username" name="usuario" maxlength="20" pattern="[A-Za-z0-9_%]{4,20}" required>
+                </div>
+                <div>
+                    <label for="country">Ciudad</label>
+                    <input list="countries" id="country" name="ciudad" required>
+                    <datalist id="countries">
+                        <option value="Granada"></option>
+                        <option value="Madrid"></option>
+                        <option value="Málaga"></option>
+                        <option value="Barcelona"></option>
+                        <option value="Comunidad Valenciana"></option>
+                    </datalist>
+                </div>
+                <div>
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="mail">
+                </div>
+                <div>
+                    <label for="github">Enlace github</label>
+                    <input type="url" id="github" name="repositorio" required placeholder="http://www.github.com/repositorio">
+                </div>
+                <div>
+                    <label for="pwd">Contraseña</label>
+                    <input type="password" id="pwd" name="password" minlength="6" maxlength="16">
+                </div>
+                <div>
+                    <label for="age">Edad</label>
+                    <input type="number" id="age" name="edad" min="18" max="120" value="18" required>
+                </div>
+                <div>
+                    <label for="observations">Observaciones</label>
+                    <textarea id="observations" name="observaciones" rows="4" maxlength="80"></textarea>
+                </div>
+                <div>
+                    <fieldset>
+                        <legend>Género</legend>
+                        <input type="radio" required name="genre" id="male" value="Sr" ><label for="male" class="inputGenre">Masculino </label>
+                        <input type="radio" required name="genre" id="female" value="Sra"><label for="female" class="inputGenre">Femenino</label>
+                    </fieldset>
+                </div>
+                <div>
+                    <label for="image">Imagen</label>
+                    <input type="file" id="image" name="imagen" accept="image/*" required>
+                </div>
+                <div>
+                    <label for="color">Color</label>
+                    <input type="color" id="color" name="color" required>
+                </div>
+                <div class="button">
+                    <button>Enviar</button>
+                </div>
+            </form>
+        </div>
+    </body>
 </html>

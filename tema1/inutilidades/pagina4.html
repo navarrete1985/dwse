@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <form action="pagina4.php" method="GET" enctype="application/x-www-form-urlencoded">
+            <input type="text" name="esteesta"/>
+            <input type="text" name="estenoesta"/>
+            <input type="submit" value="Submit"/>
+        </form>
+        <form action="pagina4.php">
+            <input type="text" name="esteesta"/>
+            <input type="submit" value="Submit"/>
+        </form>
+        <form action="pagina41.php">
+            <input type="text" name="nombre"/>
+            <input type="checkbox" name="fumador"/>
+            <br>
+            habitacion hotel
+            toalla suave <input type="checkbox" name="extra[]" value="toalla"/>
+            mini bar <input type="checkbox" name="extra[]" value="minibar"/><!--Declaración de un array name="extra[]"-->
+            desayuno <input type="checkbox" name="extra[]" value="desayuno"/>
+            <input type="submit" value="Submit"/>
+        </form>
+        <form action="pagina41.php">
+            <input type="text" name="nombre"/>
+            fumador<input type="checkbox" name="fumador"/>
+            <br>
+            habitacion hotel
+            toalla suave <input type="checkbox" name="extra" value="toalla"/>
+            mini bar <input type="checkbox" name="extra" value="minibar"/>
+            desayuno <input type="checkbox" name="extra" value="desayuno"/>
+            <input type="submit" value="Submit"/>
+        </form>
+    </body>
+</html>

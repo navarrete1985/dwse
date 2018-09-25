@@ -1,0 +1,5 @@
+[25-Sep-2018 08:45:12 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/ubuntu/workspace/tema1/inutilidades/pagina4.php on line 6
+[25-Sep-2018 08:46:23 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/ubuntu/workspace/tema1/inutilidades/pagina4.php on line 6
+[25-Sep-2018 10:19:22 UTC] PHP Warning:  var_dump() expects at least 1 parameter, 0 given in /home/ubuntu/workspace/tema1/inutilidades/pagina41.php on line 3
+[25-Sep-2018 10:24:28 UTC] PHP Notice:  Array to string conversion in /home/ubuntu/workspace/tema1/inutilidades/pagina41.php on line 17
+[25-Sep-2018 10:27:43 UTC] PHP Parse error:  syntax error, unexpected '' es: '' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ubuntu/workspace/tema1/inutilidades/pagina41.php on line 17
