@@ -16,7 +16,7 @@
             <input type="text" name="esteesta"/>
             <input type="submit" value="Submit"/>
         </form>
-        <form action="pagina41.php">
+        <form action="pagina43.php">
             <input type="text" name="nombre"/>
             <input type="checkbox" name="fumador"/>
             <br>
@@ -34,6 +34,10 @@
             toalla suave <input type="checkbox" name="extra" value="toalla"/>
             mini bar <input type="checkbox" name="extra" value="minibar"/>
             desayuno <input type="checkbox" name="extra" value="desayuno"/>
+            <input type="submit" value="Submit"/>
+        </form>
+        <form action="pagina42.php?nombre=juan" method="POST"><!--Un parámetro va en get y el otro en post, con lo que podemos recoger ambos sin problema-->
+            <input type="text" name="nombre" value="pepe"/>
             <input type="submit" value="Submit"/>
         </form>
     </body>
