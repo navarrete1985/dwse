@@ -35,6 +35,41 @@ class Reader{
         return self::_read($name, $_POST);
     }
     
+    static function readObject($class, $methodGet = 'get', $methodSet = 'set'){
+        $object = null;
+        //Si la clase existe
+        if (class_exists($class)){
+            //Creamos una instancia de la clase que se nos pasa
+            $object = new $class();
+            //Comprobamos que la clase del objeto tiene un método para darnos los valores de los atributos
+            if (method_exists($object, $methodGet)){
+                //Creamos un array con los nombres de los atributos, que lo tendrá la clase
+                $array = $object->$methodGet();
+                //Recorremos el array con los atributos para darle valor
+                if (is_array($array)){
+                    foreach($array as $atributo => $valor){
+                        $array[$atributo] = self::read($atributo);
+                    }
+                    if(method_exists($object, $methodSet)){
+                        $object->$methodSet($array);
+                    }
+                }
+            }
+        }
+        return $object;
+    }
+    
+    static function readReadableObject(Readable $object){
+        $array = $object->readableGet();
+        if (is_array($array)){
+            foreach($array as $atributo => $valor) {
+                $array[$atributo] = self::read($atributo);
+            }
+            $object->readableSet($array);
+        }
+        return $object;
+    }
+    
     private static function _read($name, array $array){
         return (isset($array[$name])) ? $array[$name] : null;
     }

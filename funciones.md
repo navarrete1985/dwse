@@ -1,0 +1,39 @@
+# FUNCIONES PHP
+
+- ``isset($var, $var, ...)`` Comprueba si la variable o variables introducidas como parámetros tienen están definidas y no son null.
+- ``is_string($string)`` Comprueva si la variable pasada como parámetro es un string.
+- ``is_numeric($var)`` Comprueba si la variable pasada como parámetro es un número.
+- ``is_int($var)`` Comprueba si la variable pasada como parámetro es un entero.
+- ``file_exists($target)`` Comprueba si el archivo existe en la ruta pasada como parámetro.
+- ``move_uploaded_file($origen, $destino)`` Mueve un archivo del origen al destino.
+- ``explode($delimitador, $array)`` Convierte un string en un array usando el delimitador pasado como argumento.
+- ``implode($separador, $array)`` Convierte un array en un string separando cada una de las posiciones por el delimitador establecido como parámetro.
+- ``shell_exec($script)`` Ejecuta un script bajo la shell del sistema devolviendonos el resultado imprimido por pantalla de la terminal.
+- ``strpos($string, $ocurrencia)`` Nos devuelve el índice en el string de la primera ocurrencia con la cadena a buscar.
+- ``$_GET`` Array asociativo con la información enviada a travez del método GET.
+- ``$_POST`` Array asociativo con la información enviada a travez del método POST.
+- ``$_FILES`` Array asociativo con la información de los archivos enviados.
+- ``is_null($var)`` Comprueba si la variable introducida como parámeto es diferente a null.
+- ``var_dump($array)`` Muestra la estructura de una variable o array.
+- ``is_array($var)`` Comprobamos si la variable introducida es un array.
+- ``dirname($path)`` Devuelve la ruta del directorio padre de la ruta pasada como argumento.
+- ``__FILE__`` Devuelve la ruta actual del archivo en el que estamos situados.
+- ``require($path)`` Importamos el archivo de la ruta pasada para poder utilizarlo, tenemos que tener cuidado de importar un archivo ya importado, puesto que si lo hacemos se nos para la ejecución del programa.
+- ``require_once($path)`` Importa el archivo de la ruta pasada, en caso de que ya esté importado no hace nada.
+- ``include($path)`` Importamos los archivos de la ruta pasada, en caso de estar no afecta a la ejecución del programa.
+- ``include_once($path)`` Similar a include, en caso de que el archivo ya esté importado no realiza ninguna operación.
+- ``spl_autoload_register($funcion)`` Registra la función de autoload, para la carga de dependencias.
+- ``property_exists($object, $atributo)`` Nos dice si el objeto pasado tiene el atributo pasado como parámetro.
+- ``get_class()`` Nos devuelve la clase del objeto en el que estamos.
+- ``strtolowercase($string)`` Devolvemos string a lowercase.
+- ``strtouppercase($string)`` Devolvemos string a uppercase.
+- ``class_exists($class)`` Comprobamos si la clase pasada como parámetro existe.
+- ``method_exists($object, $method)`` Comprobamos si el objeto pasado como parámetro tiene un determinado método.
+- ``ini_set($nombre_directiva, $valor)`` Establecemos el valor de una directiva del archivo de configuración de php.
+- ``empty($var)`` Determinamos si la variable pasada como parámetro está vacia.
+- ``var_export($var)`` Devuelve una representación de la variable pasada como parámetro.
+- ``array_keys($array)`` Devuelve un array con los indices del array pasado como parámetro.
+- ``array_values($array)`` Nos devuelve un array con los valores del array pasado como parámetro.
+- ``count($array)`` Nos devuelve los elementos de un array.
+- ``array_push($array, $elemento,...)`` Inserta en la última posición de un array un/os determinado/s elemento/s.
+- ``array_pop($array)`` Extrae de un array el último elemento.
