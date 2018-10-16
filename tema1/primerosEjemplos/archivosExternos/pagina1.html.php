@@ -7,11 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <form enctype="multipart/form-data" method="post" action="pagina9.php">
+    <form enctype="multipart/form-data" method="post" action="pagina1.php">
         <input type="text" name="nombre" placeholder="nombre" required/>
         <input type="file" name="archivo" required/>
         <input type="submit" value="Submit"/>
     </form>
+    <img src="read.php?archivo=chefs.png"/>
+    <img src="data:image/gif;base64,<?php echo base64_encode(file_get_contents('../../../../privado/chefs.png'));?>">
 </body>
 </html>
 <!--Envio de archivos-->

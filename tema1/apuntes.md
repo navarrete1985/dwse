@@ -65,5 +65,50 @@
 
         echo 'El nombre es: ' . $nombre;
         ```
+## Notas:
+    - .htaccess --> Para poner la politica de privacidad y no se tenga acceso a los archivos...directamente
+    desde na ruta a la carpeta.<br>
+    Pero tenemos que tener en cuenta de que si que podemos acceder al archivo si sabemos la ruta al archivo en sí
+    y el nombre de este y lo insertamos desde el navegador<br>
+    En caso de que accedamos a la carpeta y tengamos un index.html....esto si que lo mostramos<br>
+    
+    Para realmente tener privacidad con nuestros datos, tenemos 2 opciones.
+        - Guardar los archivos en nuestra base de datos
+        - Guardar los archivos en directorios privado por debajo de workspace...para que así no se tenga acceso
+    - Lectura de Archivos fuera del workspace:
+    ``` php
+    <?php
 
+    $archivo = $_GET['archivo'];
+    header('Content-Type: image/jpeg');
+    readfile('../../../../privado/' . $archivo);
+    
+    /*
+    Con este script lo que hacemos es leer un archivo de un directorio privado, necesitamos
+    el mimetype y ruta donde se ubica el archivo
+    */
+    ```
+    - 
+
+# Trabajos
+- Upload múltiple<br>
+    Realizar la clase upload múltiple<br>
+    Entregar El jueves próximo<br>
+    Que sea llamada sólamente con el nombre del campo de entrada input type"" name='esteNombre'<br>
+    deberá tener al menos:
+        1. Cuantos archivos vienen
+        2. Cuantos se ha podido subir
+        3. Get name -> arra()nombres de los archivos
+        4. Con 1 solo target
+        5. Set name...se le llama al archivo lo mismo a todos
+        5. En tamaño comparamos cada uno de los archivos con el maxSize
+
+
+ - Crear un formulario en el que nos podamos dar de alta, cada usuario que se de de alta, se creará un directorio
+   en /home/ubuntu/private/nombreUsuario.
+        - En caso de que el usuario exista...informamos de que el usuario ya existe.
+        - En la lista de usuarios, tenemos los enlaces de cada uno de los usuarios que llevan hasta la foto
+        - Esto se tiene que hacer en privado con ,htaccess
+        - Una página para la lista de usuarios, y otra para registro...en esta última tiene que rellenar campo nombre y campo imagen
+ 
     

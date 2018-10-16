@@ -1,0 +1,112 @@
+[15-Oct-2018 19:43:24 UTC] PHP Fatal error:  Uncaught Error: Class 'Multiupload2' not found in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php on line 19
+[15-Oct-2018 19:43:56 UTC] PHP Warning:  include(./classes/Multiupload2): failed to open stream: No such file or directory in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php on line 3
+[15-Oct-2018 19:43:56 UTC] PHP Warning:  include(): Failed opening './classes/Multiupload2' for inclusion (include_path='.:/usr/share/php') in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php on line 3
+[15-Oct-2018 19:43:56 UTC] PHP Fatal error:  Uncaught Error: Class 'Multiupload2' not found in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php on line 19
+[15-Oct-2018 19:45:37 UTC] PHP Warning:  include(./classes/Multiupload2): failed to open stream: No such file or directory in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php on line 3
+[15-Oct-2018 19:45:37 UTC] PHP Warning:  include(): Failed opening './classes/Multiupload2' for inclusion (include_path='.:/usr/share/php') in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php on line 3
+[15-Oct-2018 19:45:37 UTC] PHP Fatal error:  Uncaught Error: Class 'Multiupload2' not found in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php on line 19
+[15-Oct-2018 19:46:02 UTC] PHP Warning:  include(./classes/MultiuploadB): failed to open stream: No such file or directory in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php on line 3
+[15-Oct-2018 19:46:02 UTC] PHP Warning:  include(): Failed opening './classes/MultiuploadB' for inclusion (include_path='.:/usr/share/php') in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php on line 3
+[15-Oct-2018 19:46:02 UTC] PHP Fatal error:  Uncaught Error: Class 'Multiupload2' not found in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php on line 19
+[15-Oct-2018 19:46:31 UTC] PHP Warning:  include(classes/MultiuploadB): failed to open stream: No such file or directory in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php on line 3
+[15-Oct-2018 19:46:31 UTC] PHP Warning:  include(): Failed opening 'classes/MultiuploadB' for inclusion (include_path='.:/usr/share/php') in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php on line 3
+[15-Oct-2018 19:46:31 UTC] PHP Fatal error:  Uncaught Error: Class 'Multiupload2' not found in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php on line 19
+[15-Oct-2018 19:47:05 UTC] PHP Warning:  require(./classes/MultiuploadB): failed to open stream: No such file or directory in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php on line 3
+[15-Oct-2018 19:47:05 UTC] PHP Fatal error:  require(): Failed opening required './classes/MultiuploadB' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php on line 3
+[15-Oct-2018 19:48:11 UTC] PHP Warning:  require(./classes/Multiupload): failed to open stream: No such file or directory in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php on line 3
+[15-Oct-2018 19:48:11 UTC] PHP Fatal error:  require(): Failed opening required './classes/Multiupload' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php on line 3
+[15-Oct-2018 19:48:36 UTC] PHP Warning:  require(classes/MultiuploadB): failed to open stream: No such file or directory in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php on line 3
+[15-Oct-2018 19:48:36 UTC] PHP Fatal error:  require(): Failed opening required 'classes/MultiuploadB' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php on line 3
+[15-Oct-2018 19:48:52 UTC] PHP Warning:  require(classes/MultiuploadB): failed to open stream: No such file or directory in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php on line 3
+[15-Oct-2018 19:48:52 UTC] PHP Fatal error:  require(): Failed opening required 'classes/MultiuploadB' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php on line 3
+[15-Oct-2018 19:50:31 UTC] PHP Fatal error:  Uncaught Error: Class 'Multiupload2' not found in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php on line 19
+[15-Oct-2018 19:51:34 UTC] PHP Fatal error:  Uncaught Error: Class 'Multiupload2' not found in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php on line 19
+[15-Oct-2018 19:52:01 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getError() on boolean in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina11.php on line 21
+[15-Oct-2018 19:53:05 UTC] PHP Notice:  Undefined variable: error in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 132
+[15-Oct-2018 19:54:12 UTC] PHP Notice:  Array to string conversion in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 35
+[15-Oct-2018 19:54:12 UTC] PHP Notice:  Undefined variable: error in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 133
+[15-Oct-2018 19:55:13 UTC] PHP Notice:  Undefined variable: error in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 133
+[15-Oct-2018 19:55:58 UTC] PHP Notice:  Undefined variable: error in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 133
+[15-Oct-2018 20:09:14 UTC] PHP Notice:  Undefined variable: indice in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 208
+[15-Oct-2018 20:09:14 UTC] PHP Notice:  Undefined index:  in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 77
+[15-Oct-2018 20:09:14 UTC] PHP Notice:  Undefined index:  in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 97
+[15-Oct-2018 20:15:24 UTC] PHP Notice:  Undefined variable: files in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 117
+[15-Oct-2018 20:15:24 UTC] PHP Notice:  Undefined index: dirname in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 123
+[15-Oct-2018 20:15:24 UTC] PHP Notice:  Undefined index: dirname in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 126
+[15-Oct-2018 20:15:24 UTC] PHP Warning:  move_uploaded_file(/0): failed to open stream: Permission denied in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 106
+[15-Oct-2018 20:15:24 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/php93itQz' to '/0' in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 106
+[15-Oct-2018 20:15:24 UTC] PHP Notice:  Undefined variable: files in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 117
+[15-Oct-2018 20:15:24 UTC] PHP Notice:  Undefined index: dirname in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 123
+[15-Oct-2018 20:15:24 UTC] PHP Notice:  Undefined index: dirname in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 126
+[15-Oct-2018 20:15:24 UTC] PHP Warning:  move_uploaded_file(/0): failed to open stream: Permission denied in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 106
+[15-Oct-2018 20:15:24 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phppwLmTg' to '/0' in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 106
+[15-Oct-2018 20:17:19 UTC] PHP Notice:  Undefined variable: files in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 117
+[15-Oct-2018 20:17:19 UTC] PHP Notice:  Undefined variable: files in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 118
+[15-Oct-2018 20:17:19 UTC] PHP Notice:  Undefined index: dirname in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 124
+[15-Oct-2018 20:17:19 UTC] PHP Notice:  Undefined index: dirname in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 127
+[15-Oct-2018 20:17:19 UTC] PHP Warning:  move_uploaded_file(/0): failed to open stream: Permission denied in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 106
+[15-Oct-2018 20:17:19 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpmsKPp8' to '/0' in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 106
+[15-Oct-2018 20:17:19 UTC] PHP Notice:  Undefined variable: files in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 117
+[15-Oct-2018 20:17:19 UTC] PHP Notice:  Undefined variable: files in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 118
+[15-Oct-2018 20:17:19 UTC] PHP Notice:  Undefined index: dirname in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 124
+[15-Oct-2018 20:17:19 UTC] PHP Notice:  Undefined index: dirname in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 127
+[15-Oct-2018 20:17:19 UTC] PHP Warning:  move_uploaded_file(/0): failed to open stream: Permission denied in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 106
+[15-Oct-2018 20:17:19 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/php4oRnGS' to '/0' in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 106
+[15-Oct-2018 20:19:05 UTC] PHP Notice:  Undefined variable: files in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 118
+[15-Oct-2018 20:19:05 UTC] PHP Notice:  Undefined variable: files in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 119
+[15-Oct-2018 20:19:05 UTC] PHP Notice:  Undefined index: dirname in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 125
+[15-Oct-2018 20:19:05 UTC] PHP Notice:  Undefined index: dirname in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 128
+[15-Oct-2018 20:19:05 UTC] PHP Warning:  move_uploaded_file(/0): failed to open stream: Permission denied in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 107
+[15-Oct-2018 20:19:05 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpSX1i1I' to '/0' in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 107
+[15-Oct-2018 20:20:17 UTC] PHP Notice:  Undefined variable: files in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 119
+[15-Oct-2018 20:20:17 UTC] PHP Notice:  Undefined variable: files in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 120
+[15-Oct-2018 20:20:17 UTC] PHP Notice:  Undefined index: dirname in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 126
+[15-Oct-2018 20:20:17 UTC] PHP Notice:  Undefined index: dirname in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 129
+[15-Oct-2018 20:20:17 UTC] PHP Warning:  move_uploaded_file(/0): failed to open stream: Permission denied in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 108
+[15-Oct-2018 20:20:17 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpIZmYCi' to '/0' in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 108
+[15-Oct-2018 20:21:44 UTC] PHP Notice:  Undefined variable: files in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 119
+[15-Oct-2018 20:21:44 UTC] PHP Notice:  Undefined variable: files in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 120
+[15-Oct-2018 20:21:44 UTC] PHP Notice:  Undefined index: dirname in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 126
+[15-Oct-2018 20:21:44 UTC] PHP Notice:  Undefined index: dirname in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 129
+[15-Oct-2018 20:21:44 UTC] PHP Warning:  move_uploaded_file(/0): failed to open stream: Permission denied in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 108
+[15-Oct-2018 20:21:44 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpCWBFaH' to '/0' in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 108
+[15-Oct-2018 20:23:56 UTC] PHP Warning:  move_uploaded_file(./upload/./upload/apuntesT1.md): failed to open stream: No such file or directory in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 108
+[15-Oct-2018 20:23:56 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpqn4PRq' to './upload/./upload/apuntesT1.md' in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 108
+[15-Oct-2018 20:23:56 UTC] PHP Warning:  move_uploaded_file(./upload/./upload/apuntesT1.pdf): failed to open stream: No such file or directory in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 108
+[15-Oct-2018 20:23:56 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpW6e1KD' to './upload/./upload/apuntesT1.pdf' in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 108
+[15-Oct-2018 20:27:00 UTC] PHP Notice:  Undefined variable: files in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 119
+[15-Oct-2018 20:27:00 UTC] PHP Notice:  Undefined variable: files in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 120
+[15-Oct-2018 20:27:00 UTC] PHP Notice:  Undefined index: dirname in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 126
+[15-Oct-2018 20:27:00 UTC] PHP Notice:  Undefined index: dirname in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 129
+[15-Oct-2018 20:27:00 UTC] PHP Warning:  move_uploaded_file(/0): failed to open stream: Permission denied in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 108
+[15-Oct-2018 20:27:00 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpTbq330' to '/0' in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 108
+[15-Oct-2018 20:27:34 UTC] PHP Notice:  Undefined variable: files in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 119
+[15-Oct-2018 20:27:34 UTC] PHP Notice:  Undefined variable: files in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 120
+[15-Oct-2018 20:27:34 UTC] PHP Notice:  Undefined index: dirname in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 126
+[15-Oct-2018 20:27:34 UTC] PHP Notice:  Undefined index: dirname in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 129
+[15-Oct-2018 20:27:34 UTC] PHP Warning:  move_uploaded_file(/0): failed to open stream: Permission denied in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 108
+[15-Oct-2018 20:27:34 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpTvAjF6' to '/0' in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadB.php on line 108

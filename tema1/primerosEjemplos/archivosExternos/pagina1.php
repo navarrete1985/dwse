@@ -35,9 +35,9 @@ echo "<pre>$salida</pre>";
 // }
 // echo '<pre>' . var_export($r, true) . '</pre>';
 
-require('classes/Upload.php');
+// require('../classes/Upload.php');
 
-$upload = new Upload('archivo');
+// $upload = new Upload('archivo');
 
 // echo $upload->upload();
 
@@ -48,9 +48,27 @@ $upload = new Upload('archivo');
 
 // echo $upload->setName('miarchivonuevo')->upload();
 
-echo $upload->setTarget('upload')->setSize(5803)->upload();
+// echo $upload->setTarget('upload')->setSize(5803)->upload();
+
+
+require('../classes/Upload.php');
+$archivo = new Upload('archivo');
+$archivo->setPolicy(Upload::POLICY_KEEP);
+$archivo->setTarget('./privado/');
+$archivo->setTarget('../../../../privado/');
+$r = $archivo->upload();
 
 /*
-Hacer listado de funciones que llevamos hasta ahora 
+.htaccess --> Para poner la politica de privacidad y no se tenga acceso a los archivos...directamente
+desde na ruta a la carpeta.
+Peor tenemos que tener en cuenta de que si que podemos acceder al archivo si sabemos la ruta al archivo en sí
+En caso de que accedamos a la carpeta y tengamos un index.html....esto si que lo mostramos
+
+Para realmente tener privacidad con nuestros datos, tenemos 2 opciones.
+    - Guardar los archivos en nuestra base de datos
+    . Guardar los archivos en directorios privado por debajo de workspace...para que así no se tenga acceso
 */
 
+
+$tipo = shell_exec('whoamy');
+echo $tipo;

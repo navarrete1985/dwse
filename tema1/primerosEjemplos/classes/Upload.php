@@ -2,9 +2,9 @@
 
 class Upload {
     
-    const KEEP = 1,
-          OVERWRITE = 2,
-          RENAME = 3;
+    const POLICY_KEEP = 1,
+          POLICY_OVERWRITE = 2,
+          POLICY_RENAME = 3;
 
     public  $name="", 
             $policy=2, 
@@ -26,6 +26,10 @@ class Upload {
         return $this->error;
     }
 
+    function getName(){
+        return $this->name;
+    }
+
     //$name se supone que es un String
     function setName($name) {
         if (is_string($name)){
@@ -43,7 +47,7 @@ class Upload {
     }
 
     //$size se supone que es un Number
-    function setSize($size) {
+    function setMaxSize($size) {
         if (is_numeric($size)){
             echo '<br> Es número <br>';
             $this->maxSize = $size;
@@ -79,14 +83,14 @@ class Upload {
     private function checkPolicy(){
         $file = ($this->name !== '') ? $this->name : $_FILES[$this->nameField]['name'];
         switch($this->policy){
-            case $this::KEEP:
+            case $this::POLICY_KEEP:
                 if(file_exists($this->target . $file)){
                     return;
                 }
-            case $this::OVERWRITE:
+            case $this::POLICY_OVERWRITE:
                 $this->saveFile($file);
                 break;
-            case $this::RENAME:
+            case $this::POLICY_RENAME:
                 if(file_exists($this->target . $file)){
                     $count = 1;
                     $saved = false;
