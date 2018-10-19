@@ -4,6 +4,18 @@
 //implementar en la clase alumno y punto
 trait Comun {
     
+    function fetch(array $array, $initial = 0){
+        $count = $initial;
+        foreach($this as $atributo => $valor){
+            //Con isset vemos si la posición correspondiente existe en el array
+            if (isset($array[$count])){
+                $this->$atributo = $array[$count];
+            }
+            $count++;
+        }
+        return $this;
+    }
+    
     //metodo get -> array asociativo cuyos indices son los atributos del objeto -> get
     function get(){
         $array = array();

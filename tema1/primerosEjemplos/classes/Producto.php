@@ -2,25 +2,52 @@
 
 class Producto {
     
-    private static $contador = 0;
+    use Comun; /*Con esto tenemos implementados los métodos del trait común*/
     
-    private $id, $nombre, $precio, $iva;
+    private $id, 
+            $nombre, 
+            $precio, 
+            $observaciones;
     
     
-    function __construct($id = null, $nombre = null, $precio = null, $iva = null ){
+    function __construct($id = null, $nombre = null, $precio = null, $observaciones = null ){
         $this->id = $id;
         $this->nombre = $nombre;
         $this->precio = $precio;
-        $this->iva = $iva;
-        self::$contador++;
+        $this->observaciones = $observaciones;
     }
     
-    static function getContador(){
-        return self::$contador;
+    function getId() {
+        return $this->id;
+    }
+
+    function getNombre() {
+        return $this->nombre;
+    }
+
+    function getPrecio() {
+        return $this->precio;
+    }
+
+    function getObservaciones() {
+        return $this->observaciones;
+    }
+
+    function setId($id) {
+        $this->id = $id;
+    }
+
+    function setNombre($nombre) {
+        $this->nombre = $nombre;
+    }
+
+    function setPrecio($precio) {
+        $this->precio = $precio;
+    }
+
+    function setObservaciones($observaciones) {
+        $this->observaciones = $observaciones;
     }
     
-    function __destruct(){
-        self::$contador--;
-    }
     
 }

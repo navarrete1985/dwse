@@ -101,7 +101,7 @@ class Upload {
                             $saved = true;
                         }
                         $count++;
-                    }
+                    }&&
                 }else{
                     $this->saveFile($file);
                 }
