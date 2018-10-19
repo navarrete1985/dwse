@@ -8,18 +8,23 @@ Resumen de errores:
 4 - ha fallado move_uploaded_file()
 */
 //CUENTA LOS ARRAYS ASOCIATIVOS DE UN ARCHIVO COMO POR EJEMPLO ARCHIVO0
-class MultiUploadB {
+class MultiUpload {
 
     const POLICY_KEEP = 1,
-            POLICY_OVERWRITE = 2,
-            POLICY_RENAME = 3,
-            MIN_OWN_ERROR = 1000;
+          POLICY_OVERWRITE = 2,
+          POLICY_RENAME = 3,
+          MIN_OWN_ERROR = 1000;
+            
+    const ERROR_EMPTY_FILES = 1,
+          ERROR_EXCEED_MAX_SIZE = 2,
+          ERROR_NOT_MULTI_FILE = 3,
+          ERROR_NOT_SET_FIELD = 4;
 
     private $error,
             $files,
             $input,
-            $maxSize = 0,
             $items,
+            $maxSize = 0,
             $names,
             $policy = self::POLICY_OVERWRITE,
             $savedName = array(),
@@ -72,7 +77,7 @@ class MultiUploadB {
     }
     
     private function getValidName($indice){
-        $name='';
+         $name='';
         if(is_array($this->names)){
             $name=$this->names[$indice];
         }else{
@@ -206,7 +211,8 @@ class MultiUploadB {
             foreach ($this->files['name'] as $clave=>$valor ){
                 echo 'iteracion ' . $clave . '<br>';
                 if($this->error['archivos'][$clave] === 0 && $this->isValidSize($clave) && $this->isValidType($clave)) {
-                    $result = $this->__doUpload($clave);
+                    
+                    $result = $this-> ($clave);
                 } else {
                     $this->error['archivos'][$clave] = 2;
                 }   

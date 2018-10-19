@@ -116,7 +116,7 @@ Resumen de errores:
     /*
     Devuelve el nobre del archivo, el nombre con el que se va a guardar.
     $this->name
-    Peor si tengo POLICY_NAME, es posible, que se haya guardado con un nombre diferente.
+    Peor si tengo POLICY_RENAME, es posible, que se haya guardado con un nombre diferente.
     */
     function getName(){
         $nombre = $this->savedName;
