@@ -1,0 +1,32 @@
+[19-Oct-2018 23:33:39 UTC] PHP Fatal error:  Uncaught Error: Class 'MultiUploadC' not found in /home/ubuntu/workspace/tema1/primerosEjemplos/testMultiupload.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/primerosEjemplos/testMultiupload.php on line 19
+[19-Oct-2018 23:34:07 UTC] PHP Notice:  Undefined property: MultiUploadC::$policy in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadC.php on line 183
+[19-Oct-2018 23:34:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method MultiUploadC::getName() in /home/ubuntu/workspace/tema1/primerosEjemplos/testMultiupload.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/primerosEjemplos/testMultiupload.php on line 26
+[19-Oct-2018 23:34:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method MultiUploadC::getName() in /home/ubuntu/workspace/tema1/primerosEjemplos/testMultiupload.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/primerosEjemplos/testMultiupload.php on line 26
+[19-Oct-2018 23:36:16 UTC] PHP Notice:  Undefined variable: indice in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadC.php on line 205
+[19-Oct-2018 23:36:16 UTC] PHP Notice:  Undefined index:  in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadC.php on line 205
+[19-Oct-2018 23:39:35 UTC] PHP Notice:  Trying to get property of non-object in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadC.php on line 64
+[19-Oct-2018 23:39:35 UTC] PHP Notice:  Trying to get property of non-object in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadC.php on line 64
+[19-Oct-2018 23:47:18 UTC] PHP Fatal error:  Uncaught Error: Class 'MultiUploadB' not found in /home/ubuntu/workspace/tema1/primerosEjemplos/testMultiupload.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/primerosEjemplos/testMultiupload.php on line 21
+[19-Oct-2018 23:47:50 UTC] PHP Fatal error:  Uncaught Error: Undefined class constant 'POLICY_RENAME' in /home/ubuntu/workspace/tema1/primerosEjemplos/testMultiupload.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/primerosEjemplos/testMultiupload.php on line 21
+[19-Oct-2018 23:51:47 UTC] PHP Notice:  Undefined variable: indice in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadC.php on line 225
+[19-Oct-2018 23:51:47 UTC] PHP Notice:  Undefined index:  in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadC.php on line 225
+[20-Oct-2018 00:05:32 UTC] PHP Notice:  Uninitialized string offset: -1 in /home/ubuntu/workspace/tema1/primerosEjemplos/classes/MultiUploadC.php on line 239
+[20-Oct-2018 00:20:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method MultiUploadC::setName() in /home/ubuntu/workspace/tema1/primerosEjemplos/testMultiupload.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/primerosEjemplos/testMultiupload.php on line 23

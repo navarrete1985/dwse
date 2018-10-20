@@ -212,7 +212,7 @@ class MultiUpload {
                 echo 'iteracion ' . $clave . '<br>';
                 if($this->error['archivos'][$clave] === 0 && $this->isValidSize($clave) && $this->isValidType($clave)) {
                     
-                    $result = $this-> ($clave);
+                    $result = $this->__doUpload($clave);
                 } else {
                     $this->error['archivos'][$clave] = 2;
                 }   

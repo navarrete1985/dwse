@@ -10,7 +10,8 @@ class MultiUploadC {
           ERROR_EXCEED_MAX_SIZE = 1002,
           ERROR_NOT_MULTI_FILE = 1003,
           ERROR_NOT_SET_FIELD = 1004,
-          ERROR_FILE_EXIST = 1005;
+          ERROR_FILE_EXIST = 1005,
+          ERROR_MIME_TYPE = 1006;
           
     private $error = array(
                 'class'=>0,
@@ -44,7 +45,6 @@ class MultiUploadC {
         if($this->multifile && $this->files['name'][0] !== ''){
           $pass = true;
           $this->items = count($this->files['name']);
-          $this->error['php'] = $this->files['error'];
         }else if (!$this->multifile && $this->files['name'] !== ''){
           $pass = true;
           $this->items = 1;
@@ -52,6 +52,7 @@ class MultiUploadC {
         
         if($pass){
           $this->names = $this->files['name'];
+          $this->error['php'] = $this->files['error'];
         }else{
           $this->error['class'] = self::ERROR_EMPTY_FILES;
         }
@@ -59,11 +60,11 @@ class MultiUploadC {
     }
     
     function getError() {
-      $error = $this->error['class'];
-      if ($error !== 0){
-        $error -> $this->error['php'];
-      }
-      return $error;
+      // $error = $this->error['class'];
+      // if ($error === 0){
+      //   $error -> $this->error['php'];
+      // }
+      return $this->error;
     }
     
     function getMaxSize() {
@@ -112,8 +113,14 @@ class MultiUploadC {
       if ($this->type !== ''){
         if($index === -1) {
           $result = $this->__isValidType($this->files['tmp_name']);
+          if(!$result){
+            $this->error['php'] = self::ERROR_MIME_TYPE;
+          }
         }else {
           $result = $this->__isValidType($this->files['tmp_name'][$index]);
+          if(!$result){
+            $this->error['php'][$index] = self::ERROR_MIME_TYPE;
+          }
         }
       }
       return $result;
@@ -166,6 +173,13 @@ class MultiUploadC {
       return $this;
     }
     
+    function setType($type) {
+      if (is_string($type)){
+        $this->type = trim($type);
+      }
+      return $this;
+    }
+    
     function upload() {
       $result = 0;
       if($this->error['class'] === 0) {
@@ -180,7 +194,7 @@ class MultiUploadC {
     
     private function __doUpload($index) {
       $result = false;
-      switch($this->policy) {
+      switch($this->policity) {
           case self::POLICITY_KEEP:
               $result = $this->__doUploadKeep($index);
               break;
@@ -202,9 +216,10 @@ class MultiUploadC {
         if ($index === -1) {
           $path = $this->files['tmp_name'];
         }else {
-          $this->files['tmp_name'][$indice];
+          $path = $this->files['tmp_name'][$index];
         }
         $result = move_uploaded_file($path, $this->target . $name);
+        echo 'El resultado de mover de -> ' . $path . ' a -> ' . $this->target . $name . ' es --> ' . $result . '<br>';
       } else {
           if ($index === -1) {
             $this->error['php'] = self::ERROR_FILE_EXIST;
@@ -221,23 +236,33 @@ class MultiUploadC {
       if ($index === -1) {
         $path = $this->files['tmp_name'];
       }else {
-        $this->files['tmp_name'][$indice];
+        $path = $this->files['tmp_name'][$index];
       }
+      echo 'Entro overrite tipo ' . $index . ' path -> ' . $path . '<br>';
       return move_uploaded_file($path, $this->target . $name);
     }
     
     private function __doUploadRename($index) {
-      $name = $this-> __getFileName($indice);
-      echo 'name -> ' . $name . '<br>';
+      $name = $this-> __getFileName($index);
       $newName = $this->target . $name;
       if(file_exists($newName)) {
           $newName = self::__getValidName($newName);
       }
-      $result = move_uploaded_file($this->files['tmp_name'][$indice], $newName);
+      $path = '';
+      if ($index === -1) {
+        $path = $this->files['tmp_name'];
+      }else {
+        $path = $this->files['tmp_name'][$index];
+      }
+      $result = move_uploaded_file($path, $newName);
       if($result) {
           $nombre = pathinfo($newName);
           $nombre = $nombre['basename'];
-          $this->savedName[$indice] = $nombre;
+          if($index === -1) {
+            $this->names = $nombre;
+          }else {
+            $this->names[$index] = $nombre;
+          }
       }
       return $result;
     }
@@ -252,6 +277,19 @@ class MultiUploadC {
         }
       }
       return $name;
+    }
+    
+    private static function __getValidName($file) {
+      $parts = pathinfo($file);
+      $extension = '';
+      if(isset($parts['extension'])) {
+          $extension = '.' . $parts['extension'];
+      }
+      $cont = 1;
+      while(file_exists($parts['dirname'] . '/' . $parts['filename'] . '_' . $cont . $extension)) {
+          $cont++;
+      }
+      return $parts['dirname'] . '/' . $parts['filename'] . '_' . $cont . $extension;
     }
     
     private function __isValidType($file){
@@ -284,108 +322,6 @@ class MultiUploadC {
     
 }
 
-/*
-
-type = 'pdf';
-
-$pos = strpos(text/pdf, 'jpej')0/-1 -> false
-
-
-consulta shelll -> text/pdf
-
-
-array(
-    'generales'  => 0,
-    'php' => array(),
-);
-
-array (
-  'generales' => 0,
-  'nogenerales'=>
-      array (
-        0 => 'apuntesT1.md',
-        1 => 'apuntesT1.pdf',
-      ),
-  )
-
-Datos a devolver:
-array (
-  'archivos0' => 
-  array (
-    'name' => 
-    array (
-      0 => 'apuntesT1.md',
-      1 => 'apuntesT1.pdf',
-    ),
-    'type' => 
-    array (
-      0 => 'application/octet-stream',
-      1 => 'application/pdf',
-    ),
-    'tmp_name' => 
-    array (
-      0 => '/tmp/phpeqxbIk',
-      1 => '/tmp/phpEO0F19',
-    ),
-    'error' => 
-    array (
-      0 => 0,
-      1 => 0,
-    ),
-    'size' => 
-    array (
-      0 => 5104,
-      1 => 101374,
-    ),
-  ),
-  'archivos1' => 
-  array (
-    'name' => 
-    array (
-      0 => '',
-    ),
-    'type' => 
-    array (
-      0 => '',
-    ),
-    'tmp_name' => 
-    array (
-      0 => '',
-    ),
-    'error' => 
-    array (
-      0 => 4,
-    ),
-    'size' => 
-    array (
-      0 => 0,
-    ),
-  ),
-  'archivos2' => 
-  array (
-    'name' => 
-    array (
-      0 => '',
-    ),
-    'type' => 
-    array (
-      0 => '',
-    ),
-    'tmp_name' => 
-    array (
-      0 => '',
-    ),
-    'error' => 
-    array (
-      0 => 4,
-    ),
-    'size' => 
-    array (
-      0 => 0,
-    ),
-  ),
-)
-*/
 
 /*
 Realizar la clase upload múltiple<br>
