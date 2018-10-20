@@ -321,18 +321,3 @@ class MultiUploadC {
     }
     
 }
-
-
-/*
-Realizar la clase upload múltiple<br>
-    Entregar El jueves próximo<br>
-    Que sea llamada sólamente con el nombre del campo de entrada input type"" name='esteNombre'<br>
-    deberá tener al menos:
-        1. Cuantos archivos vienen
-        2. Cuantos se ha podido subir
-        3. Get name -> arra()nombres de los archivos
-        4. Con 1 solo target
-        5. Set name...se le llama al archivo lo mismo a todos
-        5. En tamaño comparamos cada uno de los archivos con el maxSize
-
-*/
