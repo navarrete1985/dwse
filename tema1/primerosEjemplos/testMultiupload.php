@@ -19,8 +19,8 @@ deberá tener al menos
 $archivo = new MultiUploadC('archivos0');
 // $archivo = new MultiUploadC('archivos1');
 $archivo->setTarget('./upload/');
-$archivo->setPolicy(MultiUploadC::POLICITY_RENAME);
-$archivo->setSavedName('unNombre');
+// $archivo->setPolicy(MultiUploadC::POLICITY_RENAME);
+// $archivo->setSavedName('unNombre');
 // $archivo->setMaxSize(10);
 // $archivo->setType('png');
 $r = $archivo->upload();

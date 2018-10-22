@@ -59,7 +59,7 @@ if ($op !== null){
                     $producto = new Producto();
                     $producto->set($fila);
                     $nombre = urlencode($producto->getNombre()); //Hay que codificar las cadenas de texto para pasarlas como argumento Los números no hacen falta
-                    ?>
+            ?>
                     <tr>
                         <td><input class="cbDelete" type="checkbox" name="ids[]" value="<?= $producto->getId() ?>" form="fBorrar"/></td>
                         <td><?php echo $producto->getId(); ?></td>
@@ -70,7 +70,7 @@ if ($op !== null){
                         <td ><a href="pagina13borrar.php" class='editar'>Editar</a></td>
                         <td ><a href="pagina13borrar.php?id=<?= $producto->getId() ?> &nombre=<?= $nombre ?>" class='borrar'>Borrar</a></td>
                     </tr>
-                    <?php
+            <?php
                 }
             ?>
         </tbody>

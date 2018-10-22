@@ -1,0 +1,28 @@
+h1 {
+    text-align: center;
+    color: #89898C;
+}
+
+button {
+    margin: 15px;
+}
+
+form {
+    display: inline-block;
+}
+
+.error {
+    color: #CB4E4C;
+}
+
+.success {
+    color: #4C937E;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: inline-block;
+}
