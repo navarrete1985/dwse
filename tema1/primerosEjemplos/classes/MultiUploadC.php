@@ -60,10 +60,6 @@ class MultiUploadC {
     }
     
     function getError() {
-      // $error = $this->error['class'];
-      // if ($error === 0){
-      //   $error -> $this->error['php'];
-      // }
       return $this->error;
     }
     
@@ -93,16 +89,6 @@ class MultiUploadC {
     
     function getTarget() {
       return $this->target;
-    }
-    
-    /**
-     * Función que retorna nombre de archivo válido en caso de que nuestra opción de
-     * guardado sea POLICITY_RENAME
-     */
-    private function getValidNames() {
-      
-      
-      
     }
     
     /**
