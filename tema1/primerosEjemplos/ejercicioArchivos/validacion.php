@@ -19,7 +19,7 @@ if ($name !== null && createUserFile($name, $privateDir)) {
     }
 }
 
-function createUserFile($name, $privateDir){
+function createUserFile($name, $privateDir) {
     $result = false;
     if (!file_exists($privateDir . $name)) {
         shell_exec('mkdir ' . $privateDir . $name);

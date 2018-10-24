@@ -16,24 +16,24 @@ class MultiUploadC {
     private $error = array(
                 'class'=>0,
                 'php'=>null,
-            ), //Errores tanto de php como de clase
-            $files, //Array de archivos o archivo simple recibido
-            $input, //Nombre del campo de entrada
-            $items = 0, //Contador de elementos recibidos
-            $maxSize = 0, //Tamaño máximo de archivo admitido
-            $multifile = false, //Var que sirve para saber si vamos a tener un solo archivo o varios, para tratar como array o simple el upload
-            $names, //nombre o nombres de los archivos recibidos
-            $policity = self::POLICITY_KEEP, //Politica de almacenamiento
-            $saved = false, //Acción para saber si el upload se ha completado
-            $savedName = '', //Nombre que recibiran los archivos
+            ),
+            $files,
+            $input,
+            $items = 0,
+            $maxSize = 0, 
+            $multifile = false, 
+            $names, 
+            $policity = self::POLICITY_KEEP, 
+            $saved = false,
+            $savedName = '', 
             $target = './',
-            $type = ''; //Ruta en la que guardar los archivos recibidos
+            $type = '';
     
     function __construct($input) {
         $this->input = $input;
         if (is_string($input) && isset($_FILES[$input])) {
             $this->files = $_FILES[$input];
-            $this->multifile = is_array($this->files['name']); //Sabemos si tenemos obtenemos más de 1 archivo
+            $this->multifile = is_array($this->files['name']);
             $this->chekFiles();
         }else {
             $this->error['class'] = self::ERROR_NOT_SET_FIELD;
@@ -42,18 +42,18 @@ class MultiUploadC {
     
     private function chekFiles() {
         $pass = false;
-        if($this->multifile && $this->files['name'][0] !== ''){
+        if($this->multifile && $this->files['name'][0] !== '') {
           $pass = true;
           $this->items = count($this->files['name']);
-        }else if (!$this->multifile && $this->files['name'] !== ''){
+        }else if (!$this->multifile && $this->files['name'] !== '') {
           $pass = true;
           $this->items = 1;
         }
         
-        if($pass){
+        if($pass) {
           $this->names = $this->files['name'];
           $this->error['php'] = $this->files['error'];
-        }else{
+        }else {
           $this->error['class'] = self::ERROR_EMPTY_FILES;
         }
         
@@ -96,15 +96,15 @@ class MultiUploadC {
      */
     function isValidType($index) {
       $result = true;
-      if ($this->type !== ''){
+      if ($this->type !== '') {
         if($index === -1) {
           $result = $this->__isValidType($this->files['tmp_name']);
-          if(!$result){
+          if(!$result) {
             $this->error['php'] = self::ERROR_MIME_TYPE;
           }
         }else {
           $result = $this->__isValidType($this->files['tmp_name'][$index]);
-          if(!$result){
+          if(!$result) {
             $this->error['php'][$index] = self::ERROR_MIME_TYPE;
           }
         }
@@ -122,7 +122,7 @@ class MultiUploadC {
         if ($index === -1 && !$this->files['size'] <= $this->maxSize) {
           $result = false;
           $this->error['php'] = self::ERROR_EXCEED_MAX_SIZE;
-        }else if (!$this->files['size'][$index] <= $this->maxSize){
+        }else if (!$this->files['size'][$index] <= $this->maxSize) {
           $result = false;
           $this->error['php'][$index] = self::ERROR_EXCEED_MAX_SIZE;
         }
@@ -160,7 +160,7 @@ class MultiUploadC {
     }
     
     function setType($type) {
-      if (is_string($type)){
+      if (is_string($type)) {
         $this->type = trim($type);
       }
       return $this;
@@ -169,7 +169,7 @@ class MultiUploadC {
     function upload() {
       $result = 0;
       if($this->error['class'] === 0) {
-        if($this->multifile){
+        if($this->multifile) {
           $result = $this->__multiupload();  
         }else {
           $result = $this->__upload();
@@ -205,11 +205,10 @@ class MultiUploadC {
           $path = $this->files['tmp_name'][$index];
         }
         $result = move_uploaded_file($path, $this->target . $name);
-        echo 'El resultado de mover de -> ' . $path . ' a -> ' . $this->target . $name . ' es --> ' . $result . '<br>';
       } else {
           if ($index === -1) {
             $this->error['php'] = self::ERROR_FILE_EXIST;
-          }else{
+          }else {
             $this->error['php'][$index] = self::ERROR_FILE_EXIST;
           }
       }
@@ -224,7 +223,6 @@ class MultiUploadC {
       }else {
         $path = $this->files['tmp_name'][$index];
       }
-      echo 'Entro overrite tipo ' . $index . ' path -> ' . $path . '<br>';
       return move_uploaded_file($path, $this->target . $name);
     }
     
@@ -278,7 +276,7 @@ class MultiUploadC {
       return $parts['dirname'] . '/' . $parts['filename'] . '_' . $cont . $extension;
     }
     
-    private function __isValidType($file){
+    private function __isValidType($file) {
       $valid = true;
       $tipo = shell_exec('file --mime ' . $file);
       $posicion = strpos($tipo, $this->type);
@@ -288,19 +286,19 @@ class MultiUploadC {
       return $valid;
     }
     
-    private function __multiupload(){
+    private function __multiupload() {
       $result = 0;
-      foreach($this->files['name'] as $index=>$value){
-        if ($this->error['php'][$index] === 0 && $this->isValidSize($index) && $this->isValidType($index) && $this->__doUpload($index)){
+      foreach($this->files['name'] as $index=>$value) {
+        if ($this->error['php'][$index] === 0 && $this->isValidSize($index) && $this->isValidType($index) && $this->__doUpload($index)) {
           $result++;
         }
       }
       return $result;
     }
     
-    private function __upload(){
+    private function __upload() {
       $result = 0;
-      if ($this->error['php'] === 0 && $this->isValidSize(-1) && $this->isValidType(-1) && $this->__doUpload(-1)){
+      if ($this->error['php'] === 0 && $this->isValidSize(-1) && $this->isValidType(-1) && $this->__doUpload(-1)) {
         $result++;
       }
       return $result;

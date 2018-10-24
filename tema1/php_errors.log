@@ -73,3 +73,5 @@ Stack trace:
 #0 {main}
   thrown in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13editar.php on line 33
 [24-Oct-2018 11:59:18 UTC] PHP Notice:  Undefined variable: mensaje in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13.php on line 42
+[24-Oct-2018 12:33:18 UTC] PHP Notice:  Undefined variable: mensaje in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13.php on line 42
+[24-Oct-2018 12:34:41 UTC] PHP Notice:  Undefined variable: mensaje in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13.php on line 42
