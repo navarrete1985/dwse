@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>evento</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <th>evento</th>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td>
+                        <a class="borrarJavascript" href="https://example.com">1 borrar javascript</a> (getElementsByClassName())
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a class="borrarJquery" href="https://example.com">2 borrar jquery</a> ($('.className'))
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a class="borrarForEach" href="https://example.com">3 borrar forEach</a> ([].forEach.call())
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a class="borrarArray" href="https://example.com">4 borrar Array</a> (Array.prototype.forEach.call())
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a class="borrarSelector" href="https://example.com">5 borrar querySelector</a> (querySelectorAll())
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+        <script>
+            /*global $*/
+            (function() {
+                var confirmDelete = function(event) {
+                    var className = event.target.getAttribute('class'); // getAttribute
+                    className = event.target.className; //className
+                    if (!window.confirm('Borrar? ' + className)) {
+                        event.preventDefault();
+                    }
+                };
+                var addEventDelete = function(element) {
+                    element.addEventListener('click', confirmDelete);
+                };
+                /*1º javascript tradicional*/
+                var elements1 = document.getElementsByClassName('borrarJavascript');
+                for (var i = 0; i < elements1.length; i++) {
+                    addEventDelete(elements1[i]);
+                }
+                /*2º jquery*/
+                $('.borrarJquery').on('click' , confirmDelete);
+                /*3º forEach*/
+                var elements2 = document.getElementsByClassName('borrarForEach');
+                [].forEach.call(elements2, addEventDelete);
+                /*4º Array prototype (equivalente a 3º)*/
+                var elements3 = document.getElementsByClassName('borrarArray');
+                Array.prototype.forEach.call(elements3, addEventDelete);
+                /*https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/forEach*/
+                /*5º querySelectorAll*/
+                var elements4 = document.querySelectorAll(".borrarSelector");
+                [].forEach.call(elements4, addEventDelete);
+                /*https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors*/
+            })();
+        </script>
+    </body>
+</html>

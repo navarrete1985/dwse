@@ -3,17 +3,13 @@
 require '../classes/Autoload.php';
 
 $response = Reader::get('response');
-
-if ($response != null){
-    if ($response === 'success' || $response === 'error'){
+if ($response != null) {
+    if ($response === 'success' || $response === 'error') {
         $message = ($response === 'success') ? 'con éxito' : 'erróneamente';
         echo '<h1 class="' . $response . '">La operación de registro se ha realizado ' . $message . '</h1>';    
     }
 }
-
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>

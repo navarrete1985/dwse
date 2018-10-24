@@ -10,7 +10,12 @@
                 event.preventDefault();
             }
         }else if (target.tagName === 'A' && target.getAttribute('class') === 'editar'){
-            
+            // event.preventDefault();
+            // let dataId = target.getAttribute("data-id");
+            // let id = document.getElementById('id');
+            // id.value = dataId;
+            // let feditar = document.getElementById('fEditar');
+            // feditar.submit;
         }else if (target.tagName === 'INPUT' && target.parentNode.parentNode.parentNode.tagName === 'THEAD'){
             let nodes = document.getElementsByClassName("cbDelete");
             let state = target.checked;
@@ -19,7 +24,4 @@
             }
         }
     }
-    /*
-    Meter el checkbox de selección múltiple(selecciono o quitar)
-    */
 })();

@@ -26,3 +26,14 @@ form {
 .visible {
     display: inline-block;
 }
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: #2a4c5f;
+}
+
+.wrapper img {
+    margin: auto;
+    display: block;
+}

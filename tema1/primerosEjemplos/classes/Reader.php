@@ -74,6 +74,16 @@ class Reader{
         return (isset($array[$name])) ? $array[$name] : null;
     }
     
+    static function readArray($nombre) {
+        $result = array();
+        if (isset($_GET[$nombre]) && is_array($_GET[$nombre])){
+            $result = $_GET[$nombre];
+        }else if (isset($_POST[$nombre]) && is_array($_POST[$nombre])){
+            $result = $_POST[$nombre];
+        }
+        return $result;
+    }
+    
     /*
     Clase que demostramos los comparadores de igualdad
     */

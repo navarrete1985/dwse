@@ -30,3 +30,46 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/ubuntu/workspace/tema1/primerosEjemplos/testMultiupload.php on line 23
+[23-Oct-2018 08:49:48 UTC] PHP Notice:  Undefined variable: mensaje in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13.php on line 42
+[23-Oct-2018 10:32:29 UTC] PHP Notice:  Undefined variable: mensaje in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13.php on line 42
+[23-Oct-2018 10:32:35 UTC] PHP Notice:  Undefined variable: id in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13borrarV2.php on line 16
+[23-Oct-2018 10:32:35 UTC] PHP Notice:  Undefined variable: id in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13borrarV2.php on line 16
+[23-Oct-2018 10:32:52 UTC] PHP Notice:  Undefined variable: id in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13borrarV2.php on line 16
+[23-Oct-2018 10:33:55 UTC] PHP Notice:  Undefined variable: mensaje in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13.php on line 42
+[23-Oct-2018 10:33:59 UTC] PHP Notice:  Undefined variable: id in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13borrarV2.php on line 16
+[23-Oct-2018 10:34:06 UTC] PHP Notice:  Undefined variable: mensaje in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13.php on line 42
+[23-Oct-2018 10:34:21 UTC] PHP Notice:  Undefined variable: mensaje in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13.php on line 42
+[23-Oct-2018 10:34:24 UTC] PHP Notice:  Array to string conversion in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13borrarV2.php on line 16
+[23-Oct-2018 10:34:47 UTC] PHP Notice:  Undefined variable: mensaje in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13.php on line 42
+[23-Oct-2018 10:37:33 UTC] PHP Notice:  Undefined variable: mensaje in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13.php on line 42
+[23-Oct-2018 10:37:50 UTC] PHP Notice:  Undefined variable: mensaje in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13.php on line 42
+[23-Oct-2018 10:38:32 UTC] PHP Notice:  Undefined variable: mensaje in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13.php on line 42
+[23-Oct-2018 10:39:19 UTC] PHP Notice:  Undefined variable: mensaje in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13.php on line 42
+[24-Oct-2018 11:22:37 UTC] PHP Notice:  Undefined variable: mensaje in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13.php on line 42
+[24-Oct-2018 11:24:03 UTC] PHP Notice:  Undefined variable: mensaje in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13.php on line 42
+[24-Oct-2018 11:26:39 UTC] PHP Notice:  Undefined variable: mensaje in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13.php on line 42
+[24-Oct-2018 11:29:41 UTC] PHP Notice:  Undefined variable: mensaje in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13.php on line 42
+[24-Oct-2018 11:31:34 UTC] PHP Notice:  Undefined variable: mensaje in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13.php on line 42
+[24-Oct-2018 11:34:19 UTC] PHP Notice:  Undefined variable: mensaje in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13.php on line 42
+[24-Oct-2018 11:41:53 UTC] PHP Notice:  Undefined variable: mensaje in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13.php on line 42
+[24-Oct-2018 11:44:56 UTC] PHP Notice:  Undefined variable: mensaje in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13.php on line 42
+[24-Oct-2018 11:54:18 UTC] PHP Notice:  Undefined variable: mensaje in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13.php on line 42
+[24-Oct-2018 11:54:37 UTC] PHP Notice:  Undefined variable: mensaje in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13.php on line 42
+[24-Oct-2018 11:55:43 UTC] PHP Notice:  Undefined variable: mensaje in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13.php on line 42
+[24-Oct-2018 11:55:44 UTC] PHP Notice:  Undefined variable: conexion in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13editar.php on line 11
+[24-Oct-2018 11:55:44 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13editar.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13editar.php on line 11
+[24-Oct-2018 11:56:43 UTC] PHP Notice:  Undefined variable: mensaje in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13.php on line 42
+[24-Oct-2018 11:56:44 UTC] PHP Notice:  Undefined variable: prodcuto in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13editar.php on line 33
+[24-Oct-2018 11:56:44 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getNombre() on null in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13editar.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13editar.php on line 33
+[24-Oct-2018 11:57:20 UTC] PHP Notice:  Undefined variable: prodcuto in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13editar.php on line 33
+[24-Oct-2018 11:57:20 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getNombre() on null in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13editar.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13editar.php on line 33
+[24-Oct-2018 11:59:18 UTC] PHP Notice:  Undefined variable: mensaje in /home/ubuntu/workspace/tema1/primerosEjemplos/pagina13.php on line 42

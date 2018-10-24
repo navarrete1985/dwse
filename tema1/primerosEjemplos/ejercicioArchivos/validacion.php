@@ -7,7 +7,7 @@ $privateDir = '/home/ubuntu/private/';
 
 $name = Reader::post('name');
 $file = new MultiUploadC('image');
-$file->setType('jpeg');
+$file->setType('image');
 $file->setTarget($privateDir . $name);
 
 $responseValue = 'error';

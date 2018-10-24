@@ -51,6 +51,7 @@ if ($op !== null){
                 <th>Borrar</th>
                 <th>Editar</th>
                 <th>Borrar2 Ficticio</th>
+                <th>Editar2 Ficticio</th>
             </tr>
         </thead>
         <tbody>
@@ -67,8 +68,9 @@ if ($op !== null){
                         <td><?= $producto->getPrecio() ?></td>
                         <td><?= $producto->getObservaciones() ?></td>
                         <td ><a href="pagina13borrar.php?id=<?= $producto->getId() ?>" class='borrar'>Borrar</a></td>
-                        <td ><a href="pagina13borrar.php" class='editar'>Editar</a></td>
+                        <td ><a href="pagina13editar.php?id=<?= $producto->getId() ?>" class='editar'>Editar</a></td>
                         <td ><a href="pagina13borrar.php?id=<?= $producto->getId() ?> &nombre=<?= $nombre ?>" class='borrar'>Borrar</a></td>
+                        <td ><a href="#" class='editar' data-id="<?= $producto->getId() ?>">Editar2</a></td>
                     </tr>
             <?php
                 }
@@ -83,6 +85,9 @@ if ($op !== null){
     </form>
     <form action="pagina13borrarV2.php" method="POST" name="fBorrar" id="fBorrar">
         <input type="submit" value="Borrar"/>
+    </form>
+    <form action="pagina13editar.php" method="POST" name="fEditar" id="fEditar">
+        <input type="hidden" name="id" id="id" value=""/>
     </form>
 </body>
 </html>
