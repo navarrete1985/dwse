@@ -111,4 +111,21 @@
         - Esto se tiene que hacer en privado con ,htaccess
         - Una página para la lista de usuarios, y otra para registro...en esta última tiene que rellenar campo nombre y campo imagen
  
-    
+
+
+# Trabajo bases de datos
+- Tenemos que crear una tabla de usuarios, los campos que tiene que tener son:
+    - id -> Autoincremento y primary key
+    - correo -> (not null, uni)
+    - alias -> (uni pero puede ser null)
+    - nombre -> (not null)
+    - clave -> (not null)
+    - activo -> (bit(0,1) 0->no está activo, not null)
+    - fechaalta -> (datetime, not null)
+    - https://curso1819-izvdamdaw.c9users.io/
+
+# Transacciones
+
+Las transacciones son la forma de hacer que una operación frente a la base de datos
+sea atómica, con lo que si se falla algo al realizar la operación se podría realizar
+rollback para que los datos se mantengan como ante, y no tengamos inconsistencia.
