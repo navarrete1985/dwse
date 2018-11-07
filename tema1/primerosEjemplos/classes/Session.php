@@ -1,14 +1,6 @@
 <?php
 
 class Session {
-    //constructor
-    //get
-    //set
-    //destroy
-    //getLogin
-    //setLogin
-    //logout
-    //https://ide.c9.io/izvdamdaw/curso1819
     
     const LOGIN_KEY = 'login';
     
