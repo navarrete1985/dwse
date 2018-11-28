@@ -18,6 +18,7 @@ $sesion = new Session(App::SESSION_NAME);
         <link rel="stylesheet" href="css/style.css" >
     </head>
     <body>
+        <!-- modal -->
         <div class="modal fade" id="modallogin" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -41,6 +42,7 @@ $sesion = new Session(App::SESSION_NAME);
                 </div>
             </div>
         </div>
+        <!-- fin modal -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <a class="navbar-brand" href="./">dwes</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,19 +60,19 @@ $sesion = new Session(App::SESSION_NAME);
                         <a class="nav-link" href="usuario/">Usuario</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cliente/">Registrarse</a>
+                        <a class="nav-link" href="cliente/">Registro</a>
                     </li>
-                    <!--<li class="nav-item">-->
-                    <!--    <a class="nav-link disabled" href="#">Disabled</a>-->
-                    <!--</li>-->
-                    <!--<li class="nav-item dropdown">-->
-                    <!--    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>-->
-                    <!--    <div class="dropdown-menu" aria-labelledby="dropdown01">-->
-                    <!--        <a class="dropdown-item" href="#">Action</a>-->
-                    <!--        <a class="dropdown-item" href="#">Another action</a>-->
-                    <!--        <a class="dropdown-item" href="#">Something else here</a>-->
-                    <!--    </div>-->
-                    <!--</li>-->
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -83,16 +85,20 @@ $sesion = new Session(App::SESSION_NAME);
                 <div class="container">
                     <h1 class="display-3">Hello, world!</h1>
                     <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-                    <p><a data-toggle="modal" data-target="#modallogin" class="btn btn-primary btn-lg" href="#" role="button">Login &raquo;</a>
+                    <p>
+                        <a data-toggle="modal" data-target="#modallogin" class="btn btn-primary btn-lg" href="#" role="button">Login &raquo;</a>
                         <?php
-                            if($sesion->isLogged()) {
-                                ?>
-                                <a class="btn btn-primary btn-lg" href="cliente/edit.php" role="button">Editar &raquo;</a>
-                                <?php
-                            }
+                        if($sesion->isLogged()) {
+                            ?>
+                            <a class="btn btn-primary btn-lg" href="cliente/edit.php" role="button">Editar &raquo;</a>
+                            <?php
+                        }
                         ?>
                     </p>
-                    
+                    <?php
+                    $alert = Alert::getMessage(Reader::get('op'), Reader::get('resultado'));
+                    echo $alert;
+                    ?>
                 </div>
             </div>
             <div class="container">

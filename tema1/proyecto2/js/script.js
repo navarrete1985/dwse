@@ -6,6 +6,11 @@
     var checkDesenmascarar = document.getElementById('desenmascarar');
     var fBorrar = document.getElementById('fBorrar');
     var tabla = document.getElementById('tablaProducto');
+    
+    $('#modallogin').on('hidden.bs.modal', function (e) {
+        correo.value = '';
+        clave.value = '';
+    });
 
     if(btConfirmDelete) {
         btConfirmDelete.addEventListener('click', function() {

@@ -11,6 +11,10 @@ class Util {
         return password_hash($cadena, PASSWORD_DEFAULT, $opciones);
     }
     
+    static function dateFromSql($date) {
+        return 'formato europeo de la fecha';
+    }
+
     static function getDateFromMySqlToEs($mySqlDate) {
         date_default_timezone_set('Europe/Madrid');
         if ($mySqlDate === null) {
@@ -19,8 +23,24 @@ class Util {
         return date("d/m/Y", strtotime($mySqlDate));
     }
     
-    static function dateFromSql($date) {
-        return 'formato europeo de la fecha';
+    static function getDateHourFromMySqlToEs($mySqlDate) {
+        date_default_timezone_set('Europe/Madrid');
+        if ($mySqlDate === null) {
+            return null;
+        }
+        return date("d/m/Y H:i:s", strtotime($mySqlDate));
+    }
+    
+    static function setDateHourToMySql($date) {
+        date_default_timezone_set('Europe/Madrid');
+        $date = str_replace('/', '-', $date);
+        return date('Y-m-d H:i:s', strtotime($date));
+    }
+    
+    static function setDateToMySql($date) {
+        date_default_timezone_set('Europe/Madrid');
+        $date = str_replace('/', '-', $date);
+        return date('Y-m-d', strtotime($date));
     }
 
     static function url() {

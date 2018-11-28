@@ -3,8 +3,8 @@
 use izv\data\Usuario;
 use izv\database\Database;
 use izv\managedata\ManageUsuario;
-use izv\tools\Reader;
 use izv\tools\Mail;
+use izv\tools\Reader;
 use izv\tools\Util;
 
 require '../classes/autoload.php';
@@ -24,11 +24,13 @@ if($usuario->getAlias() === '') {
 $usuario->setActivo(0);
 $usuario->setClave(Util::encriptar($usuario->getClave()));
 $resultado = $manager->add($usuario);
+$db->close();
 if($resultado > 0) {
-    $r2 = Mail::sendActivation($usuario);
+    $usuario->setId($resultado);
+    $resultado2 = Mail::sendActivation($usuario);
 }
+$url = Util::url() . 'index.php?op=insert&resultado=' . $resultado . '&mail=' . $resultado2;
+header('Location: ' . $url);
+
 /*echo Util::varDump($db->getConnection()->errorInfo());
 echo Util::varDump($db->getSentence()->errorInfo());*/
-$db->close();
-$url = Util::url() . 'index.php?op=insert&resultado=' . $resultado . '&r2=' . $r2;
-header('Location: ' . $url);

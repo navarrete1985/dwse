@@ -1,15 +1,15 @@
 <?php
 
-use izv\tools\Session;
-use izv\app\App;
-
 require '../classes/autoload.php';
 
-$session = new Session();
-if (!$session->isLogged()) {
+use izv\app\App;
+use izv\tools\Session;
+$sesion = new Session(App::SESSION_NAME);
+if(!$sesion->isLogged()) {
     header('Location: ..');
     exit();
 }
+
 ?>
 <!doctype html>
 <html>
@@ -30,14 +30,8 @@ if (!$session->isLogged()) {
                     <li class="nav-item">
                         <a class="nav-link" href="..">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="./">Producto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../usuario">Usuario</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../cliente">Registrarse</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./">Producto</a>
                     </li>
                 </ul>
             </div>

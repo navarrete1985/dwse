@@ -57,4 +57,11 @@ class Session {
         return $this;
     }
     
+    function addProducto(Producto $producto) {
+        
+        
+        
+    }
+    
+    
 }

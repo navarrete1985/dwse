@@ -17,14 +17,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="..">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../producto">Producto</a>
-                    </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="./">Usuario</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../cliente">Registrarse</a>
                     </li>
                 </ul>
             </div>

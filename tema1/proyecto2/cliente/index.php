@@ -5,16 +5,9 @@ require '../classes/autoload.php';
 use izv\data\Usuario;
 use izv\database\Database;
 use izv\managedata\ManageUsuario;
-use izv\tools\Reader;
 use izv\tools\Alert;
+use izv\tools\Reader;
 use izv\tools\Util;
-
-$db = new Database();
-$manager = new ManageUsuario($db);
-$usuarios = $manager->getAll();
-$db->close();
-
-$alert = Alert::getMessage(Reader::get('op'), Reader::get('resultado'));
 
 ?>
 <!doctype html>
@@ -57,12 +50,6 @@ $alert = Alert::getMessage(Reader::get('op'), Reader::get('resultado'));
                     <li class="nav-item">
                         <a class="nav-link" href="..">Home</a>
                     </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="../producto">Producto</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="../usuario">Usuario</a>
-                    </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="./">Registrarse</a>
                     </li>
@@ -73,7 +60,6 @@ $alert = Alert::getMessage(Reader::get('op'), Reader::get('resultado'));
             <div class="jumbotron">
                 <div class="container">
                     <h4 class="display-4">Registro de usuario</h4>
-                    <?= $alert ?>
                 </div>
             </div>
             <div class="container">

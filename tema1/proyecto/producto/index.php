@@ -88,7 +88,7 @@ $alert = Alert::getMessage(Reader::get('op'), Reader::get('resultado'));
                             <th>Borrar</th>
                             <th>Borrar 2</th>
                             <th>Editar</th>
-                            <th>Editar 2</th>
+                            <th>Carrito</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -105,7 +105,7 @@ $alert = Alert::getMessage(Reader::get('op'), Reader::get('resultado'));
                                     <td><a href="dodelete.php?id=<?= $producto->getId() ?>" class = "borrar">Borrar</a></td>
                                     <td><a href="dodelete.php?id=<?= $producto->getId() ?>&nombre=<?= $nombre ?>" class = "borrar">Borrar</a></td>
                                     <td><a href="edit.php?id=<?= $producto->getId() ?>">Editar</a></td>
-                                    <td><a href="#" class = "editar" data-id="<?= $producto->getId() ?>">Editar</a></td>
+                                    <td><a href="doaddcart.php" class = "editar" data-id="<?= $producto->getId() ?>">Añadir al carrito</a></td>
                                 </tr>
                                 <?php
                             }

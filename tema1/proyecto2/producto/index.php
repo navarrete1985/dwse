@@ -2,8 +2,8 @@
 
 require '../classes/autoload.php';
 
-use izv\data\Producto;
 use izv\app\App;
+use izv\data\Producto;
 use izv\database\Database;
 use izv\managedata\ManageProducto;
 use izv\tools\Reader;
@@ -11,11 +11,12 @@ use izv\tools\Alert;
 use izv\tools\Session;
 use izv\tools\Util;
 
-$session = new Session();
-if (!$session->isLogged()) {
+$sesion = new Session(App::SESSION_NAME);
+if(!$sesion->isLogged()) {
     header('Location: ..');
     exit();
 }
+$carrito = $sesion->get('carrito');
 
 $db = new Database();
 $manager = new ManageProducto($db);
@@ -71,12 +72,6 @@ $alert = Alert::getMessage(Reader::get('op'), Reader::get('resultado'));
                     <li class="nav-item active">
                         <a class="nav-link" href="./">Producto</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../usuario">Usuario</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../cliente">Registrarse</a>
-                    </li>
                 </ul>
             </div>
         </nav>
@@ -85,6 +80,11 @@ $alert = Alert::getMessage(Reader::get('op'), Reader::get('resultado'));
                 <div class="container">
                     <h4 class="display-4">Productos</h4>
                     <?= $alert ?>
+                    <?php
+                    if($carrito !== null) {
+                        echo '<a href="carrito.php">ver carrito con productos</a>';
+                    }
+                    ?>
                 </div>
             </div>
             <div class="container">
@@ -103,6 +103,7 @@ $alert = Alert::getMessage(Reader::get('op'), Reader::get('resultado'));
                             <th>Borrar 2</th>
                             <th>Editar</th>
                             <th>Editar 2</th>
+                            <th>Carrito</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -120,6 +121,7 @@ $alert = Alert::getMessage(Reader::get('op'), Reader::get('resultado'));
                                     <td><a href="dodelete.php?id=<?= $producto->getId() ?>&nombre=<?= $nombre ?>" class = "borrar">Borrar</a></td>
                                     <td><a href="edit.php?id=<?= $producto->getId() ?>">Editar</a></td>
                                     <td><a href="#" class = "editar" data-id="<?= $producto->getId() ?>">Editar</a></td>
+                                    <td><a href="doaddcart.php?id=<?= $producto->getId() ?>">Añadir al carrito</a></td>
                                 </tr>
                                 <?php
                             }

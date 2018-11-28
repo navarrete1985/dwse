@@ -1,16 +1,16 @@
 <?php
 
+use izv\app\App;
 use izv\data\Producto;
 use izv\database\Database;
 use izv\managedata\ManageProducto;
 use izv\tools\Reader;
-use izv\tools\Session;
-use izv\app\App;
 
 require '../classes/autoload.php';
 
-$session = new Session();
-if (!$session->isLogged()) {
+use izv\tools\Session;
+$sesion = new Session(App::SESSION_NAME);
+if(!$sesion->isLogged()) {
     header('Location: ..');
     exit();
 }
@@ -56,12 +56,6 @@ if($producto === null) {
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="./">Producto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../usuario">Usuario</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../cliente">Registrarse</a>
                     </li>
                 </ul>
             </div>

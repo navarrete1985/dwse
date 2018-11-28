@@ -57,14 +57,8 @@ $alert = Alert::getMessage(Reader::get('op'), Reader::get('resultado'));
                     <li class="nav-item">
                         <a class="nav-link" href="..">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../producto">Producto</a>
-                    </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="./">Usuario</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../cliente">Registrarse</a>
                     </li>
                 </ul>
             </div>
@@ -104,7 +98,7 @@ $alert = Alert::getMessage(Reader::get('op'), Reader::get('resultado'));
                                     <td><?= $usuario->getAlias() ?></td>
                                     <td><?= $usuario->getNombre() ?></td>
                                     <td><?= $usuario->getActivo() ?></td>
-                                    <td><?= $usuario->getFechaalta() ?></td>
+                                    <td><?= Util::getDateFromMySqlToEs($usuario->getFechaalta()) ?></td>
                                     <td><a href="dodelete.php?id=<?= $usuario->getId() ?>" class = "borrar">Borrar</a></td>
                                     <td><a href="edit.php?id=<?= $usuario->getId() ?>">Editar</a></td>
                                 </tr>

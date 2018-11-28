@@ -46,14 +46,8 @@ if($usuario === null) {
                     <li class="nav-item">
                         <a class="nav-link" href="..">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../producto">Producto</a>
-                    </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="./">Usuario</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../cliente">Registrarse</a>
                     </li>
                 </ul>
             </div>
@@ -66,7 +60,7 @@ if($usuario === null) {
             </div>
             <div class="container">
                 <div>
-                    <form action="doedit.php" method="post">
+                    <form action="doinsert.php" method="post">
                         <div class="form-group">
                             <label for="nombre">Nombre del usuario</label>
                             <input required type="text" class="form-control" id="nombre" name="nombre" placeholder="Introduce el nombre del usuario" value="<?= $usuario->getNombre() ?>">
@@ -81,7 +75,7 @@ if($usuario === null) {
                         </div>
                         <div class="form-group">
                             <label for="clave">Clave</label>
-                            <input type="password" class="form-control" id="clave" name="clave" placeholder="Introduce la clave del usuario">
+                            <input required type="password" class="form-control" id="clave" name="clave" placeholder="Introduce la clave del usuario">
                             <input type="checkbox" id="desenmascarar"> <label for="desenmascarar">desenmascarar</label>
                         </div>
                         <div class="form-group">
@@ -90,7 +84,6 @@ if($usuario === null) {
                             <input type="checkbox" id="activo" name="activo" value="1" < ?php if($usuario->getActivo() === "1") { echo 'checked';} ?>> <label for="activo">activo</label>-->
                             <?= Render::renderCheckBox('activo', $usuario->getActivo()) ?><label for="activo">activo</label>
                         </div>
-                        <input type="hidden" name="id" value="<?= $usuario->getId() ?>" />
                         <button type="submit" class="btn btn-primary">Editar</button>
                     </form>
                 </div>

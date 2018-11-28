@@ -1,20 +1,20 @@
 <?php
 
-use izv\data\Producto;
 use izv\app\App;
+use izv\data\Producto;
 use izv\database\Database;
 use izv\managedata\ManageProducto;
 use izv\tools\Reader;
 use izv\tools\Util;
 use izv\tools\Session;
 
-require '../classes/autoload.php';
-
-$session = new Session();
-if (!$session->isLogged()) {
+$sesion = new Session(App::SESSION_NAME);
+if(!$sesion->isLogged()) {
     header('Location: ..');
     exit();
 }
+
+require '../classes/autoload.php';
 
 $db = new Database();
 $manager = new ManageProducto($db);
@@ -29,9 +29,20 @@ if($id !== null) {
     }
     $resultado = $manager->remove($id);
 } else {
+    $db->getConnection()->beginTransaction();
     $error = false;
     foreach($ids as $id) {
-        $resultado += $manager->remove($id);
+        $resultadoParcial = $manager->remove($id);
+        if($resultadoParcial === 0) {
+            $error = true;
+        } else {
+            $resultado += $resultadoParcial;
+        }
+    }
+    if($error) {
+        $db->getConnection()->rollback();
+    } else {
+        $db->getConnection()->commit();
     }
 }
 $db->close();

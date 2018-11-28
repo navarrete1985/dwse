@@ -52,3 +52,8 @@ Stack trace:
 #0 /home/ubuntu/workspace/tema1/proyecto2/usuario/dodelete.php(38): PDO->commit()
 #1 {main}
   thrown in /home/ubuntu/workspace/tema1/proyecto2/usuario/dodelete.php on line 38
+[28-Nov-2018 17:06:29 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\app\Util' not found in /home/ubuntu/workspace/tema1/proyecto2/classes/izv/tools/Mail.php:14
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/proyecto2/cliente/doinsert.php(30): izv\tools\Mail::sendActivation(Object(izv\data\Usuario))
+#1 {main}
+  thrown in /home/ubuntu/workspace/tema1/proyecto2/classes/izv/tools/Mail.php on line 14

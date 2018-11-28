@@ -3,7 +3,7 @@
 namespace izv\tools;
 
 use izv\data\Usuario;
-use izv\app\Util;
+use izv\tools\Util;
 use izv\app\App;
 
 class Mail {

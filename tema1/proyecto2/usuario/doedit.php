@@ -2,7 +2,7 @@
 
 use izv\data\Usuario;
 use izv\database\Database;
-use izv\managedata\ManageUsuario;
+use izv\managedata\Manageusuario;
 use izv\tools\Reader;
 use izv\tools\Util;
 

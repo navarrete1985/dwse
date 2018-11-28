@@ -5,3 +5,7 @@
 [09-Nov-2018 11:09:44 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/ubuntu/workspace/tema1/proyecto/gmail/enviar.php on line 9
 [09-Nov-2018 11:10:13 UTC] PHP Warning:  session_start() expects parameter 1 to be array, string given in /home/ubuntu/workspace/tema1/proyecto/gmail/enviar.php on line 9
 [09-Nov-2018 11:10:44 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/ubuntu/workspace/tema1/proyecto/gmail/enviar.php on line 9
+[28-Nov-2018 12:41:27 UTC] PHP Fatal error:  Uncaught Error: Undefined class constant 'SESSION_NAME' in /home/ubuntu/workspace/tema1/proyecto/producto/doaddcart.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/proyecto/producto/doaddcart.php on line 15
