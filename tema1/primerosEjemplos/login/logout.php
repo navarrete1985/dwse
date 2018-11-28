@@ -1,7 +1,12 @@
 <?php
 
-session_name('DWES_SESSION');
+require('../classes/Autoload.php');
+
+$sesion = new Session2('DWES_SESSION');
+$sesion->logout();
+
+/*session_name('DWES_SESSION');
 session_start();
-session_destroy();
+session_destroy();*/
+
 header('Location: index.php');
-exit();

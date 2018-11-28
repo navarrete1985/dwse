@@ -23,16 +23,8 @@ class ManageUsuario {
     function add(Usuario $usuario) {
         $resultado = 0;
         if($this->database->connect()) {
-            // $query = 'insert into usuario values (null, :correo, :alias, :nombre, :clave, :activo, null)';
-            // $data = array(
-            //     'correo' => $usuario->getCorreo(),
-            //     'alias'  => $usuario->getAlias(),
-            //     'nombre' => $usuario->getNombre(),
-            //     'clave'  => $usuario->getClave(),
-            //     'activo' => $usuario->getActivo()
-            // );
             $query = 'insert into usuario values (:id, :correo, :alias, :nombre, :clave, :activo, :fechaalta)';
-            if(/*$this->database->execute($query, $data)*/$this->database->execute($query, $usuario->get())) {
+            if($this->database->execute($query, $usuario->get())) {
                 $resultado = $this->database->getSentence()->rowCount();
             }
         }
@@ -82,6 +74,29 @@ class ManageUsuario {
             }
         }
         return $users;
+    }
+    
+    /**
+     * Método con el que comprobamos el login
+     * return Devolvemos false si no hemos logueado correctamente o el usuario en caso de que el loguin sea bueno
+     */
+    function login($correo, $clave) {
+        if($this->db->connect()) {
+            $sql = 'select * from usuario where correo = :correo and activo = 1';
+            $array = array('correo' => $correo);
+            if($this->db->execute($sql, $array)) {
+                if($fila = $this->db->getSentence()->fetch()) {
+                    $usuario = new Usuario();
+                    $usuario->set($fila);
+                    $result = Util::verificarClave($clave, $usuario->getClave());
+                    if ($result) {
+                        $usuario->setClave('');
+                        return $usuario;
+                    }
+                }
+            }
+        }
+        return false;
     }
     
     function remove($id) {

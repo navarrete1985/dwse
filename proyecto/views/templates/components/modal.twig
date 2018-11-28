@@ -1,0 +1,78 @@
+{% block modallogin %}
+<div class="modal fade" id="modallogin" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Login</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="usuario/dologin.php" method="post" id="fLogin">
+                    <input class="form-control" type="email" name="correo" id="correo" required placeholder="Correo electrónico"/>
+                    <br>
+                    <input class="form-control" type="password" name="clave" id="clave" required placeholder="Clave de acceso"/>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="submit" form="fLogin" class="btn btn-primary" id="btLogin">Login</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalsignup" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Sign Up</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="usuario/doinsert.php" method="post" id="fSignUp">
+                    <div class="form-group row">
+                        <label for="inputAlias" class="col-sm-12 col-form-control ">Alias</label><br>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="inputAlias" name="alias" placeholder="Introduce Alias" maxlength="60" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputNombre" class="col-sm-12 col-form-label ">Nombre</label><br>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="inputNombre" name="nombre" placeholder="Introduce Nombre" maxlength="60" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputEmail" class="col-sm-12 col-form-label ">Correo electrónico</label><br>
+                        <div class="col-sm-12">
+                            <input type="email" class="form-control" id="inputEmail" name="correo" placeholder="Introduce Correo Electrónico" maxlength="60" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPasswd" class="col-sm-12 col-form-label">Contraseña</label><br>
+                        <div class="col-sm-12">
+                            <input type="password" class="form-control" id="inputPasswd" name="clave" placeholder="Introduce Contraseña" maxlength="18" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputRepeatPasswd" class="col-sm-12 col-form-label" maxlength="18">Contraseña</label><br><!-- text-success/text-danger -->
+                        <div class="col-sm-12">
+                            <input type="password" class="form-control" id="inputRepeatPasswd" name="clave2" placeholder="Repite Contraseña" required><!-- is-valid/is-invalid -->
+                        </div>
+                        <div class="col-sm-12  d-none">
+                            <small id="passwdHelp" class="text-danger">Las contraseñas no coinciden</small><!--d-none/d-block-->  
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="submit" form="fSignUp" class="btn btn-primary" id="btSignUp">Crear Cuenta</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

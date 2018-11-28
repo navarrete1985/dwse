@@ -128,4 +128,16 @@
 
 Las transacciones son la forma de hacer que una operación frente a la base de datos
 sea atómica, con lo que si se falla algo al realizar la operación se podría realizar
-rollback para que los datos se mantengan como ante, y no tengamos inconsistencia.
+rollback para que los datos se mantengan como antes, y no tengamos inconsistencia.
+
+
+# Trabajo
+
+Es el 80% de la nota
+- Hacer una pequeña app con la tabla usuario:
+    -   Añadir un campo administrador en la taba (0-1)
+-   Si nos logueamos como admin podemos hacer todo...create/update/delete/edit
+-   Si entramos sin login podemos sólamente el listado de usuarios(Nombre-Correo-Alias)
+-   Si entramos como usuario no administrador (podemos ver nuestros datos, podemos editarnos, si cambiamos correo mandamos nuevo
+-   mensaje de verificación, podemos cambiar la clave, hay que confirmar, y ponemos la opción de dar de baja...temporal o permanentemente)
+-   Hacer todas las comprobaciones pertinentes para la verificación de los campos de insercción

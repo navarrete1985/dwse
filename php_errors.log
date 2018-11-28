@@ -1,0 +1,263 @@
+[22-Nov-2018 20:55:02 UTC] PHP Fatal error:  Uncaught Twig_Error_Syntax: Unclosed "(". in /home/ubuntu/workspace/proyecto/views/templates/_bootstrap_landing.html:50
+Stack trace:
+#0 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Lexer.php(202): Twig_Lexer->lexExpression()
+#1 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Lexer.php(105): Twig_Lexer->lexVar()
+#2 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(512): Twig_Lexer->tokenize(Object(Twig_Source))
+#3 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(565): Twig_Environment->tokenize(Object(Twig_Source))
+#4 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(368): Twig_Environment->compileSource(Object(Twig_Source))
+#5 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(289): Twig_Environment->loadTemplate('_bootstrap_land...')
+#6 /home/ubuntu/workspace/proyecto/index.php(16): Twig_Environment->render('_bootstrap_land...', Array)
+#7 {main in /home/ubuntu/workspace/proyecto/views/templates/_bootstrap_landing.html on line 50
+[22-Nov-2018 20:55:21 UTC] PHP Fatal error:  Uncaught Twig_Error_Syntax: A template that extends another one cannot include content outside Twig blocks. Did you forget to put the content inside a {% block %} tag? in /home/ubuntu/workspace/proyecto/views/templates/_bootstrap_landing.html:50
+Stack trace:
+#0 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Parser.php(361): Twig_Parser->filterBodyNodes(Object(Twig_Node_Print), false)
+#1 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Parser.php(83): Twig_Parser->filterBodyNodes(Object(Twig_Node))
+#2 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(533): Twig_Parser->parse(Object(Twig_TokenStream))
+#3 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(565): Twig_Environment->parse(Object(Twig_TokenStream))
+#4 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(368): Twig_Environment->compileSource(Object(Twig_Source))
+#5 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/ in /home/ubuntu/workspace/proyecto/views/templates/_bootstrap_landing.html on line 50
+[22-Nov-2018 21:14:02 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\tools\Util' not found in /home/ubuntu/workspace/proyecto/index.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/proyecto/index.php on line 31
+[22-Nov-2018 21:14:45 UTC] PHP Fatal error:  Uncaught Error: Class 'classes\izv\tools\Util' not found in /home/ubuntu/workspace/proyecto/index.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/proyecto/index.php on line 31
+[22-Nov-2018 21:15:52 UTC] PHP Fatal error:  Uncaught Error: Class 'Twig_Loader_Filesystem' not found in /home/ubuntu/workspace/proyecto/index.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/proyecto/index.php on line 7
+[22-Nov-2018 21:16:09 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\tools\Util' not found in /home/ubuntu/workspace/proyecto/index.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/proyecto/index.php on line 31
+[23-Nov-2018 07:49:22 UTC] PHP Fatal error:  Uncaught Twig_Error_Syntax: A template that extends another one cannot include content outside Twig blocks. Did you forget to put the content inside a {% block %} tag? in /home/ubuntu/workspace/proyecto/views/templates/_bootstrap_dropdown.twig:3
+Stack trace:
+#0 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Parser.php(361): Twig_Parser->filterBodyNodes(Object(Twig_Node_Text), true)
+#1 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Parser.php(361): Twig_Parser->filterBodyNodes(Object(Twig_Node), true)
+#2 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Parser.php(361): Twig_Parser->filterBodyNodes(Object(Twig_Node), true)
+#3 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Parser.php(83): Twig_Parser->filterBodyNodes(Object(Twig_Node_If))
+#4 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(533): Twig_Parser->parse(Object(Twig_TokenStream))
+#5 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig in /home/ubuntu/workspace/proyecto/views/templates/_bootstrap_dropdown.twig on line 3
+[23-Nov-2018 08:46:37 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ',' or ')' in /home/ubuntu/workspace/proyecto/index.php on line 33
+[23-Nov-2018 08:49:28 UTC] PHP Fatal error:  Uncaught Twig_Error_Syntax: Unexpected token "name" of value "DWES" ("end of print statement" expected). in /home/ubuntu/workspace/proyecto/views/templates/common/footer.twig:3
+Stack trace:
+#0 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Parser.php(126): Twig_TokenStream->expect(4)
+#1 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/TokenParser/Block.php(38): Twig_Parser->subparse(Array, true)
+#2 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Parser.php(168): Twig_TokenParser_Block->parse(Object(Twig_Token))
+#3 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Parser.php(81): Twig_Parser->subparse(NULL, false)
+#4 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(533): Twig_Parser->parse(Object(Twig_TokenStream))
+#5 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(565): Twig_Environment->parse(Object(Twig_TokenStream))
+#6 /home/ubuntu/workspace/proyecto/classes/vendor/twig/t in /home/ubuntu/workspace/proyecto/views/templates/common/footer.twig on line 3
+[23-Nov-2018 09:00:08 UTC] PHP Fatal error:  Uncaught Twig_Error_Loader: Looks like you try to load a template outside configured directories (../base.html.twig) in "index.html.twig" at line 1. in /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:267
+Stack trace:
+#0 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(192): Twig_Loader_Filesystem->validateName('../base.html.tw...')
+#1 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('../base.html.tw...')
+#2 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(270): Twig_Loader_Filesystem->getCacheKey('../base.html.tw...')
+#3 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(350): Twig_Environment->getTemplateClass('../base.html.tw...')
+#4 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Template.php(330): Twig_Environment->loadTemplate('../base.html.tw...', NULL)
+#5 /home/ub in /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php on line 267
+[23-Nov-2018 09:00:56 UTC] PHP Fatal error:  Uncaught Twig_Error_Loader: Looks like you try to load a template outside configured directories (../base.html.twig) in "/users/index.html.twig" at line 1. in /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:267
+Stack trace:
+#0 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(192): Twig_Loader_Filesystem->validateName('../base.html.tw...')
+#1 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('../base.html.tw...')
+#2 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(270): Twig_Loader_Filesystem->getCacheKey('../base.html.tw...')
+#3 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(350): Twig_Environment->getTemplateClass('../base.html.tw...')
+#4 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Template.php(330): Twig_Environment->loadTemplate('../base.html.tw...', NULL)
+#5 / in /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php on line 267
+[23-Nov-2018 09:01:41 UTC] PHP Fatal error:  Uncaught Twig_Error_Loader: Looks like you try to load a template outside configured directories (../base.html.twig) in "/users/index.html.twig" at line 1. in /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:267
+Stack trace:
+#0 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(192): Twig_Loader_Filesystem->validateName('../base.html.tw...')
+#1 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('../base.html.tw...')
+#2 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(270): Twig_Loader_Filesystem->getCacheKey('../base.html.tw...')
+#3 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(350): Twig_Environment->getTemplateClass('../base.html.tw...')
+#4 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Template.php(330): Twig_Environment->loadTemplate('../base.html.tw...', NULL)
+#5 / in /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php on line 267
+[23-Nov-2018 09:01:43 UTC] PHP Fatal error:  Uncaught Twig_Error_Loader: Looks like you try to load a template outside configured directories (../base.html.twig) in "/users/index.html.twig" at line 1. in /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:267
+Stack trace:
+#0 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(192): Twig_Loader_Filesystem->validateName('../base.html.tw...')
+#1 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('../base.html.tw...')
+#2 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(270): Twig_Loader_Filesystem->getCacheKey('../base.html.tw...')
+#3 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(350): Twig_Environment->getTemplateClass('../base.html.tw...')
+#4 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Template.php(330): Twig_Environment->loadTemplate('../base.html.tw...', NULL)
+#5 / in /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php on line 267
+[23-Nov-2018 09:08:20 UTC] PHP Fatal error:  Uncaught Twig_Error_Loader: The "/home/ubuntu/workspace/proyectoviews/templates" directory does not exist ("/home/ubuntu/workspace/proyectoviews/templates"). in /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:101
+Stack trace:
+#0 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(82): Twig_Loader_Filesystem->addPath('/home/ubuntu/wo...', '__main__')
+#1 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(40): Twig_Loader_Filesystem->setPaths(Array)
+#2 /home/ubuntu/workspace/proyecto/index.php(8): Twig_Loader_Filesystem->__construct('/home/ubuntu/wo...')
+#3 {main}
+  thrown in /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php on line 101
+[23-Nov-2018 09:11:48 UTC] PHP Fatal error:  Uncaught Twig_Error_Syntax: Unexpected token "end of template" of value "" ("end of statement block" expected). in /home/ubuntu/workspace/proyecto/views/templates/users/index.html.twig:26
+Stack trace:
+#0 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/TokenParser/Block.php(51): Twig_TokenStream->expect(3)
+#1 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Parser.php(168): Twig_TokenParser_Block->parse(NULL)
+#2 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Parser.php(81): Twig_Parser->subparse(NULL, false)
+#3 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(533): Twig_Parser->parse(Object(Twig_TokenStream))
+#4 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(565): Twig_Environment->parse(Object(Twig_TokenStream))
+#5 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(368): Twig_Environment->compileSource(Object(Twig_Source))
+#6 /home/ubuntu/workspace/proyecto/c in /home/ubuntu/workspace/proyecto/views/templates/users/index.html.twig on line 26
+[23-Nov-2018 09:16:42 UTC] PHP Parse error:  syntax error, unexpected '=', expecting ',' or ')' in /home/ubuntu/workspace/proyecto/index.php on line 33
+[23-Nov-2018 09:16:53 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ',' or ')' in /home/ubuntu/workspace/proyecto/index.php on line 33
+[23-Nov-2018 09:27:58 UTC] PHP Fatal error:  Uncaught Twig_Error_Syntax: A template that extends another one cannot include content outside Twig blocks. Did you forget to put the content inside a {% block %} tag? in /home/ubuntu/workspace/proyecto/views/templates/base.html.twig:14
+Stack trace:
+#0 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Parser.php(83): Twig_Parser->filterBodyNodes(Object(Twig_Node_Text))
+#1 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/TokenParser/Embed.php(40): Twig_Parser->parse(Object(Twig_TokenStream), Array, true)
+#2 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Parser.php(168): Twig_TokenParser_Embed->parse(Object(Twig_Token))
+#3 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Parser.php(81): Twig_Parser->subparse(Array, true)
+#4 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/TokenParser/Embed.php(40): Twig_Parser->parse(Object(Twig_TokenStream), Array, true)
+#5 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Par in /home/ubuntu/workspace/proyecto/views/templates/base.html.twig on line 14
+[23-Nov-2018 16:01:25 UTC] PHP Fatal error:  Uncaught Twig_Error_Loader: Unable to find template "dropdown.twig" (looked into: /home/ubuntu/workspace/proyecto/views/templates) in "common/nav_bar.twig" at line 36. in /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:226
+Stack trace:
+#0 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('dropdown.twig')
+#1 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(270): Twig_Loader_Filesystem->getCacheKey('dropdown.twig')
+#2 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(350): Twig_Environment->getTemplateClass('dropdown.twig')
+#3 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Template.php(330): Twig_Environment->loadTemplate('dropdown.twig', NULL)
+#4 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(378) : eval()'d code(74): Twig_Template->loadTemplate('dropdown.twig', 'common/nav_ in /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php on line 226
+[24-Nov-2018 14:01:47 UTC] PHP Fatal error:  Uncaught Twig_Error_Loader: Unable to find template "/users/base.html.twig" (looked into: /home/ubuntu/workspace/proyecto/views/templates). in /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:226
+Stack trace:
+#0 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('/users/base.htm...')
+#1 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(270): Twig_Loader_Filesystem->getCacheKey('/users/base.htm...')
+#2 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(350): Twig_Environment->getTemplateClass('/users/base.htm...')
+#3 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(289): Twig_Environment->loadTemplate('/users/base.htm...')
+#4 /home/ubuntu/workspace/proyecto/index.php(33): Twig_Environment->render('/users/base.htm...', Array)
+#5 {main}
+  thrown in /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php on line 226
+[24-Nov-2018 19:52:50 UTC] PHP Fatal error:  Uncaught Twig_Error_Loader: Unable to find template "usuario/inicio.html.twig" (looked into: /home/ubuntu/workspace/proyecto/views/templates). in /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:226
+Stack trace:
+#0 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('usuario/inicio....')
+#1 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(270): Twig_Loader_Filesystem->getCacheKey('usuario/inicio....')
+#2 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(350): Twig_Environment->getTemplateClass('usuario/inicio....')
+#3 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(289): Twig_Environment->loadTemplate('usuario/inicio....')
+#4 /home/ubuntu/workspace/proyecto/index.php(33): Twig_Environment->render('usuario/inicio....', Array)
+#5 {main}
+  thrown in /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php on line 226
+[24-Nov-2018 19:53:43 UTC] PHP Fatal error:  Uncaught Twig_Error_Loader: Unable to find template "usuario/inicio.html.twig" (looked into: /home/ubuntu/workspace/proyecto/views/templates). in /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:226
+Stack trace:
+#0 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('usuario/inicio....')
+#1 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(270): Twig_Loader_Filesystem->getCacheKey('usuario/inicio....')
+#2 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(350): Twig_Environment->getTemplateClass('usuario/inicio....')
+#3 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(289): Twig_Environment->loadTemplate('usuario/inicio....')
+#4 /home/ubuntu/workspace/proyecto/index.php(33): Twig_Environment->render('usuario/inicio....', Array)
+#5 {main}
+  thrown in /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php on line 226
+[24-Nov-2018 19:54:08 UTC] PHP Fatal error:  Uncaught Twig_Error_Loader: Unable to find template "common/dropdown.twig" (looked into: /home/ubuntu/workspace/proyecto/views/templates) in "components/nav_bar.twig" at line 16. in /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:226
+Stack trace:
+#0 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('common/dropdown...')
+#1 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(270): Twig_Loader_Filesystem->getCacheKey('common/dropdown...')
+#2 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(350): Twig_Environment->getTemplateClass('common/dropdown...')
+#3 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Template.php(330): Twig_Environment->loadTemplate('common/dropdown...', NULL)
+#4 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(378) : eval()'d code(79): Twig_Template->loadTemplat in /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Loader/Filesystem.php on line 226
+[24-Nov-2018 20:52:35 UTC] PHP Fatal error:  Uncaught Twig_Error_Syntax: Unexpected token "end of print statement" of value "". in /home/ubuntu/workspace/proyecto/views/templates/components/main_inicio.twig:10
+Stack trace:
+#0 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(92): Twig_ExpressionParser->parsePrimaryExpression()
+#1 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(45): Twig_ExpressionParser->getPrimary()
+#2 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Parser.php(125): Twig_ExpressionParser->parseExpression()
+#3 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/TokenParser/Block.php(38): Twig_Parser->subparse(Array, true)
+#4 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Parser.php(168): Twig_TokenParser_Block->parse(Object(Twig_Token))
+#5 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/TokenParser/Block.php(38): Twig_Parser->subparse(Array, true)
+#6 /home/ubuntu/workspace/proyecto/classes/vend in /home/ubuntu/workspace/proyecto/views/templates/components/main_inicio.twig on line 10
+[24-Nov-2018 21:35:32 UTC] PHP Fatal error:  Uncaught Twig_Error_Syntax: Unexpected token "operator" of value ">". in /home/ubuntu/workspace/proyecto/views/templates/components/main_inicio.twig:23
+Stack trace:
+#0 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(92): Twig_ExpressionParser->parsePrimaryExpression()
+#1 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(45): Twig_ExpressionParser->getPrimary()
+#2 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(58): Twig_ExpressionParser->parseExpression(61)
+#3 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(99): Twig_ExpressionParser->parseExpression()
+#4 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(67): Twig_ExpressionParser->parseConditionalExpression(Object(Twig_Node_Expression_Binary_Equal))
+#5 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Parser.php(125): Twig_ExpressionParser->parseExpressio in /home/ubuntu/workspace/proyecto/views/templates/components/main_inicio.twig on line 23
+[24-Nov-2018 21:36:16 UTC] PHP Fatal error:  Uncaught Twig_Error_Syntax: Unexpected token "end of print statement" of value "". in /home/ubuntu/workspace/proyecto/views/templates/components/main_inicio.twig:23
+Stack trace:
+#0 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(92): Twig_ExpressionParser->parsePrimaryExpression()
+#1 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(45): Twig_ExpressionParser->getPrimary()
+#2 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(101): Twig_ExpressionParser->parseExpression()
+#3 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(67): Twig_ExpressionParser->parseConditionalExpression(Object(Twig_Node_Expression_Binary_Equal))
+#4 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Parser.php(125): Twig_ExpressionParser->parseExpression()
+#5 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/TokenParser/Block.php(38): Twig_Parser->subparse(Ar in /home/ubuntu/workspace/proyecto/views/templates/components/main_inicio.twig on line 23
+[24-Nov-2018 22:48:36 UTC] PHP Notice:  Undefined variable: lista in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:48:36 UTC] PHP Notice:  Undefined variable: dropdown in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:48:39 UTC] PHP Notice:  Undefined variable: lista in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:48:39 UTC] PHP Notice:  Undefined variable: dropdown in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:48:42 UTC] PHP Notice:  Undefined variable: lista in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:48:42 UTC] PHP Notice:  Undefined variable: dropdown in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:24 UTC] PHP Notice:  Undefined variable: lista in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:24 UTC] PHP Notice:  Undefined variable: dropdown in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:27 UTC] PHP Notice:  Undefined variable: lista in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:27 UTC] PHP Notice:  Undefined variable: dropdown in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:28 UTC] PHP Notice:  Undefined variable: lista in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:28 UTC] PHP Notice:  Undefined variable: dropdown in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:31 UTC] PHP Notice:  Undefined variable: lista in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:31 UTC] PHP Notice:  Undefined variable: dropdown in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:31 UTC] PHP Notice:  Undefined variable: lista in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:31 UTC] PHP Notice:  Undefined variable: dropdown in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:32 UTC] PHP Notice:  Undefined variable: lista in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:32 UTC] PHP Notice:  Undefined variable: dropdown in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:33 UTC] PHP Notice:  Undefined variable: lista in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:33 UTC] PHP Notice:  Undefined variable: dropdown in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:33 UTC] PHP Notice:  Undefined variable: lista in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:33 UTC] PHP Notice:  Undefined variable: dropdown in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:34 UTC] PHP Notice:  Undefined variable: lista in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:34 UTC] PHP Notice:  Undefined variable: dropdown in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:35 UTC] PHP Notice:  Undefined variable: lista in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:35 UTC] PHP Notice:  Undefined variable: dropdown in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:36 UTC] PHP Notice:  Undefined variable: lista in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:36 UTC] PHP Notice:  Undefined variable: dropdown in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:38 UTC] PHP Notice:  Undefined variable: lista in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:38 UTC] PHP Notice:  Undefined variable: dropdown in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:39 UTC] PHP Notice:  Undefined variable: lista in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:39 UTC] PHP Notice:  Undefined variable: dropdown in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:42 UTC] PHP Notice:  Undefined variable: lista in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:42 UTC] PHP Notice:  Undefined variable: dropdown in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:44 UTC] PHP Notice:  Undefined variable: lista in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:44 UTC] PHP Notice:  Undefined variable: dropdown in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:45 UTC] PHP Notice:  Undefined variable: lista in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:45 UTC] PHP Notice:  Undefined variable: dropdown in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:46 UTC] PHP Notice:  Undefined variable: lista in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:46 UTC] PHP Notice:  Undefined variable: dropdown in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:46 UTC] PHP Notice:  Undefined variable: lista in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:46 UTC] PHP Notice:  Undefined variable: dropdown in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:46 UTC] PHP Notice:  Undefined variable: lista in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:46 UTC] PHP Notice:  Undefined variable: dropdown in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:47 UTC] PHP Notice:  Undefined variable: lista in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:47 UTC] PHP Notice:  Undefined variable: dropdown in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:47 UTC] PHP Notice:  Undefined variable: lista in /home/ubuntu/workspace/proyecto/index.php on line 46
+[24-Nov-2018 22:49:47 UTC] PHP Notice:  Undefined variable: dropdown in /home/ubuntu/workspace/proyecto/index.php on line 46
+[25-Nov-2018 10:27:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get() in /home/ubuntu/workspace/proyecto/index.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/proyecto/index.php on line 15
+[25-Nov-2018 12:44:29 UTC] PHP Fatal error:  Uncaught Error: Access to undeclared static property: izv\tools\Alert::$mensaje in /home/ubuntu/workspace/proyecto/classes/izv/tools/Alert.php:72
+Stack trace:
+#0 /home/ubuntu/workspace/proyecto/index.php(25): izv\tools\Alert::getAlert('insert', '0')
+#1 {main}
+  thrown in /home/ubuntu/workspace/proyecto/classes/izv/tools/Alert.php on line 72
+[25-Nov-2018 12:58:43 UTC] PHP Notice:  Undefined offset: 18 in /home/ubuntu/workspace/proyecto/classes/izv/tools/Alert.php on line 71
+[25-Nov-2018 15:01:38 UTC] PHP Fatal error:  Uncaught Error: Class 'App' not found in /home/ubuntu/workspace/proyecto/index.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/proyecto/index.php on line 14
+[25-Nov-2018 18:06:02 UTC] PHP Fatal error:  Uncaught Twig_Error_Syntax: Unknown "modal_confirm" tag. in /home/ubuntu/workspace/proyecto/views/templates/components/modal_confirm.twig:1
+Stack trace:
+#0 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Parser.php(81): Twig_Parser->subparse(NULL, false)
+#1 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(533): Twig_Parser->parse(Object(Twig_TokenStream))
+#2 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(565): Twig_Environment->parse(Object(Twig_TokenStream))
+#3 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(368): Twig_Environment->compileSource(Object(Twig_Source))
+#4 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Template.php(330): Twig_Environment->loadTemplate('components/moda...', NULL)
+#5 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(378) : eval()'d code(37): Twig_Template->loadTemplate('components/moda...', 'users/inicio.ht...',  in /home/ubuntu/workspace/proyecto/views/templates/components/modal_confirm.twig on line 1
+[25-Nov-2018 18:06:42 UTC] PHP Fatal error:  Uncaught Twig_Error_Syntax: Unknown "modalConfirm" tag. in /home/ubuntu/workspace/proyecto/views/templates/components/modal_confirm.twig:1
+Stack trace:
+#0 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Parser.php(81): Twig_Parser->subparse(NULL, false)
+#1 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(533): Twig_Parser->parse(Object(Twig_TokenStream))
+#2 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(565): Twig_Environment->parse(Object(Twig_TokenStream))
+#3 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(368): Twig_Environment->compileSource(Object(Twig_Source))
+#4 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Template.php(330): Twig_Environment->loadTemplate('components/moda...', NULL)
+#5 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Environment.php(378) : eval()'d code(37): Twig_Template->loadTemplate('components/moda...', 'users/inicio.ht...', 1 in /home/ubuntu/workspace/proyecto/views/templates/components/modal_confirm.twig on line 1
+[25-Nov-2018 20:49:21 UTC] PHP Fatal error:  Uncaught Twig_Error_Syntax: Unexpected token "string" of value "true" ("end of print statement" expected). in /home/ubuntu/workspace/proyecto/views/templates/components/main_inicio.twig:49
+Stack trace:
+#0 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Parser.php(126): Twig_TokenStream->expect(4)
+#1 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/TokenParser/If.php(34): Twig_Parser->subparse(Array)
+#2 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Parser.php(168): Twig_TokenParser_If->parse(Object(Twig_Token))
+#3 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/TokenParser/For.php(40): Twig_Parser->subparse(Array)
+#4 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/Parser.php(168): Twig_TokenParser_For->parse(Object(Twig_Token))
+#5 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/Twig/TokenParser/Block.php(38): Twig_Parser->subparse(Array, true)
+#6 /home/ubuntu/workspace/proyecto/classes/vendor/twig/twig/lib/T in /home/ubuntu/workspace/proyecto/views/templates/components/main_inicio.twig on line 49

@@ -1,0 +1,54 @@
+[07-Nov-2018 12:50:04 UTC] PHP Notice:  Undefined variable: resultado in /home/ubuntu/workspace/tema1/proyecto/usuario/dodelete.php on line 29
+[07-Nov-2018 12:50:11 UTC] PHP Notice:  Undefined variable: resultado in /home/ubuntu/workspace/tema1/proyecto/usuario/dodelete.php on line 23
+[08-Nov-2018 08:32:10 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\managedata\ManageUsuario' not found in /home/ubuntu/workspace/tema1/proyecto2/usuario/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/proyecto2/usuario/index.php on line 13
+[08-Nov-2018 08:34:23 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\managedata\ManageUsuario' not found in /home/ubuntu/workspace/tema1/proyecto2/usuario/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/proyecto2/usuario/index.php on line 13
+[08-Nov-2018 08:34:28 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\managedata\ManageUsuario' not found in /home/ubuntu/workspace/tema1/proyecto2/usuario/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/proyecto2/usuario/index.php on line 13
+[08-Nov-2018 08:34:31 UTC] PHP Fatal error:  Trait 'izv\common\Common' not found in /home/ubuntu/workspace/tema1/proyecto2/classes/izv/data/Producto.php on line 7
+[08-Nov-2018 08:35:13 UTC] PHP Fatal error:  Trait 'izv\common\Common' not found in /home/ubuntu/workspace/tema1/proyecto2/classes/izv/data/Producto.php on line 7
+[08-Nov-2018 08:35:53 UTC] PHP Fatal error:  Trait 'izv\common\Commun' not found in /home/ubuntu/workspace/tema1/proyecto2/classes/izv/data/Producto.php on line 7
+[08-Nov-2018 08:36:12 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\managedata\ManageUsuario' not found in /home/ubuntu/workspace/tema1/proyecto2/usuario/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/proyecto2/usuario/index.php on line 13
+[08-Nov-2018 08:39:44 UTC] PHP Fatal error:  Trait 'izv\common\Common' not found in /home/ubuntu/workspace/tema1/proyecto2/classes/izv/data/Usuario.php on line 7
+[09-Nov-2018 17:54:43 UTC] PHP Fatal error:  Uncaught Error: Call to a member function beginTransaction() on null in /home/ubuntu/workspace/tema1/proyecto2/producto/dodelete.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/proyecto2/producto/dodelete.php on line 24
+[09-Nov-2018 17:55:20 UTC] PHP Fatal error:  Uncaught Error: Call to a member function beginTransaction() on null in /home/ubuntu/workspace/tema1/proyecto2/producto/dodelete.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/proyecto2/producto/dodelete.php on line 24
+[09-Nov-2018 18:00:23 UTC] PHP Fatal error:  Uncaught PDOException: There is no active transaction in /home/ubuntu/workspace/tema1/proyecto2/producto/dodelete.php:38
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/proyecto2/producto/dodelete.php(38): PDO->commit()
+#1 {main}
+  thrown in /home/ubuntu/workspace/tema1/proyecto2/producto/dodelete.php on line 38
+[09-Nov-2018 18:02:53 UTC] PHP Fatal error:  Uncaught PDOException: There is no active transaction in /home/ubuntu/workspace/tema1/proyecto2/producto/dodelete.php:36
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/proyecto2/producto/dodelete.php(36): PDO->commit()
+#1 {main}
+  thrown in /home/ubuntu/workspace/tema1/proyecto2/producto/dodelete.php on line 36
+[09-Nov-2018 18:14:09 UTC] PHP Notice:  Undefined variable: r2 in /home/ubuntu/workspace/tema1/proyecto2/cliente/doinsert.php on line 33
+[09-Nov-2018 19:05:25 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\managedata\Manageusuario' not found in /home/ubuntu/workspace/tema1/proyecto2/usuario/doedit.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/proyecto2/usuario/doedit.php on line 12
+[09-Nov-2018 19:27:17 UTC] PHP Fatal error:  Uncaught Error: Call to a member function beginTransaction() on null in /home/ubuntu/workspace/tema1/proyecto2/usuario/dodelete.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/proyecto2/usuario/dodelete.php on line 24
+[09-Nov-2018 19:28:08 UTC] PHP Fatal error:  Uncaught PDOException: There is no active transaction in /home/ubuntu/workspace/tema1/proyecto2/usuario/dodelete.php:38
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/proyecto2/usuario/dodelete.php(38): PDO->commit()
+#1 {main}
+  thrown in /home/ubuntu/workspace/tema1/proyecto2/usuario/dodelete.php on line 38

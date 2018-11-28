@@ -1,0 +1,29 @@
+{% block nav_bar %}
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">App Usuarios</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ logout }}index.php" >Inicio</a>
+                </li>
+                <!-----------Elementos nav_bar------------>
+                {% block nav_end %}
+                    {% if user.activo == 0 %}
+                        </ul>
+                        <button data-toggle="modal" data-target="#modallogin" class="btn btn-outline-light my-2 my-sm-0 mx-1">Log In</button>
+                        <button data-toggle="modal" data-target="#modalsignup" class="btn btn-primary my-2 my-sm-0 mx-1">Sign Up</button>
+                    {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ logout }}usuario/edit.php">Mi cuenta</a>
+                            </li>
+                        </ul>
+                        <span class="navbar-brand" >{{ user.alias }}</a>
+                        <a  class="btn btn-outline-success my-2 my-sm-0 mx-1" href='{{ logout }}usuario/dologin.php'>Logout</a>
+                    {% endif %}
+                {% endblock %}
+        </div>
+    </nav>
+{% endblock %}

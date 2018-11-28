@@ -51,5 +51,4 @@ class Producto {
         $this->observaciones = $observaciones;
     }
     
-    
 }

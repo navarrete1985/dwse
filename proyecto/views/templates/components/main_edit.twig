@@ -1,0 +1,71 @@
+{% block main %}
+    <main role="main">
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="display-3 pt-5">Edición Usuario</h1>
+                {#----------CONTENIDO JUMBOTRON-------------------#}
+                {% block jumbotron %}
+                    <p>
+                        {% if user.activo == 1 %}
+                            {{ user.administrador == 0 ? "Usuario normal" : "Usuario administrador"  }}
+                        {% else %}
+                            Usuario no registrado
+                        {% endif %}
+                    </p>
+                    <div class="alert {{ alert.type }}" role="alert">{{ alert.text }}</div>    
+                {% endblock %}
+            </div>
+        </div>
+        <div class="container">
+            <!-- contenido principal -->
+            {% block contenido_principal %}
+                <div>
+                    <form action="doedit.php" method="post" id='fEdit'>
+                        <div class="form-group">
+                            <label for="nombre">Nombre del usuario</label>
+                            <input required type="text" class="form-control" id="nombre" name="nombre" placeholder="Introduce el nombre del usuario" value="{{ edit.nombre }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="correo">Correo electrónico</label>
+                            <input required type="email" class="form-control" id="correo" name="correo" placeholder="Introduce el correo del usuario" value="{{ edit.correo }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="alias">Alias</label>
+                            <input type="text" class="form-control" id="alias" name="alias" placeholder="Introduce el alias del usuario" value="{{ edit.alias }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="clave">Nueva Clave</label>
+                            <input type="password" class="form-control" id="clave" name="clave" placeholder="Introduce la nueva clave de usuario">
+                        </div>
+                        {% if user.administrador == 1 %}
+                            <div class="form-group">
+                                <label for="activo">Usuario activo:</label>
+                                <input type="checkbox" id="activo" name="activo" value="1" {{ edit.activo != 1 ?: 'checked' }}> <label for="activo">activo</label>
+                            </div>
+                            <div class="form-group">
+                                <label for="administrador">Usuario administrador:</label>
+                                <input type="checkbox" id="administrador" name="administrador" value="1" {{ edit.administrador != 1 ?: 'checked' }}> <label for="administrador">administrador</label>
+                            </div>
+                        {% else %}
+                            <div class="form-group">
+                                <label for="clavenueva">Repite Clave</label>
+                                <input type="password" class="form-control" id="clavenueva" name="clavenueva" placeholder="Repite la nueva clave de usuario">
+                                <div class="col-sm-12 d-none" id="passwdHelp">
+                                    <span class="text-danger">Las contraseñas no coinciden</span><!--d-none/d-block-->  
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="administrador">Darse de baja:</label><br>
+                                <input type="checkbox" id="temporal" name="bajaTemporal" value="1"> <label for="temporal">Temporal</label><br>
+                                <input type="checkbox" id="permanente" name="bajaPermanente" value="1"> <label for="permanente">Permanente</label>
+                            </div>
+                        {% endif %}
+                        <input type="hidden" name="id" value="{{ edit.id }}" />
+                    </form>
+                    <button  class="btn btn-primary" data-toggle="modal" data-target="#confirm">Editar</button>
+                </div>
+            {% endblock %}
+            <hr>
+        </div>
+    </main>
+{% endblock %}
