@@ -13,15 +13,16 @@ require '../classes/autoload.php';
 
 $session = new Session(App::SESSION_NAME);
 $user = $session->getLogin();
+$usuario = Reader::readObject('izv\data\Usuario');
 
-if ($user->getAdministrador() != 1) {
-    header('Location: ../index.php');
-    exit();
+if ($user === null || $user->getAdministrador() != 1) {
+    $usuario->setAdministrador(0);
+    $usuario->setActivo(0);
 }
 
 $db = new Database();
 $manager = new ManageUsuario($db);
-$usuario = Reader::readObject('izv\data\Usuario');
+
 
 if($usuario->getAlias() === '') {
     $usuario->setAlias(null);
