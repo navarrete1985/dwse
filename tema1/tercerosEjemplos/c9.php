@@ -1,8 +1,24 @@
 <?php
 
-$param = '-';
+$param = '';
 if(isset($_GET['parametros'])) {
     $param = $_GET['parametros'];
 }
 
-echo '<h1>Valor que se ha obtenido:' . $param . '</h1>';
+$partes = explode('/', $param);
+
+$ruta = '';
+$accion = '';
+
+if(isset($partes[0])) {
+    $ruta = $partes[0];
+}
+
+if(isset($partes[1])) {
+    $accion = $partes[1];
+}
+
+$frontController = new FrontController($ruta, $accion);
+
+$frontController->doAction();
+echo $frontController->render();

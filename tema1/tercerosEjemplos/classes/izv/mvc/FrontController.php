@@ -21,11 +21,15 @@ class FrontController {
     }
     
     function doAction() {
-        
+        $accion = 'main';//Accion por defecto, todos los controladores tienen que tener un método que se llame main
+        if(method_exists($this->controller, $this->accion)) {
+            $accion = $his->accion;
+        }
+        $this->controller->$accion();//Llamamos a la acción que queremos realizar en nuestro controlador.
     }
     
     function render() {
-        
+        $this->view->render($this->accion);
     }
     
 }
