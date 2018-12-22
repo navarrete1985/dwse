@@ -1,0 +1,7 @@
+[03-Dec-2018 21:38:14 UTC] PHP Notice:  Undefined variable: r2 in /home/ubuntu/workspace/proyecto/usuario/doinsert.php on line 40
+[03-Dec-2018 21:38:35 UTC] PHP Notice:  Undefined variable: r2 in /home/ubuntu/workspace/proyecto/usuario/doinsert.php on line 40
+[03-Dec-2018 21:41:14 UTC] PHP Notice:  Undefined variable: usuarios in /home/ubuntu/workspace/proyecto/usuario/insert.php on line 21
+[03-Dec-2018 21:41:14 UTC] PHP Notice:  Undefined variable: alert in /home/ubuntu/workspace/proyecto/usuario/insert.php on line 21
+[03-Dec-2018 21:41:25 UTC] PHP Notice:  Undefined variable: usuarios in /home/ubuntu/workspace/proyecto/usuario/insert.php on line 21
+[03-Dec-2018 21:41:25 UTC] PHP Notice:  Undefined variable: alert in /home/ubuntu/workspace/proyecto/usuario/insert.php on line 21
+[05-Dec-2018 12:27:28 UTC] PHP Notice:  Undefined variable: r2 in /home/ubuntu/workspace/proyecto/usuario/doinsert.php on line 40

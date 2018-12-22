@@ -3,24 +3,24 @@
 namespace izv\mvc;
 
 class Router {
+
+    private $rutas, $ruta;
     
-    private $rutas = array(
-            'index' => new Route('', '', ''),
-            'ruta' => new Route('', '', ''),
-            'otra' => new Route('', '', '')
-    ),
-    $ruta;
-    
-    function __contruct($ruta) {
+    function __construct($ruta) {
+        $this->rutas = array(
+            'admin' => new Route('AdminModel', 'AdminView' , 'AdminController'),
+            'index' => new Route('FirstModel', 'MaundyView', 'UserController'),
+            'index2' => new Route('FirstModel', 'SecondView', 'FirstController'),
+            'index3' => new Route('FirstModel', 'ThirdView', 'FirstController')
+        );
         $this->ruta = $ruta;
     }
-        
+
     function getRoute() {
         $ruta = $this->rutas['index'];
-        if (isset($this->rutas[$this->ruta])) {
+        if(isset($this->rutas[$this->ruta])) {
             $ruta = $this->rutas[$this->ruta];
         }
         return $ruta;
     }
-    
 }

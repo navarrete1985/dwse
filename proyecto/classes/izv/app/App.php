@@ -18,5 +18,5 @@ class App {
           JWT_KEY = 'Proyecto_App_Usuarios',
           USER_SESSION_KEY = 'App_users',
           
-          SESSION_NAME = 'APP_USER_SESSION';
+          SESSION_NAME = 'MVC_SESSION';
 }

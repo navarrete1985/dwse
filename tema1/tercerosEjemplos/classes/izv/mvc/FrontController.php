@@ -3,13 +3,13 @@
 namespace izv\mvc;
 
 class FrontController {
-    
+
     private $model, $view, $controller;
     private $accion;
-    
+
     function __construct($ruta, $accion) {
         $router = new Router($ruta);
-        $this->route = $router->getRoute();
+        $route = $router->getRoute();
         $this->accion = $accion;
         
         $model = $route->getModel();
@@ -21,15 +21,14 @@ class FrontController {
     }
     
     function doAction() {
-        $accion = 'main';//Accion por defecto, todos los controladores tienen que tener un método que se llame main
+        $accion = 'main';
         if(method_exists($this->controller, $this->accion)) {
-            $accion = $his->accion;
+            $accion = $this->accion;
         }
-        $this->controller->$accion();//Llamamos a la acción que queremos realizar en nuestro controlador.
+        $this->controller->$accion();
     }
     
     function render() {
-        $this->view->render($this->accion);
+        return $this->view->render($this->accion);
     }
-    
 }

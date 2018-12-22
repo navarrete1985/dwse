@@ -14,8 +14,6 @@ class ManageUsuario {
         $this->db = $db;
     }
 
-    //id, correo, alias, nombre , clave, activo, fechaalta
-    //:id, :correo, :alias, :nombre , :clave, :activo, :fechaalta
     function add(Usuario $usuario) {
         $resultado = 0;
         if($this->db->connect()) {
