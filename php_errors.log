@@ -1,0 +1,70 @@
+[23-Dec-2018 14:20:33 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\controller\AdminController' not found in /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php:18
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/c9.php(23): izv\mvc\FrontController->__construct('', '')
+#1 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php on line 18
+[24-Dec-2018 11:36:18 UTC] PHP Notice:  session_start(): ps_files_cleanup_dir: opendir(/var/lib/php/sessions) failed: Permission denied (13) in /home/ubuntu/workspace/proyectoMvc/classes/izv/tools/Session.php on line 18
+[24-Dec-2018 11:48:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method izv\mvc\Router::setRoute() in /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/Router.php:21
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(12): izv\mvc\Router::getInstance('login')
+#1 /home/ubuntu/workspace/proyectoMvc/c9.php(27): izv\mvc\FrontController->__construct('login', '')
+#2 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/Router.php on line 21
+[24-Dec-2018 11:48:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method izv\mvc\Router::setRoute() in /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/Router.php:21
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(12): izv\mvc\Router::getInstance('')
+#1 /home/ubuntu/workspace/proyectoMvc/c9.php(27): izv\mvc\FrontController->__construct('', '')
+#2 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/Router.php on line 21
+[25-Dec-2018 19:42:41 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/LoginController.php on line 27
+[25-Dec-2018 19:53:15 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\controller\Reader' not found in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/LoginController.php:19
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\LoginController->dologin()
+#1 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#2 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/LoginController.php on line 19
+[25-Dec-2018 19:57:06 UTC] PHP Notice:  Undefined property: izv\controller\LoginController::$model in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/LoginController.php on line 22
+[25-Dec-2018 19:57:06 UTC] PHP Fatal error:  Uncaught Error: Call to a member function login() on null in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/LoginController.php:22
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\LoginController->dologin()
+#1 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#2 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/LoginController.php on line 22
+[25-Dec-2018 20:07:13 UTC] PHP Notice:  Undefined property: izv\controller\LoginController::$model in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/LoginController.php on line 22
+[25-Dec-2018 20:07:13 UTC] PHP Fatal error:  Uncaught Error: Call to a member function login() on null in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/LoginController.php:22
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\LoginController->dologin()
+#1 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#2 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/LoginController.php on line 22
+[25-Dec-2018 20:11:21 UTC] PHP Notice:  Undefined property: izv\controller\LoginController::$model in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/LoginController.php on line 22
+[25-Dec-2018 20:17:01 UTC] PHP Notice:  Undefined property: izv\model\UserModel::$db in /home/ubuntu/workspace/proyectoMvc/classes/izv/model/UserModel.php on line 80
+[25-Dec-2018 20:17:01 UTC] PHP Fatal error:  Uncaught Error: Call to a member function connect() on null in /home/ubuntu/workspace/proyectoMvc/classes/izv/model/UserModel.php:80
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/LoginController.php(22): izv\model\UserModel->login('asd', 'asd')
+#1 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\LoginController->dologin()
+#2 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#3 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/model/UserModel.php on line 80
+[25-Dec-2018 20:21:03 UTC] PHP Notice:  Undefined property: izv\model\UserModel::$db in /home/ubuntu/workspace/proyectoMvc/classes/izv/model/UserModel.php on line 86
+[25-Dec-2018 20:21:03 UTC] PHP Fatal error:  Uncaught Error: Call to a member function execute() on null in /home/ubuntu/workspace/proyectoMvc/classes/izv/model/UserModel.php:86
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/LoginController.php(22): izv\model\UserModel->login('asd', 'asd')
+#1 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\LoginController->dologin()
+#2 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#3 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/model/UserModel.php on line 86
+[25-Dec-2018 20:21:59 UTC] PHP Notice:  Undefined property: izv\controller\LoginController::$sesion in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/LoginController.php on line 28
+[25-Dec-2018 20:21:59 UTC] PHP Fatal error:  Uncaught Error: Call to a member function logout() on null in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/LoginController.php:28
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\LoginController->dologin()
+#1 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#2 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/LoginController.php on line 28
+[25-Dec-2018 20:22:57 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\controller\App' not found in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/LoginController.php:30
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\LoginController->dologin()
+#1 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#2 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/LoginController.php on line 30
+[25-Dec-2018 21:06:41 UTC] PHP Notice:  Trying to get property of non-object in /home/ubuntu/workspace/proyectoMvc/classes/izv/model/UserModel.php on line 91

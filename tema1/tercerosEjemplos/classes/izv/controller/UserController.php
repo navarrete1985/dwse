@@ -17,9 +17,9 @@ class UserController extends Controller {
         $this->getModel()->set('twigFile', '_login.html');
     }
 
-    /*function main() {
-        //$this->getModel()->set('twigFile', '_main.html');
-    }*/
+    function main() {
+        $this->getModel()->set('twigFile', '_main.html');
+    }
 
     function register() {
         $this->getModel()->set('twigFile', '_register.html');
