@@ -7,13 +7,13 @@ class Alert {
     private $operacion, $resultado;
     
     static private $mensajes = array(
-        'delete' => array(
-            'No se ha podido borrar.',
-            'Se ha borrado correctamente.'
+        'signup' => array(
+            'No hemos podido crear su cuenta, varifique si el email introducido no está ya registrado, o pruebe a cambiar de alias',
+            'El registro se ha realizado con éxito, le hemos enviado un email a su correo para que active su cuenta.'
         ),
-        'deleteproducto' => array(
-            'No se ha podido borrar el producto.',
-            'El producto se ha borrado correctamente.'
+        'activate' => array(
+            'Su cuenta está ya activada o hemos encontrado un error en la activación. Por favor, intente hacer loguearse o en su defecto cree una nueva cuenta.',
+            'La cuenta ha sido activada satisfactoriamente.'
         ),
         'edit'   => array(
             'No se ha podido modificar.',
@@ -39,17 +39,13 @@ class Alert {
             '',
             'Sessión finalizada.'
         ),
-        'activate' => array(
-            'Su cuenta está ya activada o hemos encontrado un error en la activación. Por favor, intente hacer loguearse o en su defecto cree una nueva cuenta.',
-            'Cuenta activada satisfactoriamente.'
-        ),
         'baja' => array(
             'Ha habido un error al dar de baja al usuario, por favor, inténtelo más tarde.',
             'La cuenta de usuario se ha dado de baja satisfactoriamente'
         )
     );
     
-    static private $clases = array('alert-danger', 'alert-success');
+    static private $clases = array('danger', 'success');
     
     function __construct($operacion, $resultado) {
         $this->operacion = $operacion;

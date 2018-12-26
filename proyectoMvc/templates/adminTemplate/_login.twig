@@ -1,5 +1,8 @@
 {% extends '_base_register.twig' %}
 {% block body %}
+  {% if alert is not null %}
+    <div id="my-notify" message="{{ alert.text }}" type="{{ alert.type }}"></div>
+  {% endif %}
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper auth-page">
       <div class="content-wrapper d-flex align-items-center auth register-bg-1 theme-one">
@@ -7,7 +10,7 @@
           <div class="col-lg-4 mx-auto">
             <h2 class="text-center mb-4">LOGIN</h2>
             <div class="auto-form-wrapper">
-              <form action="login/dologin">
+              <form action="login/dologin" method="POST">
                 <div class="form-group">
                   <label class="label">Usuario</label>
                   <div class="input-group">

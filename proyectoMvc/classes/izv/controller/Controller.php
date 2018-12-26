@@ -5,6 +5,8 @@ namespace izv\controller;
 use izv\app\App;
 use izv\model\Model;
 use izv\tools\Session;
+use izv\tools\Reader;
+use izv\tools\Alert;
 
 abstract class Controller {
 
@@ -31,6 +33,14 @@ abstract class Controller {
         if (!$this->sesion->isLogged()) {
             header('Location:' . App::BASE . 'login');
             exit();
+        }
+    }
+    
+    function getAlerts() {
+        $op = Reader::read('op');
+        $resultado = Reader::read('resultado');
+        if ($op !== null && $resultado !== null) {
+            $this->getModel()->set('alert', Alert::getAlert($op, $resultado));   
         }
     }
 }

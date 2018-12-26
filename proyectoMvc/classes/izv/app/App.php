@@ -13,7 +13,7 @@ class App {
           CLIENT_SECRET = 'eACBhPjTM7Vvjg_m3eXodfJO',
           EMAIL_ORIGIN = 'nacho.pena1985@gmail.com',
           EMAIL_ALIAS = 'Proyecto usuarios MVC',
-          EMAIL_TOKEN_FILE = '../gmail/token.conf',
+          EMAIL_TOKEN_FILE = 'https://dwes-navarrete.c9users.io/proyecto/gmail/token.conf',
           
           JWT_KEY = 'Proyecto_App_Usuarios',
           USER_SESSION_KEY = 'App_users',

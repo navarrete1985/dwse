@@ -1,6 +1,6 @@
 {% extends '_base_register.twig' %}
 {% block body %}
-  <div id="my-notify" title="Esto es un título" message="Esto es un mensaje" type=1></div>
+  {#<div id="my-notify" title="Esto es un título" message="Esto es un mensaje" type=1></div>#}
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper auth-page">
       <div class="content-wrapper d-flex align-items-center auth register-bg-1 theme-one">
@@ -8,10 +8,10 @@
           <div class="col-lg-4 mx-auto">
             <h2 class="text-center mb-4">Regístrate</h2>
             <div class="auto-form-wrapper">
-              <form action="#">
+              <form action="login/doregister" method="POST" id="register">
                 <div class="form-group">
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Alias">
+                    <input type="text" name="alias" class="form-control" placeholder="Alias">
                     <div class="input-group-append">
                       <span class="input-group-text">
                         <i class="mdi mdi-check-circle-outline"></i>
@@ -21,7 +21,7 @@
                 </div>
                 <div class="form-group">
                   <div class="input-group">
-                    <input type="email" class="form-control" placeholder="Correo Electrónico" required>
+                    <input type="text" name="nombre" class="form-control" placeholder="Nombre">
                     <div class="input-group-append">
                       <span class="input-group-text">
                         <i class="mdi mdi-check-circle-outline"></i>
@@ -31,7 +31,7 @@
                 </div>
                 <div class="form-group">
                   <div class="input-group">
-                    <input type="password" class="form-control" placeholder="Contraseña" required>
+                    <input type="email" name="correo" class="form-control" placeholder="Correo Electrónico" required>
                     <div class="input-group-append">
                       <span class="input-group-text">
                         <i class="mdi mdi-check-circle-outline"></i>
@@ -41,7 +41,17 @@
                 </div>
                 <div class="form-group">
                   <div class="input-group">
-                    <input type="password" class="form-control" placeholder="Repite Contraseña" required>
+                    <input type="password" name="clave" id='passwd' class="form-control" placeholder="Contraseña" required>
+                    <div class="input-group-append">
+                      <span class="input-group-text">
+                        <i class="mdi mdi-check-circle-outline"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <input type="password" id='rpasswd' class="form-control" placeholder="Repite Contraseña" required>
                     <div class="input-group-append">
                       <span class="input-group-text">
                         <i class="mdi mdi-check-circle-outline"></i>

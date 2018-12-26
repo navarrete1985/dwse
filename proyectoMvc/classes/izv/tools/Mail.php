@@ -14,7 +14,7 @@ class Mail {
     static function sendActivation(Usuario $usuario) {
         $asunto = 'Correo de activación de la App Usuarios';
         $jwt = JWT::encode($usuario->getCorreo(), App::JWT_KEY);
-        $enlace = Util::url() . 'doactivar.php?id='. $usuario->getId() .'&code=' . $jwt;
+        $enlace = App::BASE . 'login/activate?id='. $usuario->getId() .'&code=' . $jwt;
         $mensaje = "Correo de activación para:  ". $usuario->getNombre();
         $mensaje .= '<br><a href="' . $enlace . '">Activar cuenta</a>';
         return self::sendMail($usuario->getCorreo(), $asunto, $mensaje);

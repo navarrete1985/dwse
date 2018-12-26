@@ -4,6 +4,7 @@ namespace izv\managedata;
 
 use \izv\data\Usuario;
 use \izv\database\Database;
+use \izv\tools\Util;
 
 class ManageUsuario {
 
@@ -16,7 +17,7 @@ class ManageUsuario {
     function add(Usuario $usuario) {
         $resultado = 0;
         if($this->db->connect()) {
-            $sql = 'insert into usuario values(:id, :correo, :clave)';
+            $sql = 'insert into usuario values(:id, :correo, :alias, :nombre , :clave, :activo, :fechaalta, :administrador)';
             if($this->db->execute($sql, $usuario->get())) {
                 $resultado = $this->db->getConnection()->lastInsertId();
             }
@@ -27,9 +28,11 @@ class ManageUsuario {
     function edit(Usuario $usuario) {
         $resultado = 0;
         if($this->db->connect()) {
-            $sql = 'update usuario set correo = :correo where id = :id';
+            $sql = 'update usuario set correo = :correo, alias = :alias, nombre = :nombre, activo = :activo, administrador = :administrador where id = :id';
             $array = $usuario->get();
             unset($array['clave']);
+            unset($array['fechaalta']);
+            echo Util::varDump($array);
             if($this->db->execute($sql, $array)) {
                 $resultado = $this->db->getSentence()->rowCount();
             }
@@ -40,8 +43,9 @@ class ManageUsuario {
     function editWithPassword(Usuario $usuario) {
         $resultado = 0;
         if($this->db->connect()) {
-            $sql = 'update usuario set correo = :correo, clave = :clave where id = :id';
+            $sql = 'update usuario set correo = :correo, alias = :alias, nombre = :nombre , clave = :clave, activo = :activo, administrador = :administrador where id = :id';
             $array = $usuario->get();
+            unset($array['fechaalta']);
             if($this->db->execute($sql, $array)) {
                 $resultado = $this->db->getSentence()->rowCount();
             }
@@ -78,20 +82,33 @@ class ManageUsuario {
         }
         return $array;
     }
-
-    /**
-     * 
-     */
+    
+    function isEmailChanged($usuario) {
+        $result = true;
+        if($this->db->connect()) {
+            $sql = 'select * from usuario where correo = :correo and id = :id';
+            $array = ['correo' => $usuario->getCorreo(),
+                      'id'     => $usuario->getId()];
+            
+            if($this->db->execute($sql, $array)) {
+                if($fila = $this->db->getSentence()->fetch()) {
+                    $result = false;
+                }
+            }
+        }
+        return $result;
+    }
+    
     function login($correo, $clave) {
         if($this->db->connect()) {
-            $sql = 'select * from usuario where correo = :correo';
+            $sql = 'select * from usuario where correo = :correo and activo = 1';
             $array = array('correo' => $correo);
             if($this->db->execute($sql, $array)) {
                 if($fila = $this->db->getSentence()->fetch()) {
                     $usuario = new Usuario();
                     $usuario->set($fila);
-                    $resultado = \izv\tools\Util::verificarClave($clave, $usuario->getClave());
-                    if($resultado) {
+                    $result = Util::verificarClave($clave, $usuario->getClave());
+                    if ($result) {
                         $usuario->setClave('');
                         return $usuario;
                     }
@@ -103,7 +120,9 @@ class ManageUsuario {
     
     function remove($id) {
         $resultado = 0;
+        echo 'Entro en el método remove';
         if($this->db->connect()) {
+            echo 'Entro en conectar con la base de datos';
             $sql = 'delete from usuario where id = :id';
             $array = array('id' => $id);
             if($this->db->execute($sql, $array)) {
@@ -112,4 +131,5 @@ class ManageUsuario {
         }
         return $resultado;
     }
+    
 }
