@@ -14,7 +14,7 @@ class MainController extends Controller {
         $this->getModel()->set('twigFile', '_index.twig');
         $this->getModel()->set('user', $user);
         $this->getModel()->set('users', $this->getModel()->getAllUsers());
-        $this->getAlerts();
+        $this->getAlerts($user['nombre']);
     }
     
     function createUser() {
