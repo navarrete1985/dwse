@@ -1,0 +1,56 @@
+{% extends '_base.twig' %}
+{% block content %}
+<div class="content-wrapper">
+  <div class="row">
+    <div class="col-lg-12 grid-margin">
+      <div class="card">
+        <div class="card-body">
+          <h3 class='mb-4'>{{ accion }}</h3>
+          {#<p class="card-description">#}
+          {#  Formulario de usuario#}
+          {#</p>#}
+          <form class="forms-sample">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" class="form-control" id="nombre" name='nombre' placeholder="Nombre de usuario" value='{{user.nombre}}'>
+            </div>
+            <div class="form-group">
+              <label for="alias">Alias</label>
+              <input type="text" class="form-control" id="alias" name='alias' placeholder="Alias de usuario" value='{{user.alias}}'>
+            </div>
+            <div class="form-group">
+              <label for="correo">Alias</label>
+              <input type="email" class="form-control" id="correo" name='correo' placeholder="Email" value='{{user.correo}}'>
+            </div>
+            <div class="form-group">
+              <label for="clave">Contraseña</label>
+              <input type="password" class="form-control" id="clave" name='clave' placeholder="Contraseña">
+            </div>
+            <div class="form-group">
+              <label for="rpasswd">Repite Contraseña</label>
+              <input type="password" class="form-control" id="rpasswd" placeholder="Contraseña">
+            </div>
+            <div class="form-check">
+              <label class='form-check-label'>
+                <input type="checkbox" class="form-check-input" id="activo" name='activo' {{user.activo == 1 ? 'checked' : '' }}>
+                Activo
+              </label>
+            </div>
+            <div class="form-check mb-4">
+              <label class='form-check-label'>
+                <input type="checkbox" class="form-check-input" id="administrador" name='administrador' {{user.administrador == 1 ? 'checked' : '' }}>
+                Administrador
+              </label>
+            </div>
+            <button type="submit" class="btn btn-success mr-2">Guardar</button>
+            <a href='index/main'>
+              <button type='button' class="btn btn-light">Cancelar</button>
+            </a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+        

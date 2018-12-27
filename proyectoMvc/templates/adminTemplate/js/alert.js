@@ -39,3 +39,23 @@ function showMessage(title, message, type) {
 		},
 	});
 }
+
+(function() {
+    $('.borrar').on('click', function(e){
+        e.preventDefault();
+        var target = e.currentTarget;
+        var a = $('#enlace')[0];
+        a.href = target.href;
+        var fClose = function(){
+            modal.modal("hide");
+        };
+        var onConfirm = function() {
+           window.location = a.href;
+        };
+        var modal = $("#confirmSimple");
+        modal.modal("show");
+        $("#btConfirmSimpleDelete").unbind().one('click', onConfirm).one('click', fClose);
+        $("#btCerrarmSimpleDelete").unbind().one("click", fClose);
+    });
+    
+})();

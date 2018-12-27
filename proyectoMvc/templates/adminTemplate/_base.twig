@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="{{twigFolder}}/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="{{twigFolder}}/vendors/css/vendor.bundle.addons.css">
   <link rel="stylesheet" href="{{twigFolder}}/vendors/iconfonts/font-awesome/css/font-awesome.css">
+   <link rel="stylesheet" href="{{twigFolder}}/vendors/icheck/skins/all.css">
   <link rel="stylesheet" href="{{twigFolder}}/css/animate.css">
   <!-- endinject -->
   <!-- plugin css for this page -->
@@ -27,6 +28,28 @@
   {% if alert is not null %}
     <div id="my-notify" message="{{ alert.text }}" type="{{ alert.type }}"></div>
   {% endif %}
+  {#MModal confirm#}
+  <div class="modal fade" id="confirmSimple" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="">Confirmación eliminación de usuario</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="m-3">
+                  ¿Seguro que quiere eliminar a este usuario?
+              </div>
+              <div class="modal-footer">
+                  <a class='invisible' id="enlace"></a>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btCerrarmSimpleDelete">Cerrar</button>
+                  <button type="button" class="btn btn-primary" id="btConfirmSimpleDelete">Confirmar</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  {#end modal confirm#}
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -46,7 +69,7 @@
               <img class="img-xs rounded-circle" src="{{twigFolder}}/images/faces/face1.jpg" alt="Profile image">
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
-              <a class="dropdown-item mt-3" href='login/logout'>
+              <a class="dropdown-item mt-3" href='index/edit'>
                 <i class="fa fa-edit text-primary"></i>Editar mi cuenta
               </a>
               <a class="dropdown-item mt-3" href='login/logout'>
@@ -80,7 +103,7 @@
                   </div>
                 </div>
               </div>
-              <a href="index/createUser" class="nav-link">
+              <a href="index/createuser" class="nav-link">
                 <button class="btn btn-success btn-block">Crear Usuario
                   <i class="mdi mdi-plus"></i>
                 </button>
@@ -88,15 +111,9 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="index/main">
               <i class="menu-icon mdi mdi-television"></i>
               <span class="menu-title">Listado Usuarios</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{twigFolder}}/pages/forms/basic_elements.html">
-              <i class="menu-icon mdi mdi-backup-restore"></i>
-              <span class="menu-title">Form elements</span>
             </a>
           </li>
         </ul>

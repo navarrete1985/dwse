@@ -19,17 +19,17 @@ class Alert {
             'No se ha podido modificar.',
             'Se ha modificado correctamente.'
         ),
-        'editproducto'   => array(
-            'No se ha podido modificar el producto.',
-            'El producto se ha modificado correctamente.'
+        'read'   => array(
+            'No se ha encontrado el usuario para modificar.',
+            ''
         ),
         'insert' => array(
             'No se ha podido crear el usuario.',
             'Usuario creado satisfactoriamente'
         ),
-        'insertproducto' => array(
-            'No se ha podido insertar el producto.',
-            'El producto se ha insertado correctamente.'
+        'delete' => array(
+            'No se ha podido eliminar al usuario.',
+            'El usuario se ha eliminado satisfactoriamente.'
         ),
         'login' => array(
             'No se ha autentificado correctamente.',

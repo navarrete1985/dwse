@@ -223,3 +223,19 @@ Stack trace:
 #4 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/Parser.php(125): Twig_ExpressionParser->parseExpression()
 #5 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/TokenParser/For.php(40): Twig_Parser-> in /home/ubuntu/workspace/proyectoMvc/templates/adminTemplate/_index.twig on line 51
 [27-Dec-2018 19:04:36 UTC] PHP Notice:  session_start(): ps_files_cleanup_dir: opendir(/var/lib/php/sessions) failed: Permission denied (13) in /home/ubuntu/workspace/proyectoMvc/classes/izv/tools/Session.php on line 18
+[27-Dec-2018 21:45:21 UTC] PHP Fatal error:  Uncaught Twig_Error_Syntax: Unknown "endblock" tag. in /home/ubuntu/workspace/proyectoMvc/templates/adminTemplate/_edit.twig:24
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/Parser.php(81): Twig_Parser->subparse(NULL, false)
+#1 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/Environment.php(533): Twig_Parser->parse(Object(Twig_TokenStream))
+#2 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/Environment.php(565): Twig_Environment->parse(Object(Twig_TokenStream))
+#3 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/Environment.php(368): Twig_Environment->compileSource(Object(Twig_Source))
+#4 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/Environment.php(289): Twig_Environment->loadTemplate('_edit.twig')
+#5 /home/ubuntu/workspace/proyectoMvc/classes/izv/view/MainView.php(20): Twig_Environment->render('_edit.twig', Array)
+#6 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.ph in /home/ubuntu/workspace/proyectoMvc/templates/adminTemplate/_edit.twig on line 24
+[27-Dec-2018 22:55:51 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\controller\Reader' not found in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php:38
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\MainController->edit()
+#1 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#2 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php on line 38
+[27-Dec-2018 23:33:01 UTC] PHP Notice:  Undefined index: delete in /home/ubuntu/workspace/proyectoMvc/classes/izv/tools/Alert.php on line 80

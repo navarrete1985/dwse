@@ -35,7 +35,7 @@ class LoginController extends Controller {
         $user = $this->getModel()->login($correo, $clave);
         if (!isset($correo) || !isset($clave)) {
             header('Location: ' . App::BASE . 'login/main?op=logout&resultado=1');
-        }else if ($user) {
+        }else if ($user && $user->getActivo() == 1) {
             $this->sesion->login($user);
             header('Location: ' . App::BASE . 'index/main?op=login&resultado=1');
             exit();
