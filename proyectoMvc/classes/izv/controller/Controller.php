@@ -36,11 +36,15 @@ abstract class Controller {
         }
     }
     
-    function getAlerts() {
+    function getAlerts($usuario = null) {
         $op = Reader::read('op');
         $resultado = Reader::read('resultado');
+        $alert = Alert::getAlert($op, $resultado);
+        if ($usuario !== null && $op === 'login') {
+            $alert['text'] .= '<strong> ' . $usuario . '<strong>';
+        }
         if ($op !== null && $resultado !== null) {
-            $this->getModel()->set('alert', Alert::getAlert($op, $resultado));   
+            $this->getModel()->set('alert', $alert);   
         }
     }
 }

@@ -33,7 +33,7 @@ class Alert {
         ),
         'login' => array(
             'No se ha autentificado correctamente.',
-            'Logueado correctamente.'
+            'Bienvenido de nuevo '
         ),
         'logout' => array(
             '',

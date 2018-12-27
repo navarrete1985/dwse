@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Star Admin Free Bootstrap Admin Dashboard Template</title>
+  <base href="{{urlbase}}">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="{{twigFolder}}/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="{{twigFolder}}/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="{{twigFolder}}/vendors/css/vendor.bundle.addons.css">
+  <link rel="stylesheet" href="{{twigFolder}}/vendors/iconfonts/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="{{twigFolder}}/css/animate.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="{{twigFolder}}/css/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="{{twigFolder}}/images/favicon.png" />
+</head>
+
+<body>
+  {% if alert is not null %}
+    <div id="my-notify" message="{{ alert.text }}" type="{{ alert.type }}"></div>
+  {% endif %}
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+        <a class="navbar-brand brand-logo" href="index">
+          <img src="{{twigFolder}}/images/logo.svg" alt="logo" />
+        </a>
+        <a class="navbar-brand brand-logo-mini" href="index">
+          <img src="{{twigFolder}}/images/logo-mini.svg" alt="logo" />
+        </a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center">
+        <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item dropdown d-none d-xl-inline-block">
+            <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+              <span class="profile-text">Hola, {{ user.nombre | default('usuario')}}</span>
+              <img class="img-xs rounded-circle" src="{{twigFolder}}/images/faces/face1.jpg" alt="Profile image">
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+              <a class="dropdown-item mt-3" href='login/logout'>
+                <i class="fa fa-edit text-primary"></i>Editar mi cuenta
+              </a>
+              <a class="dropdown-item mt-3" href='login/logout'>
+                
+               <i class="fa fa-arrow-circle-o-left text-danger"></i>Sign Out
+              </a>
+            </div>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item nav-profile">
+            <div class="nav-link">
+              <div class="user-wrapper">
+                <div class="profile-image">
+                  <img src="{{twigFolder}}/images/faces/face1.jpg" alt="profile image">
+                </div>
+                <div class="text-wrapper">
+                  <p class="profile-name">{{ user.nombre }}</p>
+                  <div>
+                    <small class="designation text-muted">{{ user.administrador == 1 ? 'Administrador' : 'Normal' }}</small>
+                    <span class="status-indicator online"></span>
+                  </div>
+                </div>
+              </div>
+              <a href="index/createUser" class="nav-link">
+                <button class="btn btn-success btn-block">Crear Usuario
+                  <i class="mdi mdi-plus"></i>
+                </button>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">
+              <i class="menu-icon mdi mdi-television"></i>
+              <span class="menu-title">Listado Usuarios</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{twigFolder}}/pages/forms/basic_elements.html">
+              <i class="menu-icon mdi mdi-backup-restore"></i>
+              <span class="menu-title">Form elements</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        {% block content%}
+        {% endblock %}
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <footer class="footer">
+          <div class="container-fluid clearfix">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © IZV-DWES 2018
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="{{twigFolder}}/vendors/js/vendor.bundle.base.js"></script>
+  <script src="{{twigFolder}}/vendors/js/vendor.bundle.addons.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="{{twigFolder}}/js/off-canvas.js"></script>
+  <script src="{{twigFolder}}/js/misc.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="{{twigFolder}}/js/dashboard.js"></script>
+  <script src="{{twigFolder}}/js/bootstrap-notify.min.js" deferd></script>
+  <script src="{{twigFolder}}/js/alert.js"></script>
+  <!-- End custom js for this page-->
+</body>
+
+</html>

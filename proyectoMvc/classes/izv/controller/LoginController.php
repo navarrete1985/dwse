@@ -34,13 +34,13 @@ class LoginController extends Controller {
         $clave = Reader::read('clave');
         $user = $this->getModel()->login($correo, $clave);
         if (!isset($correo) || !isset($clave)) {
-            header('Location: ' . App::BASE . 'login/main?op=logout&result=1');
+            header('Location: ' . App::BASE . 'login/main?op=logout&resultado=1');
         }else if ($user) {
             $this->sesion->login($user);
-            header('Location: ' . App::BASE . 'index/main?op=login&result=1');
+            header('Location: ' . App::BASE . 'index/main?op=login&resultado=1');
             exit();
         }else {
-            header('Location: ' . App::BASE . 'login/main?op=login&result=0');
+            header('Location: ' . App::BASE . 'login/main?op=login&resultado=0');
         }
         $this->sesion->logout();
     }

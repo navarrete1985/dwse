@@ -214,3 +214,12 @@ Stack trace:
 #3 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/Parser.php(125): Twig_ExpressionParser->parseExpression()
 #4 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/Parser.php(81): Twig_Parser->subparse(NULL, false)
 #5 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/Environment.php(533): Twig_Parser->p in /home/ubuntu/workspace/proyectoMvc/templates/adminTemplate/_index.twig on line 69
+[27-Dec-2018 18:30:17 UTC] PHP Fatal error:  Uncaught Twig_Error_Syntax: Unexpected token "end of print statement" of value "". in /home/ubuntu/workspace/proyectoMvc/templates/adminTemplate/_index.twig:51
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(92): Twig_ExpressionParser->parsePrimaryExpression()
+#1 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(45): Twig_ExpressionParser->getPrimary()
+#2 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(107): Twig_ExpressionParser->parseExpression()
+#3 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(67): Twig_ExpressionParser->parseConditionalExpression(Object(Twig_Node_Expression_Binary_Equal))
+#4 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/Parser.php(125): Twig_ExpressionParser->parseExpression()
+#5 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/TokenParser/For.php(40): Twig_Parser-> in /home/ubuntu/workspace/proyectoMvc/templates/adminTemplate/_index.twig on line 51
+[27-Dec-2018 19:04:36 UTC] PHP Notice:  session_start(): ps_files_cleanup_dir: opendir(/var/lib/php/sessions) failed: Permission denied (13) in /home/ubuntu/workspace/proyectoMvc/classes/izv/tools/Session.php on line 18
