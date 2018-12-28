@@ -59,3 +59,24 @@ function showMessage(title, message, type) {
     });
     
 })();
+
+$(function() {
+	let form = $('#form-user');
+	form.on('submit', event => {
+		event.preventDefault();
+		if ($('#clave').val() === $('#rclave').val()) {
+			let modal = $('#confirmSimple');
+			document.querySelector('.modal .title').textContent = 'Atención';
+			document.querySelector('.modal .content').textContent = '¿Seguro que quiere realizar esta operación?';
+			modal.modal('show');
+			$("#btConfirmSimpleDelete").unbind().one('click', () =>{
+				form[0].submit();
+			}).one('click', () =>{
+				modal.modal('hide');	
+			});
+	        $("#btCerrarmSimpleDelete").unbind().one("click", () => modal.modal('hide'));	
+		} else {
+			showMessage('Las contraseñas no coinciden', 'Asegúrese de que las contraseñas sean iguales', 'danger');
+		}
+	});
+});

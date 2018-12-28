@@ -239,3 +239,55 @@ Stack trace:
 #2 {main}
   thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php on line 38
 [27-Dec-2018 23:33:01 UTC] PHP Notice:  Undefined index: delete in /home/ubuntu/workspace/proyectoMvc/classes/izv/tools/Alert.php on line 80
+[28-Dec-2018 12:28:24 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\controller\App' not found in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php:44
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\MainController->doedit()
+#1 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#2 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php on line 44
+[28-Dec-2018 12:30:30 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\controller\Mail' not found in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php:42
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\MainController->doedit()
+#1 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#2 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php on line 42
+[28-Dec-2018 12:31:12 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\controller\Mail' not found in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php:43
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\MainController->doedit()
+#1 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#2 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php on line 43
+[28-Dec-2018 12:32:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method izv\tools\Mail::sedActivation() in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php:43
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\MainController->doedit()
+#1 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#2 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php on line 43
+[28-Dec-2018 12:52:38 UTC] PHP Notice:  Undefined property: izv\data\Usuario::$getActivo in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php on line 46
+[28-Dec-2018 12:52:38 UTC] PHP Notice:  Undefined property: izv\data\Usuario::$getAdministrador in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php on line 47
+[28-Dec-2018 12:53:27 UTC] PHP Notice:  Undefined property: izv\data\Usuario::$getActivo in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php on line 46
+[28-Dec-2018 12:53:27 UTC] PHP Notice:  Undefined property: izv\data\Usuario::$getAdministrador in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php on line 47
+[28-Dec-2018 13:22:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method izv\controller\MainController::model() in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php:108
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php(43): izv\controller\MainController->__checkLeave(Object(izv\data\Usuario))
+#1 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\MainController->doedit()
+#2 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#3 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php on line 108
+[28-Dec-2018 20:39:05 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getCorreo() on null in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/EditController.php:73
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\EditController->doedit()
+#1 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#2 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/EditController.php on line 73
+[28-Dec-2018 20:46:35 UTC] PHP Notice:  Undefined variable: result in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/LoginController.php on line 82
+[28-Dec-2018 20:46:58 UTC] PHP Notice:  Undefined variable: result in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/LoginController.php on line 82
+[28-Dec-2018 20:48:47 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method izv\controller\MainController::__isAdmin() in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php:61
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\MainController->dodelete()
+#1 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#2 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php on line 61
+[28-Dec-2018 20:49:43 UTC] PHP Fatal error:  Access level to izv\controller\EditController::__isAdmin() must be protected (as in class izv\controller\Controller) or weaker in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/EditController.php on line 12
+[28-Dec-2018 20:50:18 UTC] PHP Fatal error:  Access level to izv\controller\EditController::__isAdmin() must be protected (as in class izv\controller\Controller) or weaker in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/EditController.php on line 12
+[28-Dec-2018 21:12:39 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/EditController.php on line 54

@@ -33,12 +33,12 @@
       <div class="modal-dialog" role="document">
           <div class="modal-content">
               <div class="modal-header">
-                  <h5 class="">Confirmación eliminación de usuario</h5>
+                  <h5 class="title">Confirmación eliminación de usuario</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>
-              <div class="m-3">
+              <div class="m-3 content">
                   ¿Seguro que quiere eliminar a este usuario?
               </div>
               <div class="modal-footer">
@@ -69,7 +69,7 @@
               <img class="img-xs rounded-circle" src="{{twigFolder}}/images/faces/face1.jpg" alt="Profile image">
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
-              <a class="dropdown-item mt-3" href='index/edit'>
+              <a class="dropdown-item mt-3" href='edit/main'>
                 <i class="fa fa-edit text-primary"></i>Editar mi cuenta
               </a>
               <a class="dropdown-item mt-3" href='login/logout'>
@@ -103,11 +103,13 @@
                   </div>
                 </div>
               </div>
-              <a href="index/createuser" class="nav-link">
-                <button class="btn btn-success btn-block">Crear Usuario
-                  <i class="mdi mdi-plus"></i>
-                </button>
-              </a>
+              {% if user.administrador == 1 %}
+                <a href="edit/createuser" class="nav-link">
+                  <button class="btn btn-success btn-block">Crear Usuario
+                    <i class="mdi mdi-plus"></i>
+                  </button>
+                </a>
+              {% endif %}
             </div>
           </li>
           <li class="nav-item">

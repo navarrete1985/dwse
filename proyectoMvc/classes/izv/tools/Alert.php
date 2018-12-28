@@ -16,8 +16,8 @@ class Alert {
             'La cuenta ha sido activada satisfactoriamente.'
         ),
         'edit'   => array(
-            'No se ha podido modificar.',
-            'Se ha modificado correctamente.'
+            'No se ha podido modificar al usuario',
+            'Los datos se han modificado satisfactoriamente.'
         ),
         'read'   => array(
             'No se ha encontrado el usuario para modificar.',
@@ -41,7 +41,11 @@ class Alert {
         ),
         'baja' => array(
             'Ha habido un error al dar de baja al usuario, por favor, inténtelo más tarde.',
-            'La cuenta de usuario se ha dado de baja satisfactoriamente'
+            'La cuenta de usuario se ha dado de baja satisfactoriamente.'
+        ),
+        'createuser' => array(
+            'No hemos podido crear al usuario, pruebe con un email no usado o un alias disponible.',
+            'El usuario se ha creado satisfactoriamente.'
         )
     );
     

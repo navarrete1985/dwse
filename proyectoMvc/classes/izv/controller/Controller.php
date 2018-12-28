@@ -30,7 +30,8 @@ abstract class Controller {
     }
     
     function checkIsLogged() {
-        if (!$this->sesion->isLogged()) {
+        if (!$this->sesion->isLogged() || $this->sesion->getLogin()->getActivo() === 0) {
+            $this->sesion->logout();
             header('Location:' . App::BASE . 'login');
             exit();
         }
@@ -46,5 +47,9 @@ abstract class Controller {
         if ($op !== null && $resultado !== null) {
             $this->getModel()->set('alert', $alert);   
         }
+    }
+    
+    protected function __isAdmin() {
+        return $this->sesion->getLogin()->getAdministrador() == 1;
     }
 }
