@@ -66,15 +66,18 @@ class EditController extends Controller {
             if ($user->getActivo() === 'on' || $user->getAdministrador() === 'on') {
                 $user->setActivo($user->getActivo() === 'on' ? 1 : 0);
                 $user->setAdministrador($user->getAdministrador() === 'on' ? 1 : 0);
-                $this->sesion->getLogin()->getId() === $user->getId() ? $this->sesion->login($user) : null;
             } else {
                 $this->__checkLeave($oldState);
+                $user->setActivo($oldState->getActivo());
+                $user->setAdministrador($oldState->getAdministrador());
             }
             if ($oldState->getCorreo() !== $user->getCorreo()) {
                 Mail::sendActivation($user);
+                $user->setActivo(0);
             }
             $user->setClave($user->getClave() == null || $user->getClave() == '' ? $oldState->getClave() : Util::encriptar($user->getClave()));
             $result = $this->getModel()->updateUser($user);
+            $this->sesion->getLogin()->getId() === $user->getId() ? $this->sesion->login($user) : null;
             header('Location: ' . App::BASE . 'index/main?op=edit&resultado=' . $result);
         }else {
             header('Location: ' . App::BASE . 'index/main');
@@ -99,9 +102,8 @@ class EditController extends Controller {
                 $this->getModel()->updateUser($user);
             }
             $this->sesion->logout();
-            header('Location: ' . App::BASE);
+            header('Location: ' . App::BASE . 'login/main?op=baja&resultado=1');
             exit();
         }
-    }
-    
+    }   
 }
