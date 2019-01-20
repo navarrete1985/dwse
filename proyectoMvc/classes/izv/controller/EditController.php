@@ -34,11 +34,15 @@ class EditController extends Controller {
         $this->getModel()->set('route', 'edit/doinsert');
         $this->getModel()->set('user', $this->sesion->getLogin()->get());
         $this->getModel()->set('new', true);
+        $this->getAlerts();
     }
     
     function doinsert() {
         $this->__hasPermission();
         $user = Reader::readObject('izv\data\Usuario');
+        if (strlen(trim($user->getNombre())) === 0 || strlen(trim($user->getAlias())) === 0) {
+            $this->sendRedirect('edit/createuser?op=createuser&resultado=0');
+        }
         $user->setClave(Util::encriptar($user->getClave()));
         $user->setActivo($user->getActivo() === 'on' ? 1 : 0);
         $user->setAdministrador($user->getAdministrador() === 'on' ? 1 : 0);

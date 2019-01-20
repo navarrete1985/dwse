@@ -1,6 +1,8 @@
 {% extends '_base_register.twig' %}
 {% block body %}
-  {#<div id="my-notify" title="Esto es un título" message="Esto es un mensaje" type=1></div>#}
+  {% if alert is not null %}
+    <div id="my-notify" message="{{ alert.text }}" type="{{ alert.type }}"></div>
+  {% endif %}
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper auth-page">
       <div class="content-wrapper d-flex align-items-center auth register-bg-1 theme-one">

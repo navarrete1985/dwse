@@ -8,7 +8,7 @@ class Alert {
     
     static private $mensajes = array(
         'signup' => array(
-            'No hemos podido crear su cuenta, varifique si el email introducido no está ya registrado, o pruebe a cambiar de alias',
+            'No hemos podido crear su cuenta, verifique si el email introducido no está ya registrado, o pruebe a cambiar de alias',
             'El registro se ha realizado con éxito, le hemos enviado un email a su correo para que active su cuenta.'
         ),
         'activate' => array(

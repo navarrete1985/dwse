@@ -21,6 +21,7 @@ class LoginController extends Controller {
     function register() {
         $this->checkIsLogued();
         $this->getModel()->set('twigFile', '_register.twig');
+        $this->getAlerts();
     }
     
     function logout() {
