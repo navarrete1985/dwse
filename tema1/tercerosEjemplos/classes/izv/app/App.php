@@ -4,10 +4,10 @@ namespace izv\app;
 
 class App {
     
-    const DATABASE = 'proyecto',
+    const DATABASE = 'simple',
           HOST = 'localhost',    
-          PASSWORD = 'clavebd',
-          USER = 'usuariobd',
+          PASSWORD = 'simple',
+          USER = 'simple',
           APPLICATION_NAME = 'CorreoWeb',
           CLIENT_ID = '123796518941-ptgju1jq1a68ll00ek7harhmn8jps1ee.apps.googleusercontent.com',
           CLIENT_SECRET = 'eACBhPjTM7Vvjg_m3eXodfJO',

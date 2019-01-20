@@ -1,0 +1,14 @@
+Generar las tablas en la base de datos:
+
+a) bin/doctrine orm:schema-tool:create --> Con esto lo que hacemos es crear las tablas
+b) bin/doctrine orm:schema-tool:update --force --> Para actualizar la tabla (Borra tablas)
+
+Generar los métodos get y set de la clase 'pojo':
+
+a) bin/doctrine orm:generate:entities ./src --> Indicamos donde están las tablas con las que queremos trabajar
+
+
+
+El cli_doctrine sólamente sirve para atacar a la base de datos desde consola, para la creación de tablas, etc
+Pero a la hora de producción no es necesario, por que nosotros en nivel de programación vamos a usar las clases
+y los pojos que están fuera de cli....este archivo se debería guardar fuera de la estructura de nuestro proyecto

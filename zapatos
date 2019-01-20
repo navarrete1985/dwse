@@ -1,0 +1,47 @@
+Vamos a implementar una tienda web de zapatos. Al abrir la aplicación web nos
+debe salir directamente un listado paginado de todos los zapatos con sus
+fotografías y precio. Al hacer clic sobre cualquiera de los zapatos entraremos
+en una página en la que se detallan todos los datos disponibles del zapato y
+todas sus fotografías (debe haber al menos una fotografía por cada zapato).
+
+Desde la pantalla detallada de zapatos podremos añadir a la cesta los zapatos,
+indicando el número deseado. Una vez que se hayan añadido todos los pares de
+zapatos deseados se debe poder concluir el proceso de compra. Para tramitar la
+compra deberemos darnos de alta o iniciar la sesión. Para finalizar la compra
+introduciremos nuestro número de tarjeta, su fecha de validez y el cvv.
+
+Para facilitar la búsqueda de zapatos, deberemos ofrecer una serie de filtros y
+de condiciones de búsqueda, que permitan crear un listado paginado a medida de
+las condiciones especificadas.
+
+Desde el backend, se debe poder gestionar la base de datos de zapatos y la de
+pedidos.
+
+Los datos que debe manejar la aplicación son los siguientes:
+
+Usuario: id, login, clave, nombre, apellidos, correo, dirección completa, fecha
+de alta, indicador si está activo, indicador si es administrador.
+
+Categoría: id, nombre. Posibles categorías son: botas, zapato plano, zapato con
+tacón, zapatillas de deporte, etc.
+
+Destinatario: id, nombre. Posibles destinatarios son: hombre, mujer, niño, niña,
+unisex, etc.
+
+Zapato: id, marca, modelo, categoría, destinatario, precio, color, material
+cubierta, material forro, material suela, número desde, número hasta,
+descripción, indicador si está disponible.
+
+Pedido: id, fecha, usuario, número tarjeta, fecha validez, cvv.
+
+Detalle del pedido: id, pedido, zapato, número, cantidad, precio unidad.
+
+¡Podemos agregar más tablas y campos, pero no quitar! No es imprescindible
+implementar la gestión de las tablas categoría y destinatario. Para la gestión
+de las fotografías de los zapatos podemos optar por hacerlo a través de tablas
+de la base de datos o a través de la estructura de carpetas y archivos.
+
+Para almacenar las imagenes podemos utilizar tanto blob como imágenes guardadas 
+en archivos.
+
+

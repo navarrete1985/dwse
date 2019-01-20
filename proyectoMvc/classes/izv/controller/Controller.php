@@ -49,6 +49,11 @@ abstract class Controller {
         }
     }
     
+    function sendRedirect($target = 'index/main') {
+        header('Location: ' . App::BASE . $target);
+        exit();
+    }
+    
     protected function __isAdmin() {
         return $this->sesion->getLogin()->getAdministrador() == 1;
     }

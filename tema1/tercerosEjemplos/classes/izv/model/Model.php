@@ -17,6 +17,12 @@ class Model {
         $this->db->close();
     }
     
+    function add(array $array) {
+        foreach($array as $indice => $valor) {
+            $this->set($indice, $valor);
+        }
+    }
+    
     function get($name) {
         if(isset($this->datosVista[$name])) {
             return $this->datosVista[$name];

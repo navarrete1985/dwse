@@ -79,9 +79,13 @@ class ManageUsuario {
         return $array;
     }
 
-    /**
-     * 
-     */
+    function getAllOrOne($id = null) {
+        if($id === null) {
+            return $this->getAll();
+        }
+        return $this->get($id);
+    }
+
     function login($correo, $clave) {
         if($this->db->connect()) {
             $sql = 'select * from usuario where correo = :correo';

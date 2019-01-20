@@ -19,13 +19,9 @@ class EditController extends Controller {
         $this->__isAdmin() ? $this->getModel()->set('admin', true) : null;
         if ($this->__isAdmin() && Reader::read('id') != null) {
             $user = $this->getModel()->getUser(Reader::read('id'));
-            if ($user !== null) {
-                $this->getModel()->set('edituser', $user->get());
-            }else {
-                header('Location: index/main?op=read&resultado=0');
-            }
+            $user === null ? sendRedirect('edit/main') : $this->getModel()->set('edituser', $user->get());
         } else if (!$this->__isAdmin() && Reader::read('id') != null) {
-            header('Location: index/main');
+            $this->sendRedirect('index/main');
         } else {
             $this->getModel()->set('edituser', $this->sesion->getLogin()->get());    
         }
@@ -51,7 +47,8 @@ class EditController extends Controller {
             $user->setId($result);
             Mail::sendActivation($user);
         }
-        header('Location: ' . App::BASE . 'index/main?op=createuser&resultado=' . ($result > 0 ? '1' : '0'));
+        
+        $this->sendRedirect('index/main?op=createuser&resultado=' . ($result > 0 ? '1' : '0'));
     }
     
     function doedit() {
@@ -59,11 +56,10 @@ class EditController extends Controller {
         $user = Reader::readObject('izv\data\Usuario');
         if ($user !== null) {
             if (!$this->__isAdmin() && $user->getId() != $this->sesion->getLogin()->getId()) {
-                header('Location: ' . App::BASE . 'index/main');
-                exit();
+                $this->sendRedirect('index/main');
             }
             $oldState = $this->getModel()->getUser($user->getId());
-            if ($user->getActivo() === 'on' || $user->getAdministrador() === 'on') {
+            if ($this->__isAdmin()) {
                 $user->setActivo($user->getActivo() === 'on' ? 1 : 0);
                 $user->setAdministrador($user->getAdministrador() === 'on' ? 1 : 0);
             } else {
@@ -78,17 +74,16 @@ class EditController extends Controller {
             $user->setClave($user->getClave() == null || $user->getClave() == '' ? $oldState->getClave() : Util::encriptar($user->getClave()));
             $result = $this->getModel()->updateUser($user);
             $this->sesion->getLogin()->getId() === $user->getId() ? $this->sesion->login($user) : null;
-            header('Location: ' . App::BASE . 'index/main?op=edit&resultado=' . $result);
+            $this->sendRedirect('index/main?op=edit&resultado=' . $result);
         }else {
-            header('Location: ' . App::BASE . 'index/main');
+            $this->sendRedirect();
         }
     }
     
     private function __hasPermission() {
         $this->checkIsLogged();
         if (!$this->__isAdmin()) {
-            header('Location: index/main');
-            exit();
+            $this->sendRedirect();
         }
         $this->getModel()->set('admin', true);
     }
@@ -102,8 +97,7 @@ class EditController extends Controller {
                 $this->getModel()->updateUser($user);
             }
             $this->sesion->logout();
-            header('Location: ' . App::BASE . 'login/main?op=baja&resultado=1');
-            exit();
+            $this->sendRedirect('login/main?op=baja&resultado=1');
         }
     }   
 }

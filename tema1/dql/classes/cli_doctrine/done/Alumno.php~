@@ -1,0 +1,19 @@
+<?php
+/**
+ * @Entity @Table(name="alumno")
+ */
+class Alumno {
+    /**
+     * @Id
+     * @Column(type="integer") @GeneratedValue
+     */
+    private $id;
+    /**
+     * @Column(type="string", length=120, unique=true, nullable=false)
+     */
+    private $nombre;
+    /**
+     * @Column(type="string", length=120, nullable=true)
+     */
+    private $abservaciones;
+}

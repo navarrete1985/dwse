@@ -291,3 +291,30 @@ Stack trace:
 [28-Dec-2018 20:49:43 UTC] PHP Fatal error:  Access level to izv\controller\EditController::__isAdmin() must be protected (as in class izv\controller\Controller) or weaker in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/EditController.php on line 12
 [28-Dec-2018 20:50:18 UTC] PHP Fatal error:  Access level to izv\controller\EditController::__isAdmin() must be protected (as in class izv\controller\Controller) or weaker in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/EditController.php on line 12
 [28-Dec-2018 21:12:39 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/EditController.php on line 54
+[20-Jan-2019 11:58:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function izv\controller\sendRedirect() in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/EditController.php:25
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\EditController->main()
+#1 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#2 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/EditController.php on line 25
+[20-Jan-2019 12:20:23 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\mangedata\ManageUsuario' not found in /home/ubuntu/workspace/proyectoMvc/classes/izv/model/UserModel.php:63
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/EditController.php(21): izv\model\UserModel->getUser('69')
+#1 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\EditController->main()
+#2 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#3 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/model/UserModel.php on line 63
+[20-Jan-2019 12:21:08 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\mangedata\ManageUsuario' not found in /home/ubuntu/workspace/proyectoMvc/classes/izv/model/UserModel.php:63
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/EditController.php(21): izv\model\UserModel->getUser('69')
+#1 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\EditController->main()
+#2 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#3 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/model/UserModel.php on line 63
+[20-Jan-2019 12:22:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method izv\managedata\ManageUsuario::getUser() in /home/ubuntu/workspace/proyectoMvc/classes/izv/model/UserModel.php:64
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/EditController.php(21): izv\model\UserModel->getUser('69')
+#1 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\EditController->main()
+#2 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#3 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/model/UserModel.php on line 64

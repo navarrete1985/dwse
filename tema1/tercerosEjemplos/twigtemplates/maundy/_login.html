@@ -2,13 +2,13 @@
 {% block about %}
 <div class="container" style="margin-bottom: 15px;">
     <div class="row">
-        <form action="" method="post" role="form" class="contactForm">
+        <form action="index/dologin" method="post" role="form" class="contactForma">
             <div class="form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Su correo" data-rule="email" data-msg="Por favor, un correo electrónico válido." />
+                <input type="email" class="form-control" name="correo" id="email" placeholder="Su correo" data-rule="email" data-msg="Por favor, un correo electrónico válido." />
                 <div class="validation"></div>
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" name="password" id="password" placeholder="Clave de acceso" data-rule="minlen:4" data-msg="Por favor, al menos 4 caracteres." />
+                <input type="password" class="form-control" name="clave" id="password" placeholder="Clave de acceso" data-rule="minlen:4" data-msg="Por favor, al menos 4 caracteres." />
                 <div class="validation"></div>
             </div>
             <div class="text-center">
