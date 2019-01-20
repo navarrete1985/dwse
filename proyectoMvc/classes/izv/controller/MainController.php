@@ -24,9 +24,9 @@ class MainController extends Controller {
         $this->checkIsLogged();
         if ($this->__isAdmin()) {
             $result = $this->getModel()->deleteUser(Reader::read('id'));
-            header('Location: index/main?op=delete&resultado=' . $result);
+            $this->sendRedirect('Location: index/main?op=delete&resultado=' . $result);
         }else {
-            header('Location: index/main');
+            $this->sendRedirect();
         }
     }
 }

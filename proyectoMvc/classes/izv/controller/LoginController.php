@@ -25,7 +25,7 @@ class LoginController extends Controller {
     
     function logout() {
         $this->sesion->logout();
-        header('Location: ' . App::BASE);
+        $this->sendRedirect('login/main?op=logout&resultado=1');
     }
     
     function dologin() {
@@ -33,16 +33,12 @@ class LoginController extends Controller {
         $correo = Reader::read('correo');
         $clave = Reader::read('clave');
         $user = $this->getModel()->login($correo, $clave);
-        if (!isset($correo) || !isset($clave)) {
-            header('Location: ' . App::BASE . 'login/main?op=logout&resultado=1');
-        }else if ($user && $user->getActivo() == 1) {
+        if ($user && $user->getActivo() == 1) {
             $this->sesion->login($user);
-            header('Location: ' . App::BASE . 'index/main?op=login&resultado=1');
-            exit();
-        }else {
-            header('Location: ' . App::BASE . 'login/main?op=login&resultado=0');
+            $this->sendRedirect('index/main?op=login&resultado=1');
         }
         $this->sesion->logout();
+        $this->sendRedirect('login/main?op=login&resultado=0');
     }
     
     function doregister() {
@@ -55,17 +51,15 @@ class LoginController extends Controller {
         if ($id > 0) {
             $usuario->setId($id);
             $r2 = Mail::sendActivation($usuario);
-            header('Location: ' . App::BASE . 'login/main?op=signup&resultado=1&r2=' . $r2);
-            exit();
+            $this->sendRedirect('login/main?op=signup&resultado=1&r2=' . $r2);
         }else {
-            header('Location: ' . App::BASE . 'login/register?op=signup&resultado=0');
+            $this->sendRedirect('login/register?op=signup&resultado=0');
         }
     }
     
     function checkIsLogued() {
         if ($this->sesion->isLogged()) {
-            header('Location: ' . App::BASE . 'index/main');
-            exit();
+            $this->sendRedirect();
         }
     }
     
@@ -79,6 +73,6 @@ class LoginController extends Controller {
             $user->setActivo(1);
             $result = $this->getModel()->updateUser($user);
         }
-        header('Location: ' . App::BASE . 'login/main?op=activate&resultado=' . $result);
+        $this->sendRedirect('login/main?op=activate&resultado=' . $result);
     }
 }

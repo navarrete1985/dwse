@@ -32,8 +32,7 @@ abstract class Controller {
     function checkIsLogged() {
         if (!$this->sesion->isLogged() || $this->sesion->getLogin()->getActivo() === 0) {
             $this->sesion->logout();
-            header('Location:' . App::BASE . 'login');
-            exit();
+            $this->sendRedirect('login');
         }
     }
     

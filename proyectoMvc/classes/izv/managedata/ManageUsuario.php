@@ -100,8 +100,11 @@ class ManageUsuario {
     
     function login($correo, $clave) {
         if($this->db->connect()) {
-            $sql = 'select * from usuario where correo = :correo and activo = 1';
-            $array = array('correo' => $correo);
+            $sql = 'select * from usuario where correo = :correo or alias = :alias';
+            $array = array(
+                'correo' => $correo,
+                'alias'  => $correo
+            );
             if($this->db->execute($sql, $array)) {
                 if($fila = $this->db->getSentence()->fetch()) {
                     $usuario = new Usuario();
@@ -119,9 +122,7 @@ class ManageUsuario {
     
     function remove($id) {
         $resultado = 0;
-        echo 'Entro en el método remove';
         if($this->db->connect()) {
-            echo 'Entro en conectar con la base de datos';
             $sql = 'delete from usuario where id = :id';
             $array = array('id' => $id);
             if($this->db->execute($sql, $array)) {

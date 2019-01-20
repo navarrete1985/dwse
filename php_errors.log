@@ -318,3 +318,25 @@ Stack trace:
 #2 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
 #3 {main}
   thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/model/UserModel.php on line 64
+[20-Jan-2019 13:20:48 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/ubuntu/workspace/proyectoMvc/classes/izv/model/UserModel.php:56
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/LoginController.php(35): izv\model\UserModel->login('navarrete', 'asd')
+#1 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\LoginController->dologin()
+#2 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#3 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/model/UserModel.php on line 56
+[20-Jan-2019 13:42:42 UTC] PHP Notice:  Undefined variable: manage in /home/ubuntu/workspace/proyectoMvc/classes/izv/model/UserModel.php on line 40
+[20-Jan-2019 13:42:42 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getAll() on null in /home/ubuntu/workspace/proyectoMvc/classes/izv/model/UserModel.php:40
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php(19): izv\model\UserModel->getAllUsers()
+#1 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\MainController->main()
+#2 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#3 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/model/UserModel.php on line 40
+[20-Jan-2019 13:43:19 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getAll() on null in /home/ubuntu/workspace/proyectoMvc/classes/izv/model/UserModel.php:40
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php(19): izv\model\UserModel->getAllUsers()
+#1 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\MainController->main()
+#2 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#3 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/model/UserModel.php on line 40
