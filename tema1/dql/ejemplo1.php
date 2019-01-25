@@ -6,39 +6,39 @@ require 'classes/Alumno.php';
 require 'classes/Bootstrap.php';
 
 $bootstrap = new Bootstrap();
-$gestor = $bootstrap->getEntityManager(); //Objeto gestor de la base de datos
+$gestor = $bootstrap->getEntityManager();
 
-//Creamos un objeto de alumno 
-// $alumno = new Alumno();
-// $alumno->setNombre('Pepita');
+/*$alumno = new Alumno();
+$alumno->setNombre('Pepita');
+$gestor->persist($alumno);
 
-// // Guardamos en nuestra base de datos Para evitar errores o por lo menos capturarlos utilizaríamos try/catch
-// $gestor->persist($alumno);
-// $gestor->flush();    
+$alumno2 = new Alumno();
+$alumno2->setNombre('Jaimite');
+$gestor->persist($alumno2);
 
-// echo 'El id del alumno insertado es --> ' . $alumno->getId();
-
-// $alumno2 = new Alumno();
-// $alumno2->setNombre('Pepita Flores');
-// $gestor->persist($alumno2);
-
-// $gestor->flush();
-
-//Recogemos el alumno cuya clave principal es 1
-// $alumno = $gestor->find('Alumno', 1);
-// echo 'El id del alumno es --> ' . $alumno->getId() . '; el nombre es --> ' . $alumno->getNombre();
-
-// //Recogemos el alumno por determinada condición
-// $alumno = $gestor->getRepository('Alumno')->findOneBy(array('nombre' => 'pepita'));
-// echo '<br>el id del alumno es: ' . $alumno->getId() . '; el nombre es: ' . $alumno->getNombre();
-
-$alumno = $gestor->find('Alumno', 2);
-$alumno->setAbservaciones('mu güeno');
-$alumno = $gestor->find('Alumno', 3);
-$alumno->setAbservaciones('mu güeno');
 $gestor->flush();
 
-$alumnos = $gestor->getRepository('Alumno')->findBy(array('abservaciones' => 'mu güeno'));
+echo '<br>el id del alumno insertado es: ' . $alumno->getId();
+echo '<br>el id del alumno insertado es: ' . $alumno2->getId();
+
+$alumno->setNombre('Pepita Flores');
+$gestor->flush();*/
+
+$alumno = $gestor->find('Alumno', 1);
+$alumno->setObservaciones('mu güeno');
+$alumno = $gestor->find('Alumno', 2);
+$alumno->setObservaciones('mu güeno');
+$gestor->flush();
+
+$alumnos = $gestor->getRepository('Alumno')->findBy(array('observaciones' => 'mu güeno'));
 foreach($alumnos as $alumno) {
     echo '<br>el id del alumno es: ' . $alumno->getId() . '; el nombre es: ' . $alumno->getNombre();
 }
+
+/*
+echo 'el id del alumno es: ' . $alumno->getId() . '; el nombre es: ' . $alumno->getNombre();
+
+
+echo '<br>el id del alumno es: ' . $alumno->getId() . '; el nombre es: ' . $alumno->getNombre();
+
+*/

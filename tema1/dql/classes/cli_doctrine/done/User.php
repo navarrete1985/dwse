@@ -25,7 +25,6 @@ class User {
      */
     private $type;
     
-    //Referenciamos en mappedBy el atributo de post al que estamos referenciando en la tabla post
     /** @OneToMany(targetEntity="Post", mappedBy="user") */
     private $posts;
     /**

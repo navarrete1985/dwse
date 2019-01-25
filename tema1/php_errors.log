@@ -542,3 +542,57 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/ubuntu/workspace/tema1/dql/ejemplo1.php on line 36
+[23-Jan-2019 12:58:44 UTC] PHP Fatal error:  Uncaught Error: Class 'Bootstrap' not found in /home/ubuntu/workspace/tema1/dql/ejemplo2.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/dql/ejemplo2.php on line 6
+[23-Jan-2019 13:00:06 UTC] PHP Fatal error:  Uncaught Doctrine\ORM\Mapping\MappingException: Class "izv\data\Usuario" is not a valid entity or mapped super class. in /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/MappingException.php:346
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/AnnotationDriver.php(91): Doctrine\ORM\Mapping\MappingException::classIsNotAValidEntityOrMappedSuperClass('izv\\data\\Usuari...')
+#1 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(151): Doctrine\ORM\Mapping\Driver\AnnotationDriver->loadMetadataForClass('izv\\data\\Usuari...', Object(Doctrine\ORM\Mapping\ClassMetadata))
+#2 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/AbstractClassMetadataFactory.php(332): Doctrine\ORM\Mapping\ClassMetadataFactory->doLoadMetadata(Object(Doctrine\ORM\Mapping\ClassMetadata), NULL, false, Array)
+#3 /home/ubuntu/workspace/tema in /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/MappingException.php on line 346
+[23-Jan-2019 13:05:40 UTC] PHP Fatal error:  Uncaught Error: Class 'Bootstrap' not found in /home/ubuntu/workspace/tema1/dql/ejemplo2.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/dql/ejemplo2.php on line 7
+[23-Jan-2019 13:05:58 UTC] PHP Fatal error:  Uncaught Doctrine\ORM\Mapping\MappingException: Class "izv\data\Usuario" is not a valid entity or mapped super class. in /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/MappingException.php:346
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/AnnotationDriver.php(91): Doctrine\ORM\Mapping\MappingException::classIsNotAValidEntityOrMappedSuperClass('izv\\data\\Usuari...')
+#1 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(151): Doctrine\ORM\Mapping\Driver\AnnotationDriver->loadMetadataForClass('izv\\data\\Usuari...', Object(Doctrine\ORM\Mapping\ClassMetadata))
+#2 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/AbstractClassMetadataFactory.php(332): Doctrine\ORM\Mapping\ClassMetadataFactory->doLoadMetadata(Object(Doctrine\ORM\Mapping\ClassMetadata), NULL, false, Array)
+#3 /home/ubuntu/workspace/tema in /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/MappingException.php on line 346
+[24-Jan-2019 07:45:47 UTC] PHP Warning:  require(classes/izv/data/Categoria.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/tema1/dql/ejemplo2.php on line 5
+[24-Jan-2019 07:45:47 UTC] PHP Fatal error:  require(): Failed opening required 'classes/izv/data/Categoria.php' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/tema1/dql/ejemplo2.php on line 5
+[24-Jan-2019 07:47:28 UTC] PHP Fatal error:  Uncaught Doctrine\ORM\Mapping\MappingException: Class "izv\data\Destinatario" is not a valid entity or mapped super class. in /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/MappingException.php:346
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/AnnotationDriver.php(91): Doctrine\ORM\Mapping\MappingException::classIsNotAValidEntityOrMappedSuperClass('izv\\data\\Destin...')
+#1 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(151): Doctrine\ORM\Mapping\Driver\AnnotationDriver->loadMetadataForClass('izv\\data\\Destin...', Object(Doctrine\ORM\Mapping\ClassMetadata))
+#2 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/AbstractClassMetadataFactory.php(332): Doctrine\ORM\Mapping\ClassMetadataFactory->doLoadMetadata(Object(Doctrine\ORM\Mapping\ClassMetadata), NULL, false, Array)
+#3 /home/ubuntu/workspace in /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/MappingException.php on line 346
+[24-Jan-2019 07:51:23 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method izv\data\Destinatario::setNombre() in /home/ubuntu/workspace/tema1/dql/ejemplo2.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/tema1/dql/ejemplo2.php on line 16
+[24-Jan-2019 07:54:07 UTC] PHP Fatal error:  Uncaught Doctrine\Common\Annotations\AnnotationException: [Semantical Error] The annotation "@Entity" in class izv\data\Destinatario was never imported. Did you maybe forget to add a "use" statement for this annotation? in /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationException.php:54
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/DocParser.php(727): Doctrine\Common\Annotations\AnnotationException::semanticalError('The annotation ...')
+#1 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/DocParser.php(663): Doctrine\Common\Annotations\DocParser->Annotation()
+#2 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/DocParser.php(354): Doctrine\Common\Annotations\DocParser->Annotations()
+#3 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/annotations/lib/Doctrine/Common/Anno in /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationException.php on line 54
+[24-Jan-2019 07:54:29 UTC] PHP Fatal error:  Uncaught Doctrine\Common\Annotations\AnnotationException: [Semantical Error] The annotation "@Entity" in class izv\data\Destinatario was never imported. Did you maybe forget to add a "use" statement for this annotation? in /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationException.php:54
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/DocParser.php(727): Doctrine\Common\Annotations\AnnotationException::semanticalError('The annotation ...')
+#1 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/DocParser.php(663): Doctrine\Common\Annotations\DocParser->Annotation()
+#2 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/DocParser.php(354): Doctrine\Common\Annotations\DocParser->Annotations()
+#3 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/annotations/lib/Doctrine/Common/Anno in /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationException.php on line 54
+[24-Jan-2019 08:09:21 UTC] PHP Warning:  require(../tercerosejemplos/classes/vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/tema1/ajax/c9.php on line 4
+[24-Jan-2019 08:09:21 UTC] PHP Fatal error:  require(): Failed opening required '../tercerosejemplos/classes/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/tema1/ajax/c9.php on line 4
+[24-Jan-2019 08:49:32 UTC] PHP Fatal error:  Class izv\controller\UserController contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (izv\controller\Controller::main) in /home/ubuntu/workspace/tema1/ajax/classes/izv/controller/AjaxController.php on line 12
+[24-Jan-2019 08:49:49 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\controller\AjaxController' not found in /home/ubuntu/workspace/tema1/ajax/classes/izv/mvc/FrontController.php:18
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/ajax/c9.php(20): izv\mvc\FrontController->__construct('ajax', 'listavalores')
+#1 {main}
+  thrown in /home/ubuntu/workspace/tema1/ajax/classes/izv/mvc/FrontController.php on line 18
+[24-Jan-2019 08:54:01 UTC] PHP Warning:  require(../tercerosejemplos/classes/vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/tema1/ajax/c9.php on line 4
+[24-Jan-2019 08:54:01 UTC] PHP Fatal error:  require(): Failed opening required '../tercerosejemplos/classes/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/tema1/ajax/c9.php on line 4

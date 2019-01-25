@@ -20,8 +20,6 @@ class Post {
      */
     private $text;
 
-    //select * from city ci join country co on  ci.countrycode = co.code
-    //InversedBy -> Apuntamos al atributo que va a contener todos los posts
     /** @ManyToOne(targetEntity="User", inversedBy="posts") */
     private $user;
 }

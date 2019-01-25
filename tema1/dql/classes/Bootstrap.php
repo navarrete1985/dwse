@@ -8,15 +8,16 @@ class Bootstrap {
 
     function __construct() {
         $paths = array('');
-        $isDevMode = false;
+        $isDevMode = true;
         $dbParams = array(
             'driver'   => 'pdo_mysql',
             'user'     => 'simple',
             'password' => 'simple',
-            'dbname'   => 'simple'
+            'dbname'   => 'simple',
+            'charset'  => 'utf8'
         );
         $config = Setup::createAnnotationMetadataConfiguration($paths, $isDevMode);
-        $this->entityManager = EntityManager::create ($dbParams, $config);
+        $this->entityManager = EntityManager::create($dbParams, $config);
     }
     
     function getEntityManager() {

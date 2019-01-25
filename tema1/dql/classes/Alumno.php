@@ -13,9 +13,9 @@ class Alumno {
      */
     private $nombre;
     /**
-     * @Column(type="string", length=120, nullable=true)
+     * @Column(type="string", length=200, nullable=true)
      */
-    private $abservaciones;
+    private $observaciones;
 
     /**
      * Get id
@@ -52,26 +52,26 @@ class Alumno {
     }
 
     /**
-     * Set abservaciones
+     * Set observaciones
      *
-     * @param string $abservaciones
+     * @param string $observaciones
      *
      * @return Alumno
      */
-    public function setAbservaciones($abservaciones)
+    public function setObservaciones($observaciones)
     {
-        $this->abservaciones = $abservaciones;
+        $this->observaciones = $observaciones;
 
         return $this;
     }
 
     /**
-     * Get abservaciones
+     * Get observaciones
      *
      * @return string
      */
-    public function getAbservaciones()
+    public function getObservaciones()
     {
-        return $this->abservaciones;
+        return $this->observaciones;
     }
 }

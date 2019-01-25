@@ -1,6 +1,8 @@
 <?php
 /**
- * @Entity @Table(name="post")
+ * @Entity @Table(name="post",
+ *                uniqueConstraints={@UniqueConstraint(name="restriccion", columns={"iduser", "date"})}
+ * )
  */
 class Post {
 
@@ -11,7 +13,7 @@ class Post {
     private $id;
 
     /**
-     * @Column(type="datetime", nullable=false)
+     * @Column(type="date", nullable=false)
      */
     private $date;
 
@@ -20,9 +22,10 @@ class Post {
      */
     private $text;
 
-    //select * from city ci join country co on  ci.countrycode = co.code
-    //InversedBy -> Apuntamos al atributo que va a contener todos los posts
-    /** @ManyToOne(targetEntity="User", inversedBy="posts") */
+    /**
+     * @ManyToOne(targetEntity="User", inversedBy="posts")
+     * @JoinColumn(name="iduser", referencedColumnName="id", nullable=false)
+    */
     private $user;
 
     /**
