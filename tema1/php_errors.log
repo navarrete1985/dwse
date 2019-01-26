@@ -596,3 +596,75 @@ Stack trace:
   thrown in /home/ubuntu/workspace/tema1/ajax/classes/izv/mvc/FrontController.php on line 18
 [24-Jan-2019 08:54:01 UTC] PHP Warning:  require(../tercerosejemplos/classes/vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/tema1/ajax/c9.php on line 4
 [24-Jan-2019 08:54:01 UTC] PHP Fatal error:  require(): Failed opening required '../tercerosejemplos/classes/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/tema1/ajax/c9.php on line 4
+[25-Jan-2019 10:10:54 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\model\Bootstrap2' not found in /home/ubuntu/workspace/tema1/ajax/classes/izv/model/AppModel.php:64
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/ajax/classes/izv/controller/AjaxController.php(25): izv\model\AppModel->getCities()
+#1 /home/ubuntu/workspace/tema1/ajax/classes/izv/mvc/FrontController.php(28): izv\controller\AjaxController->listavalores()
+#2 /home/ubuntu/workspace/tema1/ajax/c9.php(21): izv\mvc\FrontController->doAction()
+#3 {main}
+  thrown in /home/ubuntu/workspace/tema1/ajax/classes/izv/model/AppModel.php on line 64
+[25-Jan-2019 10:12:29 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\model\Bootstrap2' not found in /home/ubuntu/workspace/tema1/ajax/classes/izv/model/AppModel.php:64
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/ajax/classes/izv/controller/AjaxController.php(24): izv\model\AppModel->getCities()
+#1 /home/ubuntu/workspace/tema1/ajax/classes/izv/mvc/FrontController.php(28): izv\controller\AjaxController->listavalores()
+#2 /home/ubuntu/workspace/tema1/ajax/c9.php(21): izv\mvc\FrontController->doAction()
+#3 {main}
+  thrown in /home/ubuntu/workspace/tema1/ajax/classes/izv/model/AppModel.php on line 64
+[25-Jan-2019 10:54:38 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\model\Bootstrap2' not found in /home/ubuntu/workspace/tema1/ajax/classes/izv/model/AppModel.php:64
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/ajax/classes/izv/controller/AjaxController.php(24): izv\model\AppModel->getCities()
+#1 /home/ubuntu/workspace/tema1/ajax/classes/izv/mvc/FrontController.php(28): izv\controller\AjaxController->listavalores()
+#2 /home/ubuntu/workspace/tema1/ajax/c9.php(21): izv\mvc\FrontController->doAction()
+#3 {main}
+  thrown in /home/ubuntu/workspace/tema1/ajax/classes/izv/model/AppModel.php on line 64
+[25-Jan-2019 10:54:48 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\model\Bootstrap2' not found in /home/ubuntu/workspace/tema1/ajax/classes/izv/model/AppModel.php:64
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/ajax/classes/izv/controller/AjaxController.php(24): izv\model\AppModel->getCities()
+#1 /home/ubuntu/workspace/tema1/ajax/classes/izv/mvc/FrontController.php(28): izv\controller\AjaxController->listavalores()
+#2 /home/ubuntu/workspace/tema1/ajax/c9.php(21): izv\mvc\FrontController->doAction()
+#3 {main}
+  thrown in /home/ubuntu/workspace/tema1/ajax/classes/izv/model/AppModel.php on line 64
+[25-Jan-2019 10:58:19 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\model\Bootstrap2' not found in /home/ubuntu/workspace/tema1/ajax/classes/izv/model/AppModel.php:64
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/ajax/classes/izv/controller/AjaxController.php(24): izv\model\AppModel->getCities()
+#1 /home/ubuntu/workspace/tema1/ajax/classes/izv/mvc/FrontController.php(28): izv\controller\AjaxController->listavalores()
+#2 /home/ubuntu/workspace/tema1/ajax/c9.php(21): izv\mvc\FrontController->doAction()
+#3 {main}
+  thrown in /home/ubuntu/workspace/tema1/ajax/classes/izv/model/AppModel.php on line 64
+[25-Jan-2019 11:01:56 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\model\Bootstrap2' not found in /home/ubuntu/workspace/tema1/ajax/classes/izv/model/AppModel.php:64
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/ajax/classes/izv/controller/AjaxController.php(24): izv\model\AppModel->getCities()
+#1 /home/ubuntu/workspace/tema1/ajax/classes/izv/mvc/FrontController.php(28): izv\controller\AjaxController->listavalores()
+#2 /home/ubuntu/workspace/tema1/ajax/c9.php(21): izv\mvc\FrontController->doAction()
+#3 {main}
+  thrown in /home/ubuntu/workspace/tema1/ajax/classes/izv/model/AppModel.php on line 64
+[25-Jan-2019 11:02:08 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\model\Bootstrap2' not found in /home/ubuntu/workspace/tema1/ajax/classes/izv/model/AppModel.php:64
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/ajax/classes/izv/controller/AjaxController.php(24): izv\model\AppModel->getCities()
+#1 /home/ubuntu/workspace/tema1/ajax/classes/izv/mvc/FrontController.php(28): izv\controller\AjaxController->listavalores()
+#2 /home/ubuntu/workspace/tema1/ajax/c9.php(21): izv\mvc\FrontController->doAction()
+#3 {main}
+  thrown in /home/ubuntu/workspace/tema1/ajax/classes/izv/model/AppModel.php on line 64
+[25-Jan-2019 11:05:47 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\model\Bootstrap2' not found in /home/ubuntu/workspace/tema1/ajax/classes/izv/model/AppModel.php:64
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/ajax/classes/izv/controller/AjaxController.php(24): izv\model\AppModel->getCities()
+#1 /home/ubuntu/workspace/tema1/ajax/classes/izv/mvc/FrontController.php(28): izv\controller\AjaxController->listavalores()
+#2 /home/ubuntu/workspace/tema1/ajax/c9.php(21): izv\mvc\FrontController->doAction()
+#3 {main}
+  thrown in /home/ubuntu/workspace/tema1/ajax/classes/izv/model/AppModel.php on line 64
+[25-Jan-2019 11:10:16 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\model\Bootstrap2' not found in /home/ubuntu/workspace/tema1/ajax/classes/izv/model/AppModel.php:64
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/ajax/classes/izv/controller/AjaxController.php(24): izv\model\AppModel->getCities()
+#1 /home/ubuntu/workspace/tema1/ajax/classes/izv/mvc/FrontController.php(28): izv\controller\AjaxController->listavalores()
+#2 /home/ubuntu/workspace/tema1/ajax/c9.php(21): izv\mvc\FrontController->doAction()
+#3 {main}
+  thrown in /home/ubuntu/workspace/tema1/ajax/classes/izv/model/AppModel.php on line 64
+[25-Jan-2019 11:23:16 UTC] PHP Warning:  require(../tercerosejemplos/classes/vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/tema1/ajax/c9.php on line 4
+[25-Jan-2019 11:23:16 UTC] PHP Fatal error:  require(): Failed opening required '../tercerosejemplos/classes/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/tema1/ajax/c9.php on line 4
+[25-Jan-2019 11:30:10 UTC] PHP Fatal error:  Uncaught Error: Class 'Doctrine\ORM\Tools\Setup' not found in /home/ubuntu/workspace/tema1/ajax/classes/izv/managedata/Bootstrap.php:24
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/ajax/classes/izv/model/Model.php(14): izv\managedata\Bootstrap->__construct()
+#1 /home/ubuntu/workspace/tema1/ajax/classes/izv/mvc/FrontController.php(16): izv\model\Model->__construct()
+#2 /home/ubuntu/workspace/tema1/ajax/c9.php(20): izv\mvc\FrontController->__construct('', '')
+#3 {main}
+  thrown in /home/ubuntu/workspace/tema1/ajax/classes/izv/managedata/Bootstrap.php on line 24

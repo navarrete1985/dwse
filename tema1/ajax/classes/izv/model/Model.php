@@ -3,6 +3,7 @@
 namespace izv\model;
 
 use izv\database\Database;
+use izv\managedata\Bootstrap;
 
 class Model {
 
@@ -10,11 +11,13 @@ class Model {
     private $datosVista = array();
 
     function __construct() {
-        $this->db = new Database();
+        $bs = new Bootstrap();
+        //$this->db = new Database();
+        $this->db = $bs->getEntityManager();
     }
     
     function __destruct() {
-        $this->db->close();
+        //$this->db->close();
     }
     
     function add(array $array) {

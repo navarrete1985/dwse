@@ -21,6 +21,7 @@ class UserController extends Controller {
     }
 
     function ciudades() {
+        $this->getModel()->set('twigFile', '_ciudades.html');
         $ordenes = [
             'id' => 'id',
             'name' => 'name',
@@ -28,7 +29,6 @@ class UserController extends Controller {
             'district' => 'district',
             'population' => 'population'
         ];
-        $this->getModel()->set('twigFile', '_ciudades.html');
         $pagina = Reader::read('pagina');
         if($pagina === null || !is_numeric($pagina)) {
             $pagina = 1;

@@ -20,6 +20,6 @@ class App {
             
             SESSION_NAME = 'AJAX_SESSION',
             
-            BASE = 'https://dwes-navarrete.c9users.io/tema1/ajax/';
+            BASE = 'https://curso1819-izvdamdaw.c9users.io/ejemplos/ajax/';
     
 }
