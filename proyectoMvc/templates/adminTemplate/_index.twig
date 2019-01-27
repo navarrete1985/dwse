@@ -113,27 +113,35 @@
               </div>
               {#-----------------PAGINACION---------------------#}
               <div class='pagination row ml-1 mt-3 mb-3'>
-                <div class='btn-group'>
-                  <button type='button' class='btn btn-primary'>
-                    <i class="fa fa-angle-double-left"></i>
-                  </button>  
-                  <button type='button' class='btn btn-primary'>
-                    <i class="fa fa-angle-left"></i>
-                  </button>  
-                </div>
+                {% if data.actual != 1%}
+                  <div class='btn-group'>
+                    {% if data.actual > 2%}
+                      <a class='btn btn-primary' href='index/main?page={{data.pages.primero ~ querystring}}'>
+                        <i class="fa fa-angle-double-left text-white"></i>
+                      </a>
+                    {% endif %}
+                    <a class='btn btn-primary' href='index/main?page={{data.pages.anterior ~ querystring}}'>
+                      <i class="fa fa-angle-left text-white"></i>
+                    </a>  
+                  </div>
+                {% endif %}
                 <div class='btn-group ml-1'>
                   {% for item in data.range%}
                     <a href={{ '?page=' ~ item ~ querystring}} class='btn {{data.actual == item ? 'btn-light' : 'btn-primary'}}'>{{item}}</a>
                   {% endfor %}
                 </div>
+                {% if data.actual != data.pages.ultimo %}
                 <div class='btn-group ml-1'>
-                  <button type='button' class='btn btn-primary'>
-                    <i class="fa fa-angle-right"></i>
-                  </button>  
-                  <button type='button' class='btn btn-primary'>
-                    <i class="fa fa-angle-double-right"></i>
-                  </button>  
+                  <a class='btn btn-primary' href='index/main?page={{data.pages.siguiente ~ querystring}}'>
+                    <i class="fa fa-angle-right text-white"></i>
+                  </a>
+                  {% if data.actual != data.pages.ultimo - 1%}
+                    <a class='btn btn-primary' href='index/main?page={{data.pages.ultimo ~ querystring}}'>
+                      <i class="fa fa-angle-double-right text-white"></i>
+                    </a>
+                  {% endif %}
                 </div>
+                {% endif %}
               </div>
             </div>
           </div>

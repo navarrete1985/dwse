@@ -85,7 +85,7 @@ class ManageUsuario {
     }
     
     function getUsers($page, $orden, $filtro) {
-        $pagination = new Pagination($this->getTotal(), $page, 3);
+        $pagination = new Pagination($this->getTotal($filtro), $page, 3);
         $offset = $pagination->offset();
         $rpp = $pagination->rpp();
         $params = [
@@ -180,11 +180,18 @@ class ManageUsuario {
         return $resultado;
     }
     
-    function getTotal() {
+    function getTotal($filtro = null) {
         $total = 0;
+        $data = [];
         if($this->db->connect()) {
-            $sql = 'select count(*) from usuario';
-            if($this->db->execute($sql)) {
+            if ($filtro !== null) {
+                $sql = "select count(*) from usuario
+                    where nombre like concat( '%',:filtro,'%') or alias like concat( '%',:filtro,'%') or correo like concat( '%',:filtro,'%')";
+                $data['filtro'] = $filtro;
+            }else {
+                $sql = 'select count(*) from usuario';    
+            }
+            if($this->db->execute($sql, $data)) {
                 if($fila = $this->db->getSentence()->fetch()) {
                     $total = $fila[0];
                 }
