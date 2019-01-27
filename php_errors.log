@@ -15,3 +15,95 @@ Stack trace:
 [26-Jan-2019 18:58:06 UTC] PHP Notice:  Undefined variable: user in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php on line 20
 [26-Jan-2019 18:59:25 UTC] PHP Notice:  Undefined variable: user in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php on line 20
 [26-Jan-2019 18:59:42 UTC] PHP Notice:  Undefined variable: user in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php on line 20
+[26-Jan-2019 19:50:53 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\managedata\Pagination' not found in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php:87
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/model/UserModel.php(40): izv\managedata\ManageUsuario->getPage(1)
+#1 /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php(19): izv\model\UserModel->getUsersPage()
+#2 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\MainController->main()
+#3 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#4 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php on line 87
+[26-Jan-2019 19:51:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method izv\managedata\ManageUsuario::db() in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php:158
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php(88): izv\managedata\ManageUsuario->getTotal()
+#1 /home/ubuntu/workspace/proyectoMvc/classes/izv/model/UserModel.php(40): izv\managedata\ManageUsuario->getPage(1)
+#2 /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php(19): izv\model\UserModel->getUsersPage()
+#3 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\MainController->main()
+#4 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#5 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php on line 158
+[26-Jan-2019 19:52:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method izv\managedata\ManageUsuario::getDatabase() in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php:160
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php(88): izv\managedata\ManageUsuario->getTotal()
+#1 /home/ubuntu/workspace/proyectoMvc/classes/izv/model/UserModel.php(40): izv\managedata\ManageUsuario->getPage(1)
+#2 /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php(19): izv\model\UserModel->getUsersPage()
+#3 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\MainController->main()
+#4 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#5 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php on line 160
+[26-Jan-2019 19:52:59 UTC] PHP Notice:  Undefined property: izv\tools\Pagination::$offset in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php on line 90
+[26-Jan-2019 19:52:59 UTC] PHP Fatal error:  Uncaught Error: Cannot access private property izv\tools\Pagination::$rpp in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php:91
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/model/UserModel.php(40): izv\managedata\ManageUsuario->getPage(1)
+#1 /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php(19): izv\model\UserModel->getUsersPage()
+#2 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\MainController->main()
+#3 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#4 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php on line 91
+[26-Jan-2019 19:53:35 UTC] PHP Notice:  Array to string conversion in /home/ubuntu/workspace/proyectoMvc/classes/izv/database/Database.php on line 65
+[26-Jan-2019 19:53:35 UTC] PHP Notice:  Array to string conversion in /home/ubuntu/workspace/proyectoMvc/classes/izv/database/Database.php on line 65
+[26-Jan-2019 19:56:06 UTC] PHP Notice:  Array to string conversion in /home/ubuntu/workspace/proyectoMvc/classes/izv/database/Database.php on line 65
+[26-Jan-2019 19:56:06 UTC] PHP Notice:  Array to string conversion in /home/ubuntu/workspace/proyectoMvc/classes/izv/database/Database.php on line 65
+[26-Jan-2019 19:56:31 UTC] PHP Notice:  Array to string conversion in /home/ubuntu/workspace/proyectoMvc/classes/izv/database/Database.php on line 65
+[26-Jan-2019 19:56:31 UTC] PHP Notice:  Array to string conversion in /home/ubuntu/workspace/proyectoMvc/classes/izv/database/Database.php on line 65
+[26-Jan-2019 19:56:33 UTC] PHP Notice:  Array to string conversion in /home/ubuntu/workspace/proyectoMvc/classes/izv/database/Database.php on line 65
+[26-Jan-2019 19:56:33 UTC] PHP Notice:  Array to string conversion in /home/ubuntu/workspace/proyectoMvc/classes/izv/database/Database.php on line 65
+[26-Jan-2019 20:03:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method izv\model\UserModel::getUsers() in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php:19
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/izv/mvc/FrontController.php(28): izv\controller\MainController->main()
+#1 /home/ubuntu/workspace/proyectoMvc/c9.php(29): izv\mvc\FrontController->doAction()
+#2 {main}
+  thrown in /home/ubuntu/workspace/proyectoMvc/classes/izv/controller/MainController.php on line 19
+[26-Jan-2019 20:11:09 UTC] PHP Notice:  Undefined variable: orden in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php on line 100
+[26-Jan-2019 20:11:11 UTC] PHP Notice:  Undefined variable: orden in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php on line 100
+[26-Jan-2019 20:11:12 UTC] PHP Notice:  Undefined variable: orden in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php on line 100
+[26-Jan-2019 20:11:13 UTC] PHP Notice:  Undefined variable: orden in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php on line 100
+[26-Jan-2019 20:11:14 UTC] PHP Notice:  Undefined variable: orden in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php on line 100
+[26-Jan-2019 20:11:15 UTC] PHP Notice:  Undefined variable: orden in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php on line 100
+[26-Jan-2019 20:11:15 UTC] PHP Notice:  Undefined variable: orden in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php on line 100
+[26-Jan-2019 20:11:16 UTC] PHP Notice:  Undefined variable: orden in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php on line 100
+[26-Jan-2019 20:11:18 UTC] PHP Notice:  Undefined variable: orden in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php on line 100
+[26-Jan-2019 20:11:18 UTC] PHP Notice:  Undefined variable: orden in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php on line 100
+[26-Jan-2019 20:11:19 UTC] PHP Notice:  Undefined variable: orden in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php on line 100
+[26-Jan-2019 20:11:20 UTC] PHP Notice:  Undefined variable: orden in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php on line 100
+[26-Jan-2019 20:11:20 UTC] PHP Notice:  Undefined variable: orden in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php on line 100
+[26-Jan-2019 20:11:21 UTC] PHP Notice:  Undefined variable: orden in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php on line 100
+[26-Jan-2019 20:11:22 UTC] PHP Notice:  Undefined variable: orden in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php on line 100
+[26-Jan-2019 20:11:23 UTC] PHP Notice:  Undefined variable: orden in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php on line 100
+[26-Jan-2019 20:11:24 UTC] PHP Notice:  Undefined variable: orden in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php on line 100
+[26-Jan-2019 21:27:55 UTC] PHP Parse error:  syntax error, unexpected '$orden' (T_VARIABLE) in /home/ubuntu/workspace/proyectoMvc/classes/izv/managedata/ManageUsuario.php on line 102
+[27-Jan-2019 13:09:47 UTC] PHP Fatal error:  Uncaught Twig_Error_Syntax: A hash key must be a quoted string, a number, a name, or an expression enclosed in parentheses (unexpected token "punctuation" of value "{". in /home/ubuntu/workspace/proyectoMvc/templates/adminTemplate/_index.twig:3
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(197): Twig_ExpressionParser->parseHashExpression()
+#1 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(92): Twig_ExpressionParser->parsePrimaryExpression()
+#2 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(45): Twig_ExpressionParser->getPrimary()
+#3 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(58): Twig_ExpressionParser->parseExpression(31)
+#4 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(101): Twig_ExpressionParser->parseExpression()
+#5 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twi in /home/ubuntu/workspace/proyectoMvc/templates/adminTemplate/_index.twig on line 3
+[27-Jan-2019 13:09:49 UTC] PHP Fatal error:  Uncaught Twig_Error_Syntax: A hash key must be a quoted string, a number, a name, or an expression enclosed in parentheses (unexpected token "punctuation" of value "{". in /home/ubuntu/workspace/proyectoMvc/templates/adminTemplate/_index.twig:3
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(197): Twig_ExpressionParser->parseHashExpression()
+#1 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(92): Twig_ExpressionParser->parsePrimaryExpression()
+#2 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(45): Twig_ExpressionParser->getPrimary()
+#3 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(58): Twig_ExpressionParser->parseExpression(31)
+#4 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(101): Twig_ExpressionParser->parseExpression()
+#5 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twi in /home/ubuntu/workspace/proyectoMvc/templates/adminTemplate/_index.twig on line 3
+[27-Jan-2019 13:09:51 UTC] PHP Fatal error:  Uncaught Twig_Error_Syntax: A hash key must be a quoted string, a number, a name, or an expression enclosed in parentheses (unexpected token "punctuation" of value "{". in /home/ubuntu/workspace/proyectoMvc/templates/adminTemplate/_index.twig:3
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(197): Twig_ExpressionParser->parseHashExpression()
+#1 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(92): Twig_ExpressionParser->parsePrimaryExpression()
+#2 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(45): Twig_ExpressionParser->getPrimary()
+#3 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(58): Twig_ExpressionParser->parseExpression(31)
+#4 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twig/lib/Twig/ExpressionParser.php(101): Twig_ExpressionParser->parseExpression()
+#5 /home/ubuntu/workspace/proyectoMvc/classes/vendor/twig/twi in /home/ubuntu/workspace/proyectoMvc/templates/adminTemplate/_index.twig on line 3
+[27-Jan-2019 13:38:18 UTC] PHP Notice:  session_start(): ps_files_cleanup_dir: opendir(/var/lib/php/sessions) failed: Permission denied (13) in /home/ubuntu/workspace/proyectoMvc/classes/izv/tools/Session.php on line 18

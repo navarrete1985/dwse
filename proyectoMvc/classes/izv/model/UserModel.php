@@ -36,6 +36,10 @@ class UserModel extends Model {
         return $this->manage->getAll();
     }
     
+    function getUsers($page = 1, $order = 'nombre', $filtro = null) {
+        return $this->manage->getUsers($page == '' ? 1 : $page, $order == '' ? 'nombre' : $order, $filtro == '' ? null : $filtro);
+    }
+    
     function login($correo = '', $clave = '') {
         return $this->manage->login($correo, $clave);
     }

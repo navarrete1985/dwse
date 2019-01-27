@@ -1,5 +1,8 @@
 {% extends '_base.twig' %}
 {% block content %}
+  {% set search = (data.filter == '' ? '' : '&search=' ~ data.filter) %}
+  {% set order = (data.order == '' ? '' : '&order=' ~ data.order) %}
+  {% set querystring = order ~ search%}
   <div class="content-wrapper">
     <div class="row">
       <div class="col-lg-12 grid-margin">
@@ -7,24 +10,48 @@
           <div class="card-body">
             <h1 class="card-title">Listado de Usuarios</h1>
             <div class="table-responsive">
+              {#-----------------BÚSQUEDA-------------------#}
+              <div class="d-flex flex-row-reverse">
+                <div class='col-md-4'>
+                  <form method='get' action='index/main?'>
+                    {% if data.range %}
+                      <input type='hidden' name='page' value={{data.range[0]}}>
+                    {% endif %}
+                    {% if data.order != '' %}
+                      <input type='hidden' name='order' value={{data.order}}>
+                    {% endif %}
+                    <div class='form-group'>
+                      <div class='input-group'>
+                        <input type='text' class='form-control' placeholder='Buscar' name='search' value={{data.filter}}>
+                        <span class='input-group-append'>
+                          <button class='btn btn-info' type='submit'>
+                            <i class="fa fa-search"></i>
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              {#-------------TABLA DE CONTENIDO-------------#}
               <table class="table table-bordered">
                 <thead>
                   <tr>
                     <th>
-                      Nombre
+                      <a href='index/main?order=nombre{{search}}'>Nombre</a>
                     </th>
                     <th>
-                      Alias
+                      <a href='index/main?order=alias{{search}}'>Alias</a>
                     </th>
                     <th>
-                      Correo
+                      <a href='index/main?order=correo{{search}}'>Correo</a>
                     </th>
                     {% if user.administrador == 1 %}
                     <th>
-                      Activo
+                      <a href='index/main?order=activo{{search}}'>Activo</a>
                     </th>
                     <th>
-                      Admin
+                      <a href='index/main?order=administrador{{search}}'>Admin</a>
                     </th>
                     <th>
                       Editar
@@ -36,7 +63,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  {% for item in users%}
+                  {% for item in data.users%}
                     <tr>
                       <td>
                         {{item.nombre}}
@@ -83,11 +110,35 @@
                   {% endfor %}
                 </tbody>
               </table>
+              </div>
+              {#-----------------PAGINACION---------------------#}
+              <div class='pagination row ml-1 mt-3 mb-3'>
+                <div class='btn-group'>
+                  <button type='button' class='btn btn-primary'>
+                    <i class="fa fa-angle-double-left"></i>
+                  </button>  
+                  <button type='button' class='btn btn-primary'>
+                    <i class="fa fa-angle-left"></i>
+                  </button>  
+                </div>
+                <div class='btn-group ml-1'>
+                  {% for item in data.range%}
+                    <a href={{ '?page=' ~ item ~ querystring}} class='btn {{data.actual == item ? 'btn-light' : 'btn-primary'}}'>{{item}}</a>
+                  {% endfor %}
+                </div>
+                <div class='btn-group ml-1'>
+                  <button type='button' class='btn btn-primary'>
+                    <i class="fa fa-angle-right"></i>
+                  </button>  
+                  <button type='button' class='btn btn-primary'>
+                    <i class="fa fa-angle-double-right"></i>
+                  </button>  
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 {% endblock %}
         

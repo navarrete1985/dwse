@@ -16,7 +16,10 @@ class MainController extends Controller {
         $user = $this->sesion->getLogin()->get();
         $this->getModel()->set('twigFile', '_index.twig');
         $this->getModel()->set('user', $user);
-        $this->getModel()->set('users', $this->getModel()->getAllUsers());
+        $pagina = Reader::read('page');
+        $orden = Reader::read('order');
+        $filtro = Reader::read('search');
+        $this->getModel()->set('data', $this->getModel()->getUsers($pagina, $orden, $filtro));
         $this->getAlerts($user['nombre']);
     }
     

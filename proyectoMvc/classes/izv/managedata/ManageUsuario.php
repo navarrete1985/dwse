@@ -5,10 +5,12 @@ namespace izv\managedata;
 use \izv\data\Usuario;
 use \izv\database\Database;
 use \izv\tools\Util;
+use \izv\tools\Pagination;
 
 class ManageUsuario {
 
     private $db;
+    private $pagination;
 
     function __construct(Database $db) {
         $this->db = $db;
@@ -82,6 +84,52 @@ class ManageUsuario {
         return $array;
     }
     
+    function getUsers($page, $orden, $filtro) {
+        $pagination = new Pagination($this->getTotal(), $page, 3);
+        $offset = $pagination->offset();
+        $rpp = $pagination->rpp();
+        $params = [
+            "offset"    => [$offset, \PDO::PARAM_INT],
+            "rpp"    => [$rpp, \PDO::PARAM_INT]
+        ];
+        
+        if ($filtro !== null) {
+            $sql = 'select * from usuario
+                    where id like :filtro or nombre like :filtro or alias like :filtro or correo like :filtro
+                    order by '. $orden .', nombre, alias, correo, id limit :offset, :rpp';
+            $params['filtro'] = '%' . $filtro . '%';
+        }else {
+            $sql = 'select * from usuario order by ' . $orden . ', nombre, alias, correo, activo, administrador limit :offset, :rpp';
+        }
+        $datos = [];
+        if ($this->db->execute($sql, $params)) {
+            while($fila = $this->db->getSentence()->fetch()) {
+                $usuario = new Usuario();
+                $usuario->set($fila);
+                $datos[] = $usuario;
+            }
+        }
+        // return $datos;
+        
+        // echo Util::varDump( [
+        //     'pages'     => $pagination->values(),
+        //     'users'     => $datos,
+        //     'range'     => $pagination->range(2),
+        //     'filter'    => $filtro,
+        //     'order'     => $orden
+        // ]);
+        // exit();
+        
+        return [
+            'pages'     => $pagination->values(),
+            'users'     => $datos,
+            'range'     => $pagination->range(2),
+            'filter'    => $filtro,
+            'order'     => $orden,
+            'actual'    => $page
+        ];
+    }
+    
     function isEmailChanged($usuario) {
         $result = true;
         if($this->db->connect()) {
@@ -130,6 +178,19 @@ class ManageUsuario {
             }
         }
         return $resultado;
+    }
+    
+    function getTotal() {
+        $total = 0;
+        if($this->db->connect()) {
+            $sql = 'select count(*) from usuario';
+            if($this->db->execute($sql)) {
+                if($fila = $this->db->getSentence()->fetch()) {
+                    $total = $fila[0];
+                }
+            }
+        }
+        return $total;
     }
     
 }

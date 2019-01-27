@@ -62,7 +62,11 @@ class Database {
     function execute($sql, array $data = array()) {
         $this->sentence = $this->connection->prepare($sql);
         foreach($data as $nombreParametro => $valorParametro) {
-            $this->sentence->bindValue($nombreParametro, $valorParametro);
+            if(is_array($valorParametro)) {
+                $this->sentence->bindValue($nombreParametro, $valorParametro[0], $valorParametro[1]);
+            } else {
+                $this->sentence->bindValue($nombreParametro, $valorParametro);
+            }
         }
         return $this->sentence->execute();
     }

@@ -6,7 +6,7 @@ class Pagination {
 
     private $page, $rpp, $total;
     
-    function __construct($total, $page = 1, $rpp = 10) {
+    function __construct($total, $page = 1, $rpp = 5) {
         $this->total = $total;
         $this->page = $page;
         $this->rpp = $rpp;
@@ -17,7 +17,7 @@ class Pagination {
     }
     
     function last() {
-        return ceil($this->total / $this->rpp);
+        return intval(ceil($this->total / $this->rpp));
     }
     
     function next() {
