@@ -2,6 +2,7 @@
 
 require 'classes/autoload.php';
 require '../tercerosEjemplos/classes/vendor/autoload.php';
+require '../dql/classes/vendor/autoload.php';
 
 $param = '';
 if(isset($_GET['parametros'])) {

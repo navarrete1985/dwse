@@ -8,8 +8,9 @@ use izv\tools\Util;
 class AjaxView extends View {
 
     function render($accion) {
-        $datos = $this->getModel()->getViewData();
         header('Content-type:application/json');
-        return json_encode($datos);
+
+        $data = $this->getModel()->getViewData();
+        return json_encode($data, true);
     }
 }

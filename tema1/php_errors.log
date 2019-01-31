@@ -668,3 +668,35 @@ Stack trace:
 #2 /home/ubuntu/workspace/tema1/ajax/c9.php(20): izv\mvc\FrontController->__construct('', '')
 #3 {main}
   thrown in /home/ubuntu/workspace/tema1/ajax/classes/izv/managedata/Bootstrap.php on line 24
+[28-Jan-2019 17:15:48 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'login@gmail.com' for key 'UNIQ_2265B05D77040BC9' in /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php:105
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php(105): PDOStatement->execute(NULL)
+#1 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/dbal/lib/Doctrine/DBAL/Statement.php(168): Doctrine\DBAL\Driver\PDOStatement->execute(NULL)
+#2 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(281): Doctrine\DBAL\Statement->execute()
+#3 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(1014): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->executeInserts()
+#4 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(378): Doctrine\ORM\UnitOfWork- in /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 66
+[28-Jan-2019 17:17:00 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'login@gmail.com' for key 'UNIQ_2265B05D77040BC9' in /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php:105
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php(105): PDOStatement->execute(NULL)
+#1 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/dbal/lib/Doctrine/DBAL/Statement.php(168): Doctrine\DBAL\Driver\PDOStatement->execute(NULL)
+#2 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(281): Doctrine\DBAL\Statement->execute()
+#3 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(1014): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->executeInserts()
+#4 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(378): Doctrine\ORM\UnitOfWork- in /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 66
+[28-Jan-2019 17:17:24 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'login@gmail.com' for key 'UNIQ_2265B05D77040BC9' in /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php:105
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php(105): PDOStatement->execute(NULL)
+#1 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/dbal/lib/Doctrine/DBAL/Statement.php(168): Doctrine\DBAL\Driver\PDOStatement->execute(NULL)
+#2 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(281): Doctrine\DBAL\Statement->execute()
+#3 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(1014): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->executeInserts()
+#4 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(378): Doctrine\ORM\UnitOfWork- in /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 66
+[30-Jan-2019 12:11:16 UTC] PHP Fatal error:  Uncaught Error: Class 'Doctrine\ORM\Tools\Setup' not found in /home/ubuntu/workspace/tema1/ajax/classes/izv/managedata/Bootstrap.php:24
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/ajax/classes/izv/model/Model.php(14): izv\managedata\Bootstrap->__construct()
+#1 /home/ubuntu/workspace/tema1/ajax/classes/izv/mvc/FrontController.php(16): izv\model\Model->__construct()
+#2 /home/ubuntu/workspace/tema1/ajax/c9.php(20): izv\mvc\FrontController->__construct('', '')
+#3 {main}
+  thrown in /home/ubuntu/workspace/tema1/ajax/classes/izv/managedata/Bootstrap.php on line 24
+[30-Jan-2019 12:20:51 UTC] PHP Warning:  require(../tercerosejemplos/classes/vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/tema1/ajax/c9.php on line 4
+[30-Jan-2019 12:20:51 UTC] PHP Fatal error:  require(): Failed opening required '../tercerosejemplos/classes/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/tema1/ajax/c9.php on line 4
+[30-Jan-2019 12:21:22 UTC] PHP Warning:  require(../tema1/classes/vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/tema1/ajax/c9.php on line 4
+[30-Jan-2019 12:21:22 UTC] PHP Fatal error:  require(): Failed opening required '../tema1/classes/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/tema1/ajax/c9.php on line 4

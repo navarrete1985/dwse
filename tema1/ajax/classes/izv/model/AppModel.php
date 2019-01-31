@@ -11,7 +11,7 @@ use izv\tools\Pagination;
 
 class AppModel extends Model {
 
-    function getCiudades($pagina = 1, $orden = 'name', $filtro = null) {
+    /*function getCiudades($pagina = 1, $orden = 'name', $filtro = null) {
         $total = $this->getTotalCiudades();
         $paginacion = new Pagination($total, $pagina);
         $offset = $paginacion->offset();
@@ -47,37 +47,26 @@ class AppModel extends Model {
             'orden' => $orden,
             'filtro' => $filtro
         );
-    }
+    }*/
 
-    function getDoctrineCiudades($pagina = 1, $orden = 'name') {
-        //$bs = new Bootstrap();
-        //$gestor = $bs->getEntityManager();
+    function getDoctrineCiudades($pagina = 1, $orden = 'name', $limit = 10) {
         $gestor = $this->getDatabase();
-        $dql = 'select c from izv\data\City c order by c.'. $orden .', c.name, c.countrycode, c.district, c.population, c.id';
-        $query = $gestor->createQuery($dql);
-        
-        /*return $gestor->createQuery($dql)
-        ->setMaxResults(5)
-        ->setFirstResult(10)
-        ->getResult();*/
-        
+        $dql = 'select c from izv\data\City c where c.name < :name order by c.'. $orden .', c.name, c.countrycode, c.district, c.population, c.id';
+        $query = $gestor->createQuery($dql)->setParameter('name', 'zz');
         $paginator = new Paginator($query);
-        $limit = 10;
         $paginator->getQuery()
             ->setFirstResult($limit * ($pagina - 1))
             ->setMaxResults($limit);
-        /*foreach($paginator as $city) {
-            echo 'modelo: ' . $city->getName() . '<br>';
-        }*/
-        //return $paginator->toJson();
-        $r = array();
+        $pagination = new Pagination($paginator->count(), $pagina, $limit);
+        //return $paginator;
+        $ciudades = array();
         foreach($paginator as $city) {
-            $r[] = $city->get();
+            $ciudades[] = $city->get();
         }
-        return $r;
+        return ['ciudades' => $ciudades, 'paginas' => $pagination->values()];
     }
 
-    function getTotalCiudades() {
+    /*function getTotalCiudades() {
         $ciudades = 0;
         if($this->getDatabase()->connect()) {
             $sql = 'select count(*) from city';
@@ -88,5 +77,5 @@ class AppModel extends Model {
             }
         }
         return $ciudades;
-    }
+    }*/
 }

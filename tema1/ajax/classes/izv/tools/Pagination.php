@@ -64,12 +64,15 @@ class Pagination {
         return $this->rpp;
     }
     
-    function values() {
+    function values($left = 5, $right = 5) {
         return array(
             'primero'   => $this->first(),
             'anterior'  => $this->previous(),
             'siguiente' => $this->next(),
-            'ultimo'    => $this->last()
+            'ultimo'    => $this->last(),
+            'cuenta'    => $this->total,
+            'pagina'    => $this->page(),
+            'rango'     => $this->asymetricRange($left, $right)
         );
     }
 }

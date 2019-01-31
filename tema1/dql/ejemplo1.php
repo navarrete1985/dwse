@@ -24,13 +24,15 @@ echo '<br>el id del alumno insertado es: ' . $alumno2->getId();
 $alumno->setNombre('Pepita Flores');
 $gestor->flush();*/
 
-$alumno = $gestor->find('Alumno', 1);
-$alumno->setObservaciones('mu güeno');
-$alumno = $gestor->find('Alumno', 2);
-$alumno->setObservaciones('mu güeno');
-$gestor->flush();
+// $alumno = $gestor->find('Alumno', 1);
+// $alumno->setObservaciones('mu güeno');
+// $alumno = $gestor->find('Alumno', 2);
+// $alumno->setObservaciones('mu güeno');
+// $gestor->flush();
 
-$alumnos = $gestor->getRepository('Alumno')->findBy(array('observaciones' => 'mu güeno'));
+$alumnos = $gestor->getRepository('Alumno')->findByOne(array('id' => '1'));
+echo Util::varDump($alumno);
+exit();
 foreach($alumnos as $alumno) {
     echo '<br>el id del alumno es: ' . $alumno->getId() . '; el nombre es: ' . $alumno->getNombre();
 }

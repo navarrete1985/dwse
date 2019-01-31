@@ -1,0 +1,4 @@
+[{% for city in ciudades %}
+    {{city | json_encode | raw}}
+    {% if not loop.last %} , {% endif %}
+{% endfor %}]

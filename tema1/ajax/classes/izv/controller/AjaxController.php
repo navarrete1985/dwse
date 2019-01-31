@@ -33,17 +33,14 @@ class AjaxController extends Controller {
             $orden = 'name';
         }
         $r = $this->getModel()->getDoctrineCiudades($pagina, $orden);
-        /*foreach($r as $city) {
-            echo 'controller: ' . json_encode($city) . '<br>';
-        }*/
-        $this->getModel()->set('ciudades', $r);
+        //var_dump($r);
+        $this->getModel()->add($r);
     }
 
     function listavalores() {
         $array = [];
         $array[] = ['codigo' => 1, 'descripcion' => 'hola'];
         $array[] = ['codigo' => 2, 'descripcion' => 'adios'];
-        sleep(3);
         $this->getModel()->set('resultado', $array);
     }
     
