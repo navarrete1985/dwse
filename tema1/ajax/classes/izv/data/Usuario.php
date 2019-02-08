@@ -6,7 +6,7 @@ namespace izv\data;
  * @Entity @Table(name="usuario")
  */
 class Usuario {
-
+    use \izv\common\Common;
     /**
      * @Id
      * @Column(type="integer") @GeneratedValue
@@ -41,7 +41,7 @@ class Usuario {
     /**
      * @Column(type="string", length=255, nullable=false)
      */
-    private $direccion;
+    private $direccion = '';
     
     /**
      * @Column(type="date", nullable=false)

@@ -700,3 +700,85 @@ Stack trace:
 [30-Jan-2019 12:20:51 UTC] PHP Fatal error:  require(): Failed opening required '../tercerosejemplos/classes/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/tema1/ajax/c9.php on line 4
 [30-Jan-2019 12:21:22 UTC] PHP Warning:  require(../tema1/classes/vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/tema1/ajax/c9.php on line 4
 [30-Jan-2019 12:21:22 UTC] PHP Fatal error:  require(): Failed opening required '../tema1/classes/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/tema1/ajax/c9.php on line 4
+[31-Jan-2019 09:00:54 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to izv\model\AppModel::addUser() must be an instance of izv\model\izv\data\Usuario, instance of izv\data\Usuario given, called in /home/ubuntu/workspace/tema1/ajax/classes/izv/controller/AjaxController.php on line 41 and defined in /home/ubuntu/workspace/tema1/ajax/classes/izv/model/AppModel.php:52
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/ajax/classes/izv/controller/AjaxController.php(41): izv\model\AppModel->addUser(Object(izv\data\Usuario))
+#1 /home/ubuntu/workspace/tema1/ajax/classes/izv/mvc/FrontController.php(28): izv\controller\AjaxController->register()
+#2 /home/ubuntu/workspace/tema1/ajax/c9.php(22): izv\mvc\FrontController->doAction()
+#3 {main}
+  thrown in /home/ubuntu/workspace/tema1/ajax/classes/izv/model/AppModel.php on line 52
+[31-Jan-2019 09:03:49 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'clave' cannot be null in /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php:105
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php(105): PDOStatement->execute(NULL)
+#1 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/dbal/lib/Doctrine/DBAL/Statement.php(168): Doctrine\DBAL\Driver\PDOStatement->execute(NULL)
+#2 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(281): Doctrine\DBAL\Statement->execute()
+#3 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(1014): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->executeInserts()
+#4 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(378): Doctrine\ORM\UnitOfWork->executeInserts(Object(Doctrine\ORM\ in /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 112
+[31-Jan-2019 09:06:32 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'direccion' cannot be null in /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php:105
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php(105): PDOStatement->execute(NULL)
+#1 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/dbal/lib/Doctrine/DBAL/Statement.php(168): Doctrine\DBAL\Driver\PDOStatement->execute(NULL)
+#2 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(281): Doctrine\DBAL\Statement->execute()
+#3 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(1014): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->executeInserts()
+#4 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(378): Doctrine\ORM\UnitOfWork->executeInserts(Object(Doctrine\ in /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 112
+[31-Jan-2019 09:07:44 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'direccion' cannot be null in /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php:105
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php(105): PDOStatement->execute(NULL)
+#1 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/dbal/lib/Doctrine/DBAL/Statement.php(168): Doctrine\DBAL\Driver\PDOStatement->execute(NULL)
+#2 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php(281): Doctrine\DBAL\Statement->execute()
+#3 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(1014): Doctrine\ORM\Persisters\Entity\BasicEntityPersister->executeInserts()
+#4 /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php(378): Doctrine\ORM\UnitOfWork->executeInserts(Object(Doctrine\ in /home/ubuntu/workspace/tema1/dql/classes/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 112
+[01-Feb-2019 11:24:16 UTC] PHP Notice:  Undefined variable: resultado in /home/ubuntu/workspace/tema1/ajax/classes/izv/controller/AjaxController.php on line 40
+[01-Feb-2019 11:24:16 UTC] PHP Notice:  Trying to get property of non-object in /home/ubuntu/workspace/tema1/ajax/classes/izv/controller/AjaxController.php on line 40
+[01-Feb-2019 11:24:16 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getModel() on null in /home/ubuntu/workspace/tema1/ajax/classes/izv/controller/AjaxController.php:40
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/ajax/classes/izv/mvc/FrontController.php(28): izv\controller\AjaxController->dologin()
+#1 /home/ubuntu/workspace/tema1/ajax/c9.php(22): izv\mvc\FrontController->doAction()
+#2 {main}
+  thrown in /home/ubuntu/workspace/tema1/ajax/classes/izv/controller/AjaxController.php on line 40
+[01-Feb-2019 11:25:24 UTC] PHP Fatal error:  Uncaught Error: Class 'izv\model\izv\tools\Util' not found in /home/ubuntu/workspace/tema1/ajax/classes/izv/model/AppModel.php:125
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/ajax/classes/izv/controller/AjaxController.php(40): izv\model\AppModel->login('anormal@pepepac...', 'asdf')
+#1 /home/ubuntu/workspace/tema1/ajax/classes/izv/mvc/FrontController.php(28): izv\controller\AjaxController->dologin()
+#2 /home/ubuntu/workspace/tema1/ajax/c9.php(22): izv\mvc\FrontController->doAction()
+#3 {main}
+  thrown in /home/ubuntu/workspace/tema1/ajax/classes/izv/model/AppModel.php on line 125
+[05-Feb-2019 11:09:44 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to izv\tools\Session::login() must be an instance of izv\data\Usuario, none given, called in /home/ubuntu/workspace/tema1/ajax/classes/izv/controller/AjaxController.php on line 116 and defined in /home/ubuntu/workspace/tema1/ajax/classes/izv/tools/Session.php:53
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/ajax/classes/izv/controller/AjaxController.php(116): izv\tools\Session->login()
+#1 /home/ubuntu/workspace/tema1/ajax/classes/izv/mvc/FrontController.php(28): izv\controller\AjaxController->upload()
+#2 /home/ubuntu/workspace/tema1/ajax/c9.php(22): izv\mvc\FrontController->doAction()
+#3 {main}
+  thrown in /home/ubuntu/workspace/tema1/ajax/classes/izv/tools/Session.php on line 53
+[05-Feb-2019 11:37:58 UTC] PHP Fatal error:  Uncaught Error: Undefined class constant 'BASE' in /home/ubuntu/workspace/tema1/ajax/classes/izv/controller/AjaxController.php:126
+Stack trace:
+#0 /home/ubuntu/workspace/tema1/ajax/classes/izv/mvc/FrontController.php(28): izv\controller\AjaxController->upload()
+#1 /home/ubuntu/workspace/tema1/ajax/c9.php(22): izv\mvc\FrontController->doAction()
+#2 {main}
+  thrown in /home/ubuntu/workspace/tema1/ajax/classes/izv/controller/AjaxController.php on line 126
+[08-Feb-2019 11:40:22 UTC] PHP Notice:  Undefined index: name in /home/ubuntu/workspace/tema1/rest/slim.php on line 27
+[08-Feb-2019 11:41:07 UTC] Slim Application Error:
+Type: FastRoute\BadRouteException
+Message: Static route &quot;/hello/todos&quot; is shadowed by previously defined variable route &quot;/hello/([^/]+)&quot; for method &quot;GET&quot;
+File: /home/ubuntu/workspace/classes/vendor/nikic/fast-route/src/DataGenerator/RegexBasedAbstract.php
+Line: 95
+Trace: #0 /home/ubuntu/workspace/classes/vendor/nikic/fast-route/src/DataGenerator/RegexBasedAbstract.php(30): FastRoute\DataGenerator\RegexBasedAbstract->addStaticRoute('GET', Array, 'route1')
+#1 /home/ubuntu/workspace/classes/vendor/nikic/fast-route/src/RouteCollector.php(44): FastRoute\DataGenerator\RegexBasedAbstract->addRoute('GET', Array, 'route1')
+#2 /home/ubuntu/workspace/classes/vendor/slim/slim/Slim/Router.php(238): FastRoute\RouteCollector->addRoute(Array, '/hello/todos', 'route1')
+#3 /home/ubuntu/workspace/classes/vendor/nikic/fast-route/src/functions.php(25): Slim\Router->Slim\{closure}(Object(FastRoute\RouteCollector))
+#4 /home/ubuntu/workspace/classes/vendor/slim/slim/Slim/Router.php(249): FastRoute\simpleDispatcher(Object(Closure), Array)
+#5 /home/ubuntu/workspace/classes/vendor/slim/slim/Slim/Router.php(202): Slim\Router->createDispatcher()
+#6 /home/ubuntu/workspace/classes/vendor/slim/slim/Slim/App.php(586): Slim\Router->dispatch(Object(Slim\Http\Request))
+#7 /home/ubuntu/workspace/classes/vendor/slim/slim/Slim/App.php(510): Slim\App->dispatchRouterAndPrepareRoute(Object(Slim\Http\Request), Object(Slim\Router))
+#8 /home/ubuntu/workspace/tema1/rest/slim.php(17): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Object(Slim\App))
+#10 /home/ubuntu/workspace/classes/vendor/slim/slim/Slim/DeferredCallable.php(43): call_user_func_array(Object(Closure), Array)
+#11 [internal function]: Slim\DeferredCallable->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response), Object(Slim\App))
+#12 /home/ubuntu/workspace/classes/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func(Object(Slim\DeferredCallable), Object(Slim\Http\Request), Object(Slim\Http\Response), Object(Slim\App))
+#13 /home/ubuntu/workspace/classes/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\App->Slim\{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#14 /home/ubuntu/workspace/classes/vendor/slim/slim/Slim/App.php(407): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#15 /home/ubuntu/workspace/classes/vendor/slim/slim/Slim/App.php(315): Slim\App->process(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#16 /home/ubuntu/workspace/tema1/rest/slim.php(63): Slim\App->run()
+#17 {main}
+View in rendered output by enabling the "displayErrorDetails" setting.
+

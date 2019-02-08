@@ -141,7 +141,7 @@ class Upload {
     }
 
     function setName($name) {
-        if(is_string($name) && trim($name) !== '') {
+        if(trim($name) !== '') {
             $this->name = trim($name);
         }
         return $this;
@@ -180,5 +180,8 @@ class Upload {
         }
         return $result;
     }
-
+    
+     function getRoute() {
+        return $this->target . $this->getName();
+    }
 }

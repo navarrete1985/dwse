@@ -8,6 +8,8 @@ use izv\data\City;
 use izv\database\Database;
 use izv\managedata\Bootstrap;
 use izv\tools\Pagination;
+use izv\tools\Util;
+use izv\data\Usuario;
 
 class AppModel extends Model {
 
@@ -48,6 +50,43 @@ class AppModel extends Model {
             'filtro' => $filtro
         );
     }*/
+    
+    function addUser(Usuario $usuario) {
+        try {
+            $gestor = $this->getDatabase();
+            $gestor->persist($usuario);
+            $gestor->flush();
+            return $usuario->getId();
+        } catch(\Exception $e) {
+            return 0;
+        }
+    }
+
+    function aliasAvailable($alias) {
+        $gestor = $this->getDatabase();
+        $dql = 'select count(u) from izv\data\Usuario u where u.alias = :alias';
+        $query = $gestor->createQuery($dql)->setParameter('alias', $alias);
+        $resultado = $query->getResult();
+        $cuenta = $resultado[0][1];
+        $resultado = 0;
+        if($cuenta === '0'){
+            $resultado = 1;
+        }
+        return $resultado;
+    }
+    
+    function correoAvailable($correo) {
+        $gestor = $this->getDatabase();
+        $dql = 'select count(u) from izv\data\Usuario u where u.correo = :correo';
+        $query = $gestor->createQuery($dql)->setParameter('correo', $correo);
+        $resultado = $query->getResult();
+        $cuenta = $resultado[0][1];
+        $resultado = 0;
+        if($cuenta === '0'){
+            $resultado = 1;
+        }
+        return $resultado;
+    }
 
     function getDoctrineCiudades($pagina = 1, $orden = 'name', $limit = 10) {
         $gestor = $this->getDatabase();
@@ -78,4 +117,18 @@ class AppModel extends Model {
         }
         return $ciudades;
     }*/
+    
+    function login($correo, $clave){
+        $gestor = $this->getDatabase();
+        $usuario = $gestor->getRepository('izv\data\Usuario')->findOneBy(['correo' => $correo]);
+        if ($usuario !== null) {
+            $resultado = Util::verificarClave($clave, $usuario->getClave());
+            if ($resultado) {
+                $usuario->setClave('');
+                $this->set('usuario', $usuario->get());
+                return $usuario;
+            }
+        }
+        return false;
+    }
 }
