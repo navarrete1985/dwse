@@ -12,9 +12,9 @@ class UserModel extends Model {
     function createUser(Usuario $usuario) {
         $result = 1;
         try {
-            $r = $this->gestor->persist($usuario);
+            $this->gestor->persist($usuario);
             $this->gestor->flush();
-            return $r;    
+            return $usuario->getId();    
         }catch(\Doctrine\DBAL\Exception\UniqueConstraintViolationException $e){
             $result = -1;
             echo 'Constraint violation <br>';

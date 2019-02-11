@@ -948,3 +948,115 @@ Stack trace:
 [10-Feb-2019 21:12:23 UTC] PHP Warning:  var_export does not handle circular references in /home/ubuntu/workspace/proyectoLinks/classes/izv/tools/Util.php on line 33
 [10-Feb-2019 21:12:23 UTC] PHP Warning:  var_export does not handle circular references in /home/ubuntu/workspace/proyectoLinks/classes/izv/tools/Util.php on line 33
 [10-Feb-2019 21:12:37 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/ubuntu/workspace/proyectoLinks/classes/izv/model/UserModel.php on line 25
+[11-Feb-2019 17:43:19 UTC] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN), expecting ',' or ';' in /home/ubuntu/workspace/proyectoLinks/classes/izv/model/UserModel.php on line 18
+[11-Feb-2019 17:45:20 UTC] PHP Notice:  Undefined variable: r in /home/ubuntu/workspace/proyectoLinks/classes/izv/controller/LoginController.php on line 59
+[11-Feb-2019 17:45:20 UTC] PHP Notice:  Undefined variable: r2 in /home/ubuntu/workspace/proyectoLinks/classes/izv/controller/LoginController.php on line 59
+[11-Feb-2019 17:50:35 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method izv\data\Usuario::setId() in /home/ubuntu/workspace/proyectoLinks/classes/izv/controller/LoginController.php:53
+Stack trace:
+#0 /home/ubuntu/workspace/proyectoLinks/classes/izv/mvc/FrontController.php(28): izv\controller\LoginController->doregister()
+#1 /home/ubuntu/workspace/proyectoLinks/c9.php(26): izv\mvc\FrontController->doAction()
+#2 {main}
+  thrown in /home/ubuntu/workspace/proyectoLinks/classes/izv/controller/LoginController.php on line 53
+[11-Feb-2019 17:51:46 UTC] PHP Warning:  require(/home/ubuntu/workspace/proyectoLinks/classes/izv/tools/../../vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/proyectoLinks/classes/izv/tools/Mail.php on line 10
+[11-Feb-2019 17:51:46 UTC] PHP Fatal error:  require(): Failed opening required '/home/ubuntu/workspace/proyectoLinks/classes/izv/tools/../../vendor/autoload.php' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/proyectoLinks/classes/izv/tools/Mail.php on line 10
+[11-Feb-2019 17:53:42 UTC] PHP Warning:  require(/home/ubuntu/workspace/proyectoLinks/classes/izv/tools/../../vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/proyectoLinks/classes/izv/tools/Mail.php on line 10
+[11-Feb-2019 17:53:42 UTC] PHP Fatal error:  require(): Failed opening required '/home/ubuntu/workspace/proyectoLinks/classes/izv/tools/../../vendor/autoload.php' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/proyectoLinks/classes/izv/tools/Mail.php on line 10
+[11-Feb-2019 17:53:59 UTC] PHP Warning:  require(/home/ubuntu/workspace/proyectoLinks/classes/izv/tools/../../../classes/vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/proyectoLinks/classes/izv/tools/Mail.php on line 10
+[11-Feb-2019 17:53:59 UTC] PHP Fatal error:  require(): Failed opening required '/home/ubuntu/workspace/proyectoLinks/classes/izv/tools/../../../classes/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/proyectoLinks/classes/izv/tools/Mail.php on line 10
+[11-Feb-2019 18:35:36 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/ubuntu/workspace/proyectoLinks/classes/izv/tools/Mail.php on line 128
+[11-Feb-2019 18:36:24 UTC] PHP Notice:  Undefined variable: jwt in /home/ubuntu/workspace/proyectoLinks/classes/izv/tools/Mail.php on line 18
+[11-Feb-2019 18:36:26 UTC] PHP Fatal error:  Uncaught Google_Service_Exception: {
+ "error": {
+  "errors": [
+   {
+    "domain": "global",
+    "reason": "invalidArgument",
+    "message": "Recipient address required"
+   }
+  ],
+  "code": 400,
+  "message": "Recipient address required"
+ }
+}
+ in /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Http/REST.php:118
+Stack trace:
+#0 /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Http/REST.php(94): Google_Http_REST::decodeHttpResponse(Object(GuzzleHttp\Psr7\Response), Object(GuzzleHttp\Psr7\Request), 'Google_Service_...')
+#1 /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Task/Runner.php(176): Google_Http_REST::doExecute(Object(GuzzleHttp\Client), Object(GuzzleHttp\Psr7\Request), 'Google_Service_...')
+#2 /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Http/REST.php(58): Google_Task_Runner->run()
+#3 /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Client.php(798): Google_Http_REST::execute(Object(GuzzleHttp\Client), Object(GuzzleH in /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Http/REST.php on line 118
+[11-Feb-2019 18:36:54 UTC] PHP Fatal error:  Uncaught Google_Service_Exception: {
+ "error": {
+  "errors": [
+   {
+    "domain": "global",
+    "reason": "invalidArgument",
+    "message": "Recipient address required"
+   }
+  ],
+  "code": 400,
+  "message": "Recipient address required"
+ }
+}
+ in /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Http/REST.php:118
+Stack trace:
+#0 /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Http/REST.php(94): Google_Http_REST::decodeHttpResponse(Object(GuzzleHttp\Psr7\Response), Object(GuzzleHttp\Psr7\Request), 'Google_Service_...')
+#1 /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Task/Runner.php(176): Google_Http_REST::doExecute(Object(GuzzleHttp\Client), Object(GuzzleHttp\Psr7\Request), 'Google_Service_...')
+#2 /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Http/REST.php(58): Google_Task_Runner->run()
+#3 /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Client.php(798): Google_Http_REST::execute(Object(GuzzleHttp\Client), Object(GuzzleH in /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Http/REST.php on line 118
+[11-Feb-2019 18:38:38 UTC] PHP Fatal error:  Uncaught Google_Service_Exception: {
+ "error": {
+  "errors": [
+   {
+    "domain": "global",
+    "reason": "invalidArgument",
+    "message": "Recipient address required"
+   }
+  ],
+  "code": 400,
+  "message": "Recipient address required"
+ }
+}
+ in /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Http/REST.php:118
+Stack trace:
+#0 /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Http/REST.php(94): Google_Http_REST::decodeHttpResponse(Object(GuzzleHttp\Psr7\Response), Object(GuzzleHttp\Psr7\Request), 'Google_Service_...')
+#1 /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Task/Runner.php(176): Google_Http_REST::doExecute(Object(GuzzleHttp\Client), Object(GuzzleHttp\Psr7\Request), 'Google_Service_...')
+#2 /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Http/REST.php(58): Google_Task_Runner->run()
+#3 /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Client.php(798): Google_Http_REST::execute(Object(GuzzleHttp\Client), Object(GuzzleH in /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Http/REST.php on line 118
+[11-Feb-2019 18:50:36 UTC] PHP Fatal error:  Uncaught Google_Service_Exception: {
+ "error": {
+  "errors": [
+   {
+    "domain": "global",
+    "reason": "invalidArgument",
+    "message": "Recipient address required"
+   }
+  ],
+  "code": 400,
+  "message": "Recipient address required"
+ }
+}
+ in /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Http/REST.php:118
+Stack trace:
+#0 /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Http/REST.php(94): Google_Http_REST::decodeHttpResponse(Object(GuzzleHttp\Psr7\Response), Object(GuzzleHttp\Psr7\Request), 'Google_Service_...')
+#1 /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Task/Runner.php(176): Google_Http_REST::doExecute(Object(GuzzleHttp\Client), Object(GuzzleHttp\Psr7\Request), 'Google_Service_...')
+#2 /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Http/REST.php(58): Google_Task_Runner->run()
+#3 /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Client.php(798): Google_Http_REST::execute(Object(GuzzleHttp\Client), Object(GuzzleH in /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Http/REST.php on line 118
+[11-Feb-2019 18:56:40 UTC] PHP Fatal error:  Uncaught Google_Service_Exception: {
+ "error": {
+  "errors": [
+   {
+    "domain": "global",
+    "reason": "invalidArgument",
+    "message": "Recipient address required"
+   }
+  ],
+  "code": 400,
+  "message": "Recipient address required"
+ }
+}
+ in /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Http/REST.php:118
+Stack trace:
+#0 /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Http/REST.php(94): Google_Http_REST::decodeHttpResponse(Object(GuzzleHttp\Psr7\Response), Object(GuzzleHttp\Psr7\Request), 'Google_Service_...')
+#1 /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Task/Runner.php(176): Google_Http_REST::doExecute(Object(GuzzleHttp\Client), Object(GuzzleHttp\Psr7\Request), 'Google_Service_...')
+#2 /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Http/REST.php(58): Google_Task_Runner->run()
+#3 /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Client.php(798): Google_Http_REST::execute(Object(GuzzleHttp\Client), Object(GuzzleH in /home/ubuntu/workspace/classes/vendor/google/apiclient/src/Google/Http/REST.php on line 118

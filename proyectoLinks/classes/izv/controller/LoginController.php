@@ -50,7 +50,6 @@ class LoginController extends Controller {
         $usuario->setClave(Util::encriptar($usuario->getClave()));
         $id = $this->getModel()->createUser($usuario);
         if ($id > 0) {
-            $usuario->setId($id);
             $r2 = Mail::sendActivation($usuario);
             $this->sendRedirect('login/main?op=signup&resultado=1&r2=' . $r2);
         }else {
