@@ -1,0 +1,32 @@
+<?php
+/**
+ * @Entity @Table(name="categoria",
+ *              uniqueConstraints={@UniqueConstraint(name="catconstr", columns={"idusuario", "categoria"})})
+ * id, id_usuario, categoria
+ */
+class Categoria{
+    
+    /**
+     * @Id
+     * @Column(type="integer") @GeneratedValue
+     */
+    private $id;
+    
+    /**
+     * @Column(type="string", length=200, nullable=false)
+     */
+    private $categoria;
+    
+    /*-------------------RELACIONES------------------*/
+    /**
+     * @OneToOne(targetEntity="Link", inversedBy="categoria")
+     * @JoinColumn(name="idcategoria", referencedColumnName="id")
+     */
+    private $link;
+    
+    /**
+     * @ManyToOne(targetEntity="Usuario", inversedBy="categorias") 
+     * @JoinColumn(name="idusuario", referencedColumnName="id", nullable=false)
+     */
+    private $usuario;
+}

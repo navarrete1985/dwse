@@ -1,0 +1,152 @@
+{% extends '_base.twig' %}
+{% block content %}
+  {% set search = (data.filter == '' ? '' : '&search=' ~ data.filter) %}
+  {% set order = (data.order == '' ? '' : '&order=' ~ data.order) %}
+  {% set querystring = order ~ search%}
+  <div class="content-wrapper">
+    <div class="row">
+      <div class="col-lg-12 grid-margin">
+        <div class="card">
+          <div class="card-body">
+            <h1 class="card-title">Listado de Usuarios</h1>
+            <div class="table-responsive">
+              {#-----------------BÚSQUEDA-------------------#}
+              <div class="d-flex flex-row-reverse">
+                <div class='col-md-4'>
+                  <form method='get' action='index/main?'>
+                    {% if data.range %}
+                      <input type='hidden' name='page' value={{data.range[0]}}>
+                    {% endif %}
+                    {% if data.order != '' %}
+                      <input type='hidden' name='order' value={{data.order}}>
+                    {% endif %}
+                    <div class='form-group'>
+                      <div class='input-group'>
+                        <input type='text' class='form-control' placeholder='Buscar' name='search' value={{data.filter}}>
+                        <span class='input-group-append'>
+                          <button class='btn btn-info' type='submit'>
+                            <i class="fa fa-search"></i>
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              {#-------------TABLA DE CONTENIDO-------------#}
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>
+                      <a href='index/main?order=nombre{{search}}'>Nombre</a>
+                    </th>
+                    <th>
+                      <a href='index/main?order=alias{{search}}'>Alias</a>
+                    </th>
+                    <th>
+                      <a href='index/main?order=correo{{search}}'>Correo</a>
+                    </th>
+                    {% if user.administrador == 1 %}
+                    <th>
+                      <a href='index/main?order=activo{{search}}'>Activo</a>
+                    </th>
+                    <th>
+                      <a href='index/main?order=administrador{{search}}'>Admin</a>
+                    </th>
+                    <th>
+                      Editar
+                    </th>
+                    <th>
+                      Eliminar
+                    </th>
+                    {% endif %}
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for item in data.users%}
+                    <tr>
+                      <td>
+                        {{item.nombre}}
+                      </td>
+                      <td>
+                        {{item.alias}}
+                      </td>
+                      <td>
+                        {{item.correo}}
+                      </td>
+                      {% if user.administrador == 1 %}
+                        <td>
+                          {% if item.activo == 1%}
+                            <i class='fa fa-check-square-o text-success'></i>
+                          {% else %}
+                            <i class='fa fa-minus text-secondary'></i>
+                          {% endif %}
+                        </td>
+                        <td>
+                          {% if item.administrador == 1%}
+                            <i class='fa fa-check-square-o text-success'></i>
+                          {% else %}
+                            <i class='fa fa-minus text-secondary'></i>
+                          {% endif %}
+                        </td>
+                        <td>
+                          <a href='edit/main?id={{item.id}}'>
+                            <button type='button' class='btn btn-inverse-info btn-rounded btn-sm'>
+                              <i class='mdi mdi-file-document'></i>
+                              Editar
+                            </button>
+                          </a>
+                        </td>
+                        <td>
+                          <a href='index/dodelete?id={{item.id}}' class='borrar'>
+                            <button type='button' class='btn btn-inverse-danger btn-rounded btn-sm'>
+                              <i class='mdi mdi-alert-outline'></i>
+                              Eliminar
+                            </button>
+                          </a>
+                        </td>
+                      {% endif %}
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+              </div>
+              {#-----------------PAGINACION---------------------#}
+              <div class='pagination row ml-1 mt-3 mb-3'>
+                {% if data.actual != 1%}
+                  <div class='btn-group'>
+                    {% if data.actual > 2%}
+                      <a class='btn btn-primary' href='index/main?page={{data.pages.primero ~ querystring}}'>
+                        <i class="fa fa-angle-double-left text-white"></i>
+                      </a>
+                    {% endif %}
+                    <a class='btn btn-primary' href='index/main?page={{data.pages.anterior ~ querystring}}'>
+                      <i class="fa fa-angle-left text-white"></i>
+                    </a>  
+                  </div>
+                {% endif %}
+                <div class='btn-group ml-1'>
+                  {% for item in data.range%}
+                    <a href={{ '?page=' ~ item ~ querystring}} class='btn {{data.actual == item ? 'btn-light' : 'btn-primary'}}'>{{item}}</a>
+                  {% endfor %}
+                </div>
+                {% if data.actual != data.pages.ultimo %}
+                <div class='btn-group ml-1'>
+                  <a class='btn btn-primary' href='index/main?page={{data.pages.siguiente ~ querystring}}'>
+                    <i class="fa fa-angle-right text-white"></i>
+                  </a>
+                  {% if data.actual != data.pages.ultimo - 1%}
+                    <a class='btn btn-primary' href='index/main?page={{data.pages.ultimo ~ querystring}}'>
+                      <i class="fa fa-angle-double-right text-white"></i>
+                    </a>
+                  {% endif %}
+                </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
+        

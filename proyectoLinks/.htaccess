@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteRule ^$ c9.php [L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ c9.php?parametros=$1 [QSA]
+
+ErrorDocument 404 /proyectoMvc/errors/adminTemplate/error-404.html;
+ErrorDocument 500 /proyectoMvc/errors/error-500.html;

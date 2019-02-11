@@ -1,0 +1,37 @@
+<?php
+/**
+ * @Entity @Table(name="link",
+ *          uniqueConstraints={@UniqueConstraint(name="linkconstr", columns={"idusuario", "idcategoria", "href"})})
+ * id, id_cat, id_user, href, comentario
+ */
+class Link {
+
+    /**
+     * @Id
+     * @Column(type="integer") @GeneratedValue
+     */
+    private $id;
+
+    /**
+     * @Column(type="string", length=255 ,nullable=false)
+     */
+    private $href;
+
+    /**
+     * @Column(type="text", nullable=false)
+     */
+    private $comentario;
+
+
+    /*----------------RELACIONES------------------*/
+    /**
+     * @OneToOne(targetEntity="Categoria", mappedBy="link")
+     * @JoinColumn(name="idcategoria", referencedColumnName="id", nullable=false)
+     */
+    private $categoria;
+
+    /** @ManyToOne(targetEntity="Usuario", inversedBy="links") 
+    *   @JoinColumn(name="idusuario", referencedColumnName="id", nullable=false)
+    */
+    private $usuario;
+}

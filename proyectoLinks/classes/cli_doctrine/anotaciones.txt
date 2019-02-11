@@ -1,0 +1,10 @@
+Generar las tablas en la base de datos:
+
+a) bin/doctrine orm:schema-tool:create
+b) bin/doctrine orm:schema-tool:update --force
+
+Generar los métodos get y set de las clases 'pojo':
+
+a) bin/doctrine orm:generate:entities ./src
+
+/*../../../classes/vendor/bin/doctrine*/
