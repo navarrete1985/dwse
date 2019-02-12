@@ -56,7 +56,7 @@ class Mail {
     
     private static function getEmailBody($userName, $userId, $userCode) {
         $imgPath = App::BASE . 'templates/img/';
-        $link = App::BASE . 'login/activate?id='. $userName .'&code=' . $userCode;
+        $link = App::BASE . 'login/activate?id='. $userId .'&code=' . $userCode;
         return '<body style="margin: 0; padding: 0;">
                     <table border="0" cellpadding="0" cellspacing="0" width="100%">	
                 		<tr>

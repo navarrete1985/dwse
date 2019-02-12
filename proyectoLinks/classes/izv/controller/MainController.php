@@ -19,7 +19,7 @@ class MainController extends Controller {
         $pagina = Reader::read('page');
         $orden = Reader::read('order');
         $filtro = Reader::read('search');
-        $this->getModel()->set('data', $this->getModel()->getUsers($pagina, $orden, $filtro));
+        $this->getModel()->set('data', $this->getModel()->getAllUsers());
         $this->getAlerts($user['nombre']);
     }
     

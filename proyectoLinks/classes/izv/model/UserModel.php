@@ -29,7 +29,9 @@ class UserModel extends Model {
     }
     
     function updateUser(Usuario $usuario) {
-        
+        $this->gestor->persist($usuario);
+        $this->gestor->flush();
+        return $usuario->getActivo();
     }
     
     function deleteUser($id) {
@@ -37,12 +39,14 @@ class UserModel extends Model {
     }
     
     function getUser($id) {
-        
+        return $this->gestor->createQuery('select u from izv\data\Usuario u where u.id = :id')
+                            ->setParameter('id', $id)
+                            ->getOneOrNullResult();
     }
     
     function getAllUsers() {
         $usuario = new Usuario();
-        $usuario = $this->gestor->getRepository('\tienda\data\Usuario')->findAll();
+        $usuario = $this->gestor->getRepository('izv\data\Usuario')->findAll();
         return $usuario;   
     }
     
@@ -53,9 +57,10 @@ class UserModel extends Model {
     function login($correo = '', $clave = '') {
         $usuario = new Usuario();
         $usuario->setCorreo($correo);
-        $usuario = $this->gestor->getRepository('\tienda\data\Usuario')->findOneBy(array('correo' => $correo));
+        $usuario = $this->gestor->createQuery('select u from izv\data\Usuario u where u.correo = :correo or u.alias = :correo')
+                                ->setParameter('correo', $correo)
+                                ->getOneOrNullResult();
         return $usuario;
-        // return $this->manage->login($correo, $clave);
     }
     
     function isEmailChanged($usuario) {
@@ -64,7 +69,7 @@ class UserModel extends Model {
     
     function activateUser($id, $correo) {
         $result = 0;
-        $usuario = $this->gestor->getRepository('tienda\data\Usuario')->findOneBy(array('correo' => $correo, 'id' => $id));
+        $usuario = $this->gestor->getRepository('izv\data\Usuario')->findOneBy(array('correo' => $correo, 'id' => $id));
         if ($usuario !== null) {
             $usuario->setActivo(1);
             $this->gestor->persist($usuario);
