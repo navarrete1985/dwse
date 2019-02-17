@@ -69,7 +69,9 @@ class Pagination {
             'primero'   => $this->first(),
             'anterior'  => $this->previous(),
             'siguiente' => $this->next(),
-            'ultimo'    => $this->last()
+            'ultimo'    => $this->last(),
+            'range'     => $this->range(2),
+            'actual'    => $this->page()
         );    
     }
     

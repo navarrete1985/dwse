@@ -168,9 +168,73 @@ $(function() {
 	if ($('#links-table').length > 0) {
 		$('a').on('click', event => {
 			event.preventDefault();
-			genericAjax('ajax/getLinks', {}, 'post', response => {
-				
+			genericAjax('ajax/getLinks', {pagina: $(event.currentTarget).attr('data-page')}, 'post', response => {
+				renderTable(response);
+				renderPagination(response.pagination);
 			})
 		})
-	}	
+	}
+	
+	function renderTable(data) {
+		let table = '';
+		Array.from(data.links).forEach(item => {
+			table += `
+			<tr>
+			<td>
+				${item.link.categoria}
+			</td>
+			<td>
+				${item.link.href}
+			</td>
+			<td>
+				${item.link.comentario}
+			</td>
+			<td>
+				<a href='#' data-action='ajax/deleteLink' data-id='${item.link.id}' class='borrar'>
+					<button type='button' class='btn btn-inverse-danger btn-rounded btn-sm'>
+						<i class='mdi mdi-alert-outline'></i>
+						Eliminar
+					</button>
+				</a>
+            </td>
+            </tr>`;
+		});
+		
+		$('#links-table tbody').empty();
+		$('#links-table tbody').append(table);
+	}
+	
+	function renderPagination(data) {
+		/*
+		{% if data.paginas.actual != 1%}
+                  <div class='btn-group'>
+                    {% if data.paginas.actual > 2%}
+                      <a class='btn btn-primary' href='index/main?page={{data.paginas.primero ~ querystring}}' data-page='{{data.paginas.primero}}'>
+                        <i class="fa fa-angle-double-left text-white"></i>
+                      </a>
+                    {% endif %}
+                    <a class='btn btn-primary' href='index/main?page={{data.paginas.anterior ~ querystring}}' data-page='{{data.paginas.anterior}}'>
+                      <i class="fa fa-angle-left text-white"></i>
+                    </a>  
+                  </div>
+                {% endif %}
+                <div class='btn-group ml-1'>
+                  {% for item in data.paginas.range %}
+                    <a href={{ '?page=' ~ item ~ querystring}} class='btn {{data.actual == item ? 'btn-light' : 'btn-primary'}}' data-page='{{item}}'>{{item}}</a>
+                  {% endfor %}
+                </div>
+                {% if data.paginas.actual != data.paginas.ultimo %}
+                <div class='btn-group ml-1'>
+                  <a class='btn btn-primary' href='index/main?page={{data.paginas.siguiente ~ querystring}}' data-page='{{data.paginas.siguiente}}'>
+                    <i class="fa fa-angle-right text-white"></i>
+                  </a>
+                  {% if data.actual != data.pages.ultimo - 1%}
+                    <a class='btn btn-primary' href='index/main?page={{data.pages.ultimo ~ querystring}}' data-page='{{data.paginas.ultimo}}'>
+                      <i class="fa fa-angle-double-right text-white"></i>
+                    </a>
+                  {% endif %}
+                </div>
+                {% endif %}
+		*/
+	}
 });

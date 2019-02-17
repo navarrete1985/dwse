@@ -84,13 +84,15 @@ trait Crud {
             //     'categoria' => $categoria
             // ];
             $result= [
-                'link'      => $link->getUnset(['categoria', 'usuario'])
+                'link'  => $link->getUnset(['categoria', 'usuario'])
             ];
             $result['link']['categoria'] = $categoria;
             $links[] = $result;
             
         }
-        return ['links' => $links, 'paginas' => $pagination->values()];
+        $paginas = $pagination->values();
+        $paginas['order'] = $orden;
+        return ['links' => $links, 'paginas' => $paginas];
     }
     
 }
