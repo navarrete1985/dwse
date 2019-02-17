@@ -224,22 +224,7 @@ $(function() {
 	          </div>
 			`;
 		}
-		if (data.paginas.actual != 1) {
-			paginacion += `<div class='btn-group'>`;
-			if (data.paginas.actual > 2) {
-				paginacion += `
-					<a class='btn btn-primary' data-page='${data.paginas.primero}'>
-						<i class="fa fa-angle-double-left text-white"></i>
-					</a>
-				`;
-			}
-			paginacion += `
-				<a class='btn btn-primary' data-page='${data.paginas.anterior}'>
-					<i class="fa fa-angle-left text-white"></i>
-					</a>  
-				</div>
-			`;
-		}
+		
 		paginacion += `<div class='btn-group ml-1'>`;
 		Array.from(data.paginas.range).forEach(item => paginacion += `<a class='btn ${data.paginas.actual == item ? 'btn-light' : 'btn-primary'}' data-page='${item}'>${item}</a>`);
 		paginacion += `</div>`;
@@ -275,4 +260,12 @@ $(function() {
 			})
 		})
 	}
+});
+
+$(document).ajaxStart(function () {
+    $('#wrapper-loader').removeClass('hidden');
+});
+
+$(document).ajaxStop(function () {
+    $('#wrapper-loader').addClass('hidden');
 });
