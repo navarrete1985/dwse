@@ -23,7 +23,7 @@ class EditController extends Controller {
         $this->getModel()->set('accion', 'Crear Link Nuevo');
         $this->getModel()->set('user', $this->sesion->getLogin()->get());
         $this->getModel()->set('new', true);
-        $this->getModel()->set('categories', $this->getModel()->getAll('Categoria'));
+        $this->getModel()->set('categories', $this->getModel()->getCategories($this->getSesion()->getLogin()->getId()));
         $this->getAlerts();
     }
     

@@ -40,4 +40,11 @@ class LinkModel extends Model {
         return 0;
     }
     
+    function getCategories($userId) {
+        $result = $this->gestor->createQuery('SELECT c FROM izv\data\Categoria c JOIN c.usuario u WHERE u.id = :id')
+                ->setParameter('id', $userId)
+                ->getResult();
+        return $result;
+    }
+    
 }

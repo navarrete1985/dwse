@@ -2,6 +2,8 @@
 
 namespace izv\model;
 
+use izv\data\Categoria;
+
 class AjaxModel extends Model {
     
     use \izv\common\Crud;
