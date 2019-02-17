@@ -20,5 +20,11 @@ class App {
           
           SESSION_NAME = 'APP_MVC_SESSION',
           
-          BASE = 'https://dwes-navarrete.c9users.io/proyectoLinks/';
+          BASE = 'https://dwes-navarrete.c9users.io/proyectoLinks/',
+          FILTER = [
+            'c.categoria' => '',
+            'l.href' => '',
+            'l.comentario' => '',
+            'l.id' => ''
+          ];
 }

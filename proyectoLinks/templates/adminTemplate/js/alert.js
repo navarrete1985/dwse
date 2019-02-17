@@ -163,3 +163,14 @@ $(function() {
 		$("#selectList").val($("#selectList option:first").val());
 	}
 });
+
+$(function() {
+	if ($('#links-table').length > 0) {
+		$('a').on('click', event => {
+			event.preventDefault();
+			genericAjax('ajax/getLinks', {}, 'post', response => {
+				
+			})
+		})
+	}	
+});

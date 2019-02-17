@@ -19,9 +19,9 @@ class MainController extends Controller {
         $pagina = Reader::read('page');
         $orden = Reader::read('order');
         $filtro = Reader::read('search');
-        $this->getModel()->set('data', $this->getModel()->getAll('Link'));
+        $r = $this->getModel()->getLinksPaginator($this->getSesion()->getLogin()->getId(), $pagina, $orden);
+        $this->getModel()->set('data', $r);
         $this->getAlerts($user['nombre']);
     }
-    
     
 }

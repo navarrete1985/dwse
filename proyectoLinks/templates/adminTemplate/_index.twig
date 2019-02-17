@@ -34,17 +34,17 @@
                 </div>
               </div>
               {#-------------TABLA DE CONTENIDO-------------#}
-              <table class="table table-bordered">
+              <table class="table table-bordered" id='links-table'>
                 <thead>
                   <tr>
                     <th>
-                      <a href='index/main?order=nombre{{search}}'>Categoria</a>
+                      <a href='#' data-search='{{search}}' data-value='categoria'>Categoria</a>
                     </th>
                     <th>
-                      <a href='index/main?order=alias{{search}}'>href</a>
+                      <a href='#' data-search='{{search}}' data-value='href'>href</a>
                     </th>
                     <th>
-                      <a href='index/main?order=correo{{search}}'>Comentario</a>
+                      <a href='#' data-search='{{search}}' data-value='comentario'>Comentario</a>
                     </th>
                     {#<th>#}
                     {#  Editar#}

@@ -38,4 +38,12 @@ class AjaxController extends Controller {
         $result = $this->getModel()->delete('Link', $linkId);
         $this->getModel()->set('result', ($result->getId() === null) ? 1 : 0);
     }
+    
+    function getLinks() {
+        $this->checkIsLogged();
+        $pagina = Reader::read('pagina');
+        $orden = Reader::read('orden');
+        $r = $this->getModel()->getLinksPaginator($this->getSesion()->getLogin()->getId(), $pagina, $orden);
+        $this->getModel()->add($r);
+    }
 }
