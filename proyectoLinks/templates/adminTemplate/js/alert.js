@@ -166,13 +166,15 @@ $(function() {
 
 $(function() {
 	if ($('#links-table').length > 0) {
-		$('a').on('click', event => {
+		$('#links-table thead a').on('click', event => {
 			event.preventDefault();
-			genericAjax('ajax/getLinks', {pagina: $(event.currentTarget).attr('data-page')}, 'post', response => {
+			genericAjax('ajax/getLinks', {pagina: $(event.currentTarget).attr('data-page'),
+										  orden: $(event.currentTarget).attr('data-value')}, 'post', response => {
 				renderTable(response);
-				renderPagination(response.pagination);
+				renderPagination(response);
 			})
-		})
+		});
+		addPaginationListener();
 	}
 	
 	function renderTable(data) {
@@ -205,36 +207,72 @@ $(function() {
 	}
 	
 	function renderPagination(data) {
-		/*
-		{% if data.paginas.actual != 1%}
-                  <div class='btn-group'>
-                    {% if data.paginas.actual > 2%}
-                      <a class='btn btn-primary' href='index/main?page={{data.paginas.primero ~ querystring}}' data-page='{{data.paginas.primero}}'>
-                        <i class="fa fa-angle-double-left text-white"></i>
-                      </a>
-                    {% endif %}
-                    <a class='btn btn-primary' href='index/main?page={{data.paginas.anterior ~ querystring}}' data-page='{{data.paginas.anterior}}'>
-                      <i class="fa fa-angle-left text-white"></i>
-                    </a>  
-                  </div>
-                {% endif %}
-                <div class='btn-group ml-1'>
-                  {% for item in data.paginas.range %}
-                    <a href={{ '?page=' ~ item ~ querystring}} class='btn {{data.actual == item ? 'btn-light' : 'btn-primary'}}' data-page='{{item}}'>{{item}}</a>
-                  {% endfor %}
-                </div>
-                {% if data.paginas.actual != data.paginas.ultimo %}
-                <div class='btn-group ml-1'>
-                  <a class='btn btn-primary' href='index/main?page={{data.paginas.siguiente ~ querystring}}' data-page='{{data.paginas.siguiente}}'>
-                    <i class="fa fa-angle-right text-white"></i>
-                  </a>
-                  {% if data.actual != data.pages.ultimo - 1%}
-                    <a class='btn btn-primary' href='index/main?page={{data.pages.ultimo ~ querystring}}' data-page='{{data.paginas.ultimo}}'>
-                      <i class="fa fa-angle-double-right text-white"></i>
-                    </a>
-                  {% endif %}
-                </div>
-                {% endif %}
-		*/
+		let paginacion = '';
+		if(data.paginas.actual != 1) {
+			paginacion += `<div class='btn-group'>`;
+			if (data.paginas.actual > 2) {
+				paginacion += `
+					<a class='btn btn-primary' data-page='${data.paginas.primero}'>
+		                <i class="fa fa-angle-double-left text-white"></i>
+		              </a>	
+				`;
+			}
+			paginacion += `
+				<a class='btn btn-primary' data-page='${data.paginas.anterior}'>
+	              <i class="fa fa-angle-left text-white"></i>
+	            </a>  
+	          </div>
+			`;
+		}
+		if (data.paginas.actual != 1) {
+			paginacion += `<div class='btn-group'>`;
+			if (data.paginas.actual > 2) {
+				paginacion += `
+					<a class='btn btn-primary' data-page='${data.paginas.primero}'>
+						<i class="fa fa-angle-double-left text-white"></i>
+					</a>
+				`;
+			}
+			paginacion += `
+				<a class='btn btn-primary' data-page='${data.paginas.anterior}'>
+					<i class="fa fa-angle-left text-white"></i>
+					</a>  
+				</div>
+			`;
+		}
+		paginacion += `<div class='btn-group ml-1'>`;
+		Array.from(data.paginas.range).forEach(item => paginacion += `<a class='btn ${data.paginas.actual == item ? 'btn-light' : 'btn-primary'}' data-page='${item}'>${item}</a>`);
+		paginacion += `</div>`;
+		if (data.paginas.actual != data.paginas.ultimo) {
+			paginacion += `
+				<div class='btn-group ml-1'>
+		          <a class='btn btn-primary' data-page='${data.paginas.siguiente}'>
+		            <i class="fa fa-angle-right text-white"></i>
+		          </a>
+			`;
+			if (data.paginas.actual != data.paginas.ultimo - 1) {
+				paginacion += `
+					<a class='btn btn-primary' data-page='${data.paginas.ultimo}'>
+		              <i class="fa fa-angle-double-right text-white"></i>
+		            </a>
+				`;
+			}
+			paginacion += `</div>`;
+		}
+		$('#pagination-order').val(data.paginas.order);
+		$('#paginacion').empty();
+		$('#paginacion').append(paginacion);
+		addPaginationListener();
+	}
+	
+	function addPaginationListener() {
+		$('#paginacion a').on('click', event => {
+			event.preventDefault();
+			genericAjax('ajax/getLinks', {pagina: $(event.currentTarget).attr('data-page'),
+										  orden: $('#pagination-order').val()}, 'post', response => {
+				renderTable(response);
+				renderPagination(response);
+			})
+		})
 	}
 });
