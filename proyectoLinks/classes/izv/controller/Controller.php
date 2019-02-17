@@ -52,8 +52,4 @@ abstract class Controller {
         header('Location: ' . App::BASE . $target);
         exit();
     }
-    
-    protected function __isAdmin() {
-        return $this->sesion->getLogin()->getAdministrador() == 1;
-    }
 }

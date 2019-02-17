@@ -46,11 +46,6 @@ class Usuario {
      * @Column(type="boolean", nullable=false, precision=1, options={"default" : 0})
      */
     private $activo = 0;
-
-    /**
-     * @Column(type="boolean", nullable=false, precision=1, options={"default" : 0})
-     */
-    private $administrador = 0;
     
     /*-----------------------RELACIONES---------------------------*/
     /** 
@@ -228,37 +223,13 @@ class Usuario {
     }
 
     /**
-     * Set administrador
-     *
-     * @param boolean $administrador
-     *
-     * @return Usuario
-     */
-    public function setAdministrador($administrador)
-    {
-        $this->administrador = $administrador;
-
-        return $this;
-    }
-
-    /**
-     * Get administrador
-     *
-     * @return boolean
-     */
-    public function getAdministrador()
-    {
-        return $this->administrador;
-    }
-
-    /**
      * Add link
      *
      * @param \Link $link
      *
      * @return Usuario
      */
-    public function addLink(\Link $link)
+    public function addLink(Link $link)
     {
         $this->links[] = $link;
 
@@ -270,7 +241,7 @@ class Usuario {
      *
      * @param \Link $link
      */
-    public function removeLink(\Link $link)
+    public function removeLink(Link $link)
     {
         $this->links->removeElement($link);
     }
@@ -292,7 +263,7 @@ class Usuario {
      *
      * @return Usuario
      */
-    public function addCategoria(\Categoria $categoria)
+    public function addCategoria(Categoria $categoria)
     {
         $this->categorias[] = $categoria;
 
@@ -304,7 +275,7 @@ class Usuario {
      *
      * @param \Categoria $categoria
      */
-    public function removeCategoria(\Categoria $categoria)
+    public function removeCategoria(Categoria $categoria)
     {
         $this->categorias->removeElement($categoria);
     }

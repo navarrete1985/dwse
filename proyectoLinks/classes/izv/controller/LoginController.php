@@ -46,10 +46,9 @@ class LoginController extends Controller {
         $this->checkIsLogued();
         $usuario = Reader::readObject('izv\data\Usuario');
         $usuario->setActivo(0);
-        $usuario->setAdministrador(0);
         $usuario->setClave(Util::encriptar($usuario->getClave()));
-        $id = $this->getModel()->createUser($usuario);
-        if ($id > 0) {
+        $this->getModel()->create($usuario);
+        if ($usuario->getId() > 0) {
             $r2 = Mail::sendActivation($usuario);
             $this->sendRedirect('login/main?op=signup&resultado=1&r2=' . $r2);
         }else {
@@ -68,11 +67,11 @@ class LoginController extends Controller {
         $mailEncode = Reader::read('code');
         
         $mailDecode = \Firebase\JWT\JWT::decode($mailEncode, App::JWT_KEY, array('HS256'));
-        $user = $this->getModel()->getUser($id);
+        $user = $this->getModel()->get('Usuario', ['id' => $id]);
         if ($user !== null && $user->getCorreo() === $mailDecode) {
             $user->setActivo(1);
-            $result = $this->getModel()->updateUser($user);
+            $result = $this->getModel()->update($user);
         }
-        $this->sendRedirect('login/main?op=activate&resultado=' . $result);
+        $this->sendRedirect('login/main?op=activate&resultado=' . $result->getActivo());
     }
 }

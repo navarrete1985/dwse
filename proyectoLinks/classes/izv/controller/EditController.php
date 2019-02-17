@@ -13,27 +13,17 @@ class EditController extends Controller {
     
     function main() {
         $this->checkIsLogged();
-        $this->getModel()->set('twigFile', '_edit.twig');
-        $this->getModel()->set('accion', 'Edición de Usuario');
-        $this->getModel()->set('user', $this->sesion->getLogin()->get());    
-        $this->__isAdmin() ? $this->getModel()->set('admin', true) : null;
-        if ($this->__isAdmin() && Reader::read('id') != null) {
-            $user = $this->getModel()->getUser(Reader::read('id'));
-            $user === null ? sendRedirect('edit/main') : $this->getModel()->set('edituser', $user->get());
-        } else if (!$this->__isAdmin() && Reader::read('id') != null) {
-            $this->sendRedirect('index/main');
-        } else {
-            $this->getModel()->set('edituser', $this->sesion->getLogin()->get());    
-        }
+        $this->sendRedirect('index/main');
     }
     
-    function createuser() {
-        $this->__hasPermission();
+    function createlink() {
+        // $this->__hasPermission();
+        $this->checkIsLogged();
         $this->getModel()->set('twigFile', '_edit.twig');
-        $this->getModel()->set('accion', 'Usuario Nuevo');
-        $this->getModel()->set('route', 'edit/doinsert');
+        $this->getModel()->set('accion', 'Crear Link Nuevo');
         $this->getModel()->set('user', $this->sesion->getLogin()->get());
         $this->getModel()->set('new', true);
+        $this->getModel()->set('categories', $this->getModel()->getAll('Categoria'));
         $this->getAlerts();
     }
     

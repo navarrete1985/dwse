@@ -25,7 +25,7 @@ class Link {
 
     /*----------------RELACIONES------------------*/
     /**
-     * @OneToOne(targetEntity="Categoria", mappedBy="link")
+     * @ManyToOne(targetEntity="Categoria", inversedBy="links")
      * @JoinColumn(name="idcategoria", referencedColumnName="id", nullable=false)
      */
     private $categoria;

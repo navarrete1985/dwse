@@ -9,8 +9,9 @@ use Doctrine\ORM\Tools\Setup,
 
 class Bootstrap {
     private $entityManager;
+    private static $instance = null;
 
-    function __construct() {
+    private function __construct() {
         $paths = array('./cli_doctrine/src/');
         $isDevMode = true;
         $dbParams = array(
@@ -25,7 +26,19 @@ class Bootstrap {
         $this->entityManager = EntityManager::create($dbParams, $config);
     }
     
+    public static function getInstance() {
+        if (self::$instance === null) {
+            $class = get_class();
+            self::$instance = new $class;
+        }
+        return self::$instance; 
+    }
+    
     function getEntityManager() {
         return $this->entityManager;
+    }
+    
+    public function __clone() {
+        trigger_error('La clonación de este objeto no está permitida', E_USER_ERROR);
     }
 }

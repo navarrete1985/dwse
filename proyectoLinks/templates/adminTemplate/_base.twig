@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="{{twigFolder}}/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="{{twigFolder}}/vendors/css/vendor.bundle.addons.css">
   <link rel="stylesheet" href="{{twigFolder}}/vendors/iconfonts/font-awesome/css/font-awesome.css">
-   <link rel="stylesheet" href="{{twigFolder}}/vendors/icheck/skins/all.css">
+  <link rel="stylesheet" href="{{twigFolder}}/vendors/icheck/skins/all.css">
   <link rel="stylesheet" href="{{twigFolder}}/css/animate.css">
   <!-- endinject -->
   <!-- plugin css for this page -->
@@ -103,19 +103,17 @@
                   </div>
                 </div>
               </div>
-              {% if user.administrador == 1 %}
-                <a href="edit/createuser" class="nav-link">
-                  <button class="btn btn-success btn-block">Crear Usuario
+                <a href="edit/createlink" class="nav-link">
+                  <button class="btn btn-success btn-block">Añadir Link
                     <i class="mdi mdi-plus"></i>
                   </button>
                 </a>
-              {% endif %}
             </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="index/main">
               <i class="menu-icon mdi mdi-television"></i>
-              <span class="menu-title">Listado Usuarios</span>
+              <span class="menu-title">Listado Links</span>
             </a>
           </li>
         </ul>

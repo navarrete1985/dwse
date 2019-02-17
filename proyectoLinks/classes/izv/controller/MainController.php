@@ -19,17 +19,9 @@ class MainController extends Controller {
         $pagina = Reader::read('page');
         $orden = Reader::read('order');
         $filtro = Reader::read('search');
-        $this->getModel()->set('data', $this->getModel()->getAllUsers());
+        $this->getModel()->set('data', $this->getModel()->getAll('Link'));
         $this->getAlerts($user['nombre']);
     }
     
-    function dodelete() {
-        $this->checkIsLogged();
-        if ($this->__isAdmin()) {
-            $result = $this->getModel()->deleteUser(Reader::read('id'));
-            $this->sendRedirect('Location: index/main?op=delete&resultado=' . $result);
-        }else {
-            $this->sendRedirect();
-        }
-    }
+    
 }

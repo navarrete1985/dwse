@@ -28,19 +28,9 @@ class Usuario {
     private $nombre;
     
     /**
-     * @Column(type="string", length=60, nullable=false)
-     */
-    private $apellidos;
-    
-    /**
      * @Column(type="string", length=60, nullable=false, unique=true)
      */
     private $correo;
-    
-    /**
-     * @Column(type="string", length=255, nullable=false)
-     */
-    private $direccion;
     
     /**
      * @Column(type="date", nullable=false)
@@ -51,11 +41,6 @@ class Usuario {
      * @Column(type="boolean", nullable=false, precision=1, options={"default" : 0})
      */
     private $activo = 0;
-
-    /**
-     * @Column(type="boolean", nullable=false, precision=1, options={"default" : 0})
-     */
-    private $administrador = 0;
     
     /*-----------------------RELACIONES---------------------------*/
     /** 
@@ -160,30 +145,6 @@ class Usuario {
     }
 
     /**
-     * Set apellidos
-     *
-     * @param string $apellidos
-     *
-     * @return Usuario
-     */
-    public function setApellidos($apellidos)
-    {
-        $this->apellidos = $apellidos;
-
-        return $this;
-    }
-
-    /**
-     * Get apellidos
-     *
-     * @return string
-     */
-    public function getApellidos()
-    {
-        return $this->apellidos;
-    }
-
-    /**
      * Set correo
      *
      * @param string $correo
@@ -205,30 +166,6 @@ class Usuario {
     public function getCorreo()
     {
         return $this->correo;
-    }
-
-    /**
-     * Set direccion
-     *
-     * @param string $direccion
-     *
-     * @return Usuario
-     */
-    public function setDireccion($direccion)
-    {
-        $this->direccion = $direccion;
-
-        return $this;
-    }
-
-    /**
-     * Get direccion
-     *
-     * @return string
-     */
-    public function getDireccion()
-    {
-        return $this->direccion;
     }
 
     /**
@@ -277,30 +214,6 @@ class Usuario {
     public function getActivo()
     {
         return $this->activo;
-    }
-
-    /**
-     * Set administrador
-     *
-     * @param boolean $administrador
-     *
-     * @return Usuario
-     */
-    public function setAdministrador($administrador)
-    {
-        $this->administrador = $administrador;
-
-        return $this;
-    }
-
-    /**
-     * Get administrador
-     *
-     * @return boolean
-     */
-    public function getAdministrador()
-    {
-        return $this->administrador;
     }
 
     /**

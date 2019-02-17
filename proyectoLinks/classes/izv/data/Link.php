@@ -9,6 +9,8 @@ namespace izv\data;
  */
 class Link {
 
+    use \izv\common\Common;
+
     /**
      * @Id
      * @Column(type="integer") @GeneratedValue
@@ -28,7 +30,7 @@ class Link {
 
     /*----------------RELACIONES------------------*/
     /**
-     * @OneToOne(targetEntity="Categoria", mappedBy="link")
+     * @ManyToOne(targetEntity="Categoria", inversedBy="links")
      * @JoinColumn(name="idcategoria", referencedColumnName="id", nullable=false)
      */
     private $categoria;
@@ -103,7 +105,7 @@ class Link {
      *
      * @return Link
      */
-    public function setCategoria(\Categoria $categoria)
+    public function setCategoria(Categoria $categoria)
     {
         $this->categoria = $categoria;
 
@@ -127,7 +129,7 @@ class Link {
      *
      * @return Link
      */
-    public function setUsuario(\Usuario $usuario)
+    public function setUsuario(Usuario $usuario)
     {
         $this->usuario = $usuario;
 

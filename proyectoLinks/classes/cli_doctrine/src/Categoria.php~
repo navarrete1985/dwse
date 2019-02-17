@@ -19,10 +19,9 @@ class Categoria{
     
     /*-------------------RELACIONES------------------*/
     /**
-     * @OneToOne(targetEntity="Link", inversedBy="categoria")
-     * @JoinColumn(name="idcategoria", referencedColumnName="id")
+     * @OneToMany(targetEntity="Link", mappedBy="categoria") 
      */
-    private $link;
+    private $links;
     
     /**
      * @ManyToOne(targetEntity="Usuario", inversedBy="categorias") 

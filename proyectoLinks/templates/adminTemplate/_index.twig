@@ -38,74 +38,50 @@
                 <thead>
                   <tr>
                     <th>
-                      <a href='index/main?order=nombre{{search}}'>Nombre</a>
+                      <a href='index/main?order=nombre{{search}}'>Categoria</a>
                     </th>
                     <th>
-                      <a href='index/main?order=alias{{search}}'>Alias</a>
+                      <a href='index/main?order=alias{{search}}'>href</a>
                     </th>
                     <th>
-                      <a href='index/main?order=correo{{search}}'>Correo</a>
+                      <a href='index/main?order=correo{{search}}'>Comentario</a>
                     </th>
-                    {% if user.administrador == 1 %}
-                    <th>
-                      <a href='index/main?order=activo{{search}}'>Activo</a>
-                    </th>
-                    <th>
-                      <a href='index/main?order=administrador{{search}}'>Admin</a>
-                    </th>
-                    <th>
-                      Editar
-                    </th>
+                    {#<th>#}
+                    {#  Editar#}
+                    {#</th>#}
                     <th>
                       Eliminar
                     </th>
-                    {% endif %}
                   </tr>
                 </thead>
                 <tbody>
                   {% for item in data%}
                     <tr>
                       <td>
-                        {{item.nombre}}
+                        {{item.categoria.categoria}}
                       </td>
                       <td>
-                        {{item.alias}}
+                        {{item.href}}
                       </td>
                       <td>
-                        {{item.correo}}
+                        {{item.comentario}}
                       </td>
-                      {% if user.administrador == 1 %}
+                        {#<td>#}
+                        {#  <a href='edit/main?id={{item.id}}'>#}
+                        {#    <button type='button' class='btn btn-inverse-info btn-rounded btn-sm'>#}
+                        {#      <i class='mdi mdi-file-document'></i>#}
+                        {#      Editar#}
+                        {#    </button>#}
+                        {#  </a>#}
+                        {#</td>#}
                         <td>
-                          {% if item.activo == 1%}
-                            <i class='fa fa-check-square-o text-success'></i>
-                          {% else %}
-                            <i class='fa fa-minus text-secondary'></i>
-                          {% endif %}
-                        </td>
-                        <td>
-                          {% if item.administrador == 1%}
-                            <i class='fa fa-check-square-o text-success'></i>
-                          {% else %}
-                            <i class='fa fa-minus text-secondary'></i>
-                          {% endif %}
-                        </td>
-                        <td>
-                          <a href='edit/main?id={{item.id}}'>
-                            <button type='button' class='btn btn-inverse-info btn-rounded btn-sm'>
-                              <i class='mdi mdi-file-document'></i>
-                              Editar
-                            </button>
-                          </a>
-                        </td>
-                        <td>
-                          <a href='index/dodelete?id={{item.id}}' class='borrar'>
+                          <a href='#' data-action='ajax/deleteLink' data-id='{{item.id}}' class='borrar'>
                             <button type='button' class='btn btn-inverse-danger btn-rounded btn-sm'>
                               <i class='mdi mdi-alert-outline'></i>
                               Eliminar
                             </button>
                           </a>
                         </td>
-                      {% endif %}
                     </tr>
                   {% endfor %}
                 </tbody>

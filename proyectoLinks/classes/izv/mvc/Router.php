@@ -9,9 +9,10 @@ class Router {
     
     function __construct() {
         $this->rutas = array(
-            'index' => new Route('UserModel', 'MainView' , 'MainController'),
-            'login' => new Route('UserModel', 'MainView', 'LoginController'),
-            'edit'  => new Route('UserModel', 'MainView', 'EditController')
+            'index' => new Route('LinkModel', 'MainView' , 'MainController'),
+            'login' => new Route('LinkModel', 'MainView', 'LoginController'),
+            'edit'  => new Route('LinkModel', 'MainView', 'EditController'),
+            'ajax'  => new Route('AjaxModel', 'AjaxView', 'AjaxController')
         );
     }
 

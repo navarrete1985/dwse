@@ -6,16 +6,17 @@ use izv\tools\Bootstrap;
 
 class Model {
     
-    protected $datosVista = array(),
-              $bootstrap,
+    protected $datosVista = array();
+    
+    protected $bootstrap,
               $gestor;
     
     function __construct() {
-        $this->bootstrap = new Bootstrap();
+        $this->bootstrap = Bootstrap::getInstance();
         $this->gestor = $this->bootstrap->getEntityManager();
     }
 
-    function get($name) {
+    function getData($name) {
         if(isset($this->datosVista[$name])) {
             return $this->datosVista[$name];
         }
@@ -30,4 +31,15 @@ class Model {
         $this->datosVista[$name] = $value;
         return $this;
     }
+    
+    function add(array $array) {
+        foreach($array as $indice => $valor) {
+            $this->set($indice, $valor);
+        }
+    }
+    
+    function getReference($class, $id) {
+        return $this->gestor->getReference($class, $id);
+    }
 }
+ 

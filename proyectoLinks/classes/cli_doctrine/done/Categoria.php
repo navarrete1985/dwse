@@ -19,16 +19,22 @@ class Categoria{
     
     /*-------------------RELACIONES------------------*/
     /**
-     * @OneToOne(targetEntity="Link", inversedBy="categoria")
-     * @JoinColumn(name="idcategoria", referencedColumnName="id")
+     * @OneToMany(targetEntity="Link", mappedBy="categoria") 
      */
-    private $link;
+    private $links;
     
     /**
      * @ManyToOne(targetEntity="Usuario", inversedBy="categorias") 
      * @JoinColumn(name="idusuario", referencedColumnName="id", nullable=false)
      */
     private $usuario;
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->links = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -65,27 +71,37 @@ class Categoria{
     }
 
     /**
-     * Set link
+     * Add link
      *
      * @param \Link $link
      *
      * @return Categoria
      */
-    public function setLink(\Link $link = null)
+    public function addLink(\Link $link)
     {
-        $this->link = $link;
+        $this->links[] = $link;
 
         return $this;
     }
 
     /**
-     * Get link
+     * Remove link
      *
-     * @return \Link
+     * @param \Link $link
      */
-    public function getLink()
+    public function removeLink(\Link $link)
     {
-        return $this->link;
+        $this->links->removeElement($link);
+    }
+
+    /**
+     * Get links
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getLinks()
+    {
+        return $this->links;
     }
 
     /**

@@ -23,6 +23,14 @@ trait Common {
         return $this;
     }
 
+    function getUnset(array $datos = []) {
+        $objeto = $this->get();
+        foreach($datos as $dato) {
+            unset($objeto[$dato]);
+        }
+        return $objeto;
+    }
+    
     function get() {
         $array = array();
         foreach($this as $atributo => $valor) {
