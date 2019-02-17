@@ -24,10 +24,6 @@ class LinkModel extends Model {
         return $usuario;
     }
     
-    function isEmailChanged($usuario) {
-        // return $this->manage->isEmailChanged($usuario);
-    }
-    
     function activateUser($id, $correo) {
         $result = 0;
         $usuario = $this->gestor->get(['correo' => $correo, 'id' => $id]);
