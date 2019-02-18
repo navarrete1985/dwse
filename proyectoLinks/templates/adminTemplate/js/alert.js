@@ -79,28 +79,6 @@ function add(action, data, completeCallback) {
 
 }
 
-
-(function() {
-    $('.borrar').on('click', function(e){
-        e.preventDefault();
-        var target = e.currentTarget;
-        var fClose = function(){
-            modal.modal("hide");
-        };
-        var onConfirm = function() {
-			add($(e.currentTarget).attr('data-action'), {link: $(e.currentTarget).attr('data-id')}, response => {
-				$(e.currentTarget).closest('tr').remove();
-				showMessage('Éxito', 'El link se ha eliminado con éxito');
-			})
-        };
-        var modal = $("#confirmSimple");
-        modal.modal("show");
-        $("#btConfirmSimpleDelete").unbind().one('click', onConfirm).one('click', fClose);
-        $("#btCerrarmSimpleDelete").unbind().one("click", fClose);
-    });
-    
-})();
-
 $(function() {
 	let form = $('#form-user');
 	form.on('submit', event => {
@@ -257,9 +235,32 @@ $(function() {
 										  orden: $('#pagination-order').val()}, 'post', response => {
 				renderTable(response);
 				renderPagination(response);
+				addDeleteListener();
 			})
 		})
 	}
+	
+	function addDeleteListener() {
+		$('.borrar').on('click', function(e){
+	        e.preventDefault();
+	        var target = e.currentTarget;
+	        var fClose = function(){
+	            modal.modal("hide");
+	        };
+	        var onConfirm = function() {
+				add($(e.currentTarget).attr('data-action'), {link: $(e.currentTarget).attr('data-id')}, response => {
+					$(e.currentTarget).closest('tr').remove();
+					showMessage('Éxito', 'El link se ha eliminado con éxito');
+				})
+	        };
+	        var modal = $("#confirmSimple");
+	        modal.modal("show");
+	        $("#btConfirmSimpleDelete").unbind().one('click', onConfirm).one('click', fClose);
+	        $("#btCerrarmSimpleDelete").unbind().one("click", fClose);
+	    });
+	}
+	
+	addDeleteListener();
 });
 
 $(document).ajaxStart(function () {
