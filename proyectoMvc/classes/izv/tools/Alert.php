@@ -56,7 +56,7 @@ class Alert {
         $this->resultado = $resultado;
     }
     
-    function _getAlert() {
+    private function _getAlert() {
         $string = '';
         if(isset(self::$mensajes[$this->operacion])) {
             $pos = 1;
