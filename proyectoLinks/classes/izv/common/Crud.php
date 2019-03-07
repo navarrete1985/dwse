@@ -28,10 +28,9 @@ trait Crud {
             $r = $this->gestor->persist($item);
             $this->gestor->flush();
             return $item;    
-        }catch(\Doctrine\DBAL\Exception\UniqueConstraintViolationException $e){
+        } catch(\Doctrine\DBAL\Exception\UniqueConstraintViolationException $e){
             $result = -1;
-        }    
-        catch(\Exception $e){
+        } catch(\Exception $e){
             $result = 0;
         }
         return $result;
